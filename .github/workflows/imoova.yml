@@ -1,4 +1,4 @@
-name: Ejecutar scraper imoova diariamente
+name: Ejecutar scraper imoova cada 30 minutos
 
 on:
   schedule:
@@ -13,7 +13,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}   # Necesario para hacer push
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
       - name: Instalar Chromium y dependencias
         run: |
@@ -33,4 +34,4 @@ jobs:
           git config --global user.name "GitHub Action Bot"
           git add offers.json
           git commit -m "Update offers.json" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/daniel1999guimar/imoova.git HEAD:main
