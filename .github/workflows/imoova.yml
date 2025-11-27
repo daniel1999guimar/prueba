@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: false
 
       - name: Instalar Chromium y dependencias
         run: |
@@ -28,10 +27,12 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: python3 scraper.py
 
-      - name: Guardar cambios en offers.json
+      - name: Commit updated offers.json
         run: |
           git config --global user.email "bot@github.com"
           git config --global user.name "GitHub Action Bot"
           git add offers.json
           git commit -m "Update offers.json" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/daniel1999guimar/imoova.git HEAD:main
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
