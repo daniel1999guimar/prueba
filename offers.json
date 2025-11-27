@@ -1,21 +1,5 @@
 [
   {
-    "id": "67207",
-    "origin": "Rome",
-    "destination": "Porto",
-    "nights": 10,
-    "dates": "27 Nov - 9 Dec",
-    "link": "https://www.imoova.com/en/relocations/67207"
-  },
-  {
-    "id": "67202",
-    "origin": "Paris",
-    "destination": "Madrid",
-    "nights": 9,
-    "dates": "27 Nov - 4 Dec",
-    "link": "https://www.imoova.com/en/relocations/67202"
-  },
-  {
     "id": "67015",
     "origin": "Paris",
     "destination": "Malaga",
