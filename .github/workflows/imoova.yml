@@ -2,27 +2,24 @@ name: Ejecutar scraper imoova diariamente
 
 on:
   schedule:
-    - cron: "0 7 * * *"   # Todos los días a las 07:00 UTC
-  workflow_dispatch:      # Permite ejecutarlo manualmente
+    - cron: "0 7 * * *"
+  workflow_dispatch:
 
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Instalar dependencias
+      - name: Instalar Chromium y dependencias
         run: |
           sudo apt-get update
           sudo apt-get install -y chromium-browser chromium-chromedriver
-          python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Ejecutar script
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-        run: |
-          python3 scraper.py
+        run: python3 scraper.py
