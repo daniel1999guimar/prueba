@@ -238,5 +238,29 @@
     "nights": 4,
     "dates": "27 Nov - 18 Dec",
     "link": "https://www.imoova.com/en/relocations/66528"
+  },
+  {
+    "id": "67261",
+    "origin": "Vienna",
+    "destination": "Stuttgart",
+    "nights": 7,
+    "dates": "28 Nov - 30 Dec",
+    "link": "https://www.imoova.com/en/relocations/67261"
+  },
+  {
+    "id": "67260",
+    "origin": "Vienna",
+    "destination": "Stuttgart",
+    "nights": 7,
+    "dates": "28 Nov - 30 Dec",
+    "link": "https://www.imoova.com/en/relocations/67260"
+  },
+  {
+    "id": "67255",
+    "origin": "Split",
+    "destination": "Munich",
+    "nights": 6,
+    "dates": "6 Dec - 4 Jan 26",
+    "link": "https://www.imoova.com/en/relocations/67255"
   }
 ]
