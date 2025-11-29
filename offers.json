@@ -302,5 +302,13 @@
     "nights": 7,
     "dates": "1 - 12 Dec",
     "link": "https://www.imoova.com/en/relocations/67311"
+  },
+  {
+    "id": "67339",
+    "origin": "Edinburgh",
+    "destination": "London",
+    "nights": 7,
+    "dates": "5 - 18 Dec",
+    "link": "https://www.imoova.com/en/relocations/67339"
   }
 ]
