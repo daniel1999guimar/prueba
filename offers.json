@@ -374,5 +374,21 @@
     "nights": 6,
     "dates": "2 - 7 Dec",
     "link": "https://www.imoova.com/en/relocations/67536"
+  },
+  {
+    "id": "67542",
+    "origin": "Paris",
+    "destination": "Madrid",
+    "nights": 13,
+    "dates": "2 - 13 Dec",
+    "link": "https://www.imoova.com/en/relocations/67542"
+  },
+  {
+    "id": "67541",
+    "origin": "Valencia",
+    "destination": "Madrid",
+    "nights": 7,
+    "dates": "2 - 14 Dec",
+    "link": "https://www.imoova.com/en/relocations/67541"
   }
 ]
