@@ -398,5 +398,13 @@
     "nights": 5,
     "dates": "3 - 7 Dec",
     "link": "https://www.imoova.com/en/relocations/67596"
+  },
+  {
+    "id": "67597",
+    "origin": "Lisbon",
+    "destination": "Madrid",
+    "nights": 4,
+    "dates": "12 - 14 Dec",
+    "link": "https://www.imoova.com/en/relocations/67597"
   }
 ]
