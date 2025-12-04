@@ -414,5 +414,21 @@
     "nights": 4,
     "dates": "8 - 9 Dec",
     "link": "https://www.imoova.com/en/relocations/67714"
+  },
+  {
+    "id": "67716",
+    "origin": "Split",
+    "destination": "Barcelona",
+    "nights": 8,
+    "dates": "5 - 12 Dec",
+    "link": "https://www.imoova.com/en/relocations/67716"
+  },
+  {
+    "id": "67717",
+    "origin": "Venice",
+    "destination": "Zurich",
+    "nights": 5,
+    "dates": "4 - 31 Dec",
+    "link": "https://www.imoova.com/en/relocations/67717"
   }
 ]
