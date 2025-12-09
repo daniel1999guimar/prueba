@@ -30,5 +30,21 @@
     "nights": 5,
     "dates": "9 - 12 Dec",
     "link": "https://www.imoova.com/en/relocations/67716"
+  },
+  {
+    "id": "68016",
+    "origin": "Paris Orly",
+    "destination": "Barcelona",
+    "nights": 4,
+    "dates": "9 - 12 Dec",
+    "link": "https://www.imoova.com/en/relocations/68016"
+  },
+  {
+    "id": "66571",
+    "origin": "Lyon",
+    "destination": "Madrid",
+    "nights": 4,
+    "dates": "9 - 14 Dec",
+    "link": "https://www.imoova.com/en/relocations/66571"
   }
 ]
