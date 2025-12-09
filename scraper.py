@@ -17,9 +17,8 @@ URL = 'https://www.imoova.com/en/relocations?region=EU'
 # Configuración correo
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-smtp_user = 'danieldelgadospain@gmail.com'
+from_email = smtp_user = 'danieldelgadospain@gmail.com'
 smtp_password = 'ccjd yvwg wnol rzdd'
-from_email = smtp_user
 to_email = 'danieldelgadospain@gmail.com'
 
 def load_previous():
@@ -34,22 +33,14 @@ def save_offers(offers):
         json.dump(offers, f, indent=2)
 
 def parse_nights(text):
-    # Mantener solo números y "+"
-    clean = text.strip()
-
-    # Caso "3 + 3 noches" → coger solo el número de la izquierda
-    if "+" in clean:
-        left = clean.split("+")[0]
-        nums = re.findall(r'\d+', left)
-        if nums:
-            return int(nums[0])
-
-    # Caso normal: "5 noches" o similar
-    nums = re.findall(r'\d+', clean)
-    if nums:
-        return int(nums[0])
-
-    return None
+    """
+    Extrae SOLO el número de la izquierda.
+    Si solo hay uno, devuelve ese.
+    """
+    numbers = re.findall(r'\d+', text)
+    if not numbers:
+        return None
+    return int(numbers[0])  # Solo el primero
 
 def extract_offers(html):
     soup = BeautifulSoup(html, 'html.parser')
@@ -66,6 +57,7 @@ def extract_offers(html):
             continue
         offer_id = offer_id_match.group(1)
 
+        # Origen → Destino
         h3 = a.find('h3')
         if h3:
             route_text = h3.get_text(strip=True)
@@ -75,11 +67,11 @@ def extract_offers(html):
         else:
             origin = destination = None
 
+        # Fechas
         time_elements = a.find_all('time')
-        dates = None
-        if time_elements:
-            dates = " - ".join(t.get_text(strip=True) for t in time_elements)
+        dates = " - ".join(t.get_text(strip=True) for t in time_elements) if time_elements else None
 
+        # Noches
         night_span = a.find('span', string=re.compile(r'\d.*(night|noche|día|dias|\+)', re.IGNORECASE))
         nights = parse_nights(night_span.get_text(strip=True)) if night_span else None
 
@@ -124,6 +116,11 @@ def main():
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
+    # 🔥 IMPORTANTE EN GITHUB ACTIONS 🔥
+    options.binary_location = "/usr/bin/chromium-browser"
+
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
 
@@ -155,8 +152,6 @@ def main():
     driver.quit()
 
     offers = extract_offers(html)
-    for o in offers:
-        print(f"[DEBUG] {o['origin']} → {o['destination']} | Noches: {o['nights']} | Fechas: {o['dates']}")
 
     previous_offers = load_previous()
     previous_ids = {offer['id'] for offer in previous_offers}
