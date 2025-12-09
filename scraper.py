@@ -34,22 +34,21 @@ def save_offers(offers):
         json.dump(offers, f, indent=2)
 
 def parse_nights(text):
-    """
-    Extrae el número de noches:
-    - Si hay un '+', toma solo el número de la izquierda
-    - Si no hay '+', toma el primer número encontrado
-    """
-    text = text.replace(" ", "")
-    if '+' in text:
-        left_number = text.split('+')[0]
-        try:
-            return int(left_number)
-        except ValueError:
-            return None
-    else:
-        match = re.search(r'\d+', text)
-        if match:
-            return int(match.group())
+    # Mantener solo números y "+"
+    clean = text.strip()
+
+    # Caso "3 + 3 noches" → coger solo el número de la izquierda
+    if "+" in clean:
+        left = clean.split("+")[0]
+        nums = re.findall(r'\d+', left)
+        if nums:
+            return int(nums[0])
+
+    # Caso normal: "5 noches" o similar
+    nums = re.findall(r'\d+', clean)
+    if nums:
+        return int(nums[0])
+
     return None
 
 def extract_offers(html):
@@ -67,7 +66,6 @@ def extract_offers(html):
             continue
         offer_id = offer_id_match.group(1)
 
-        # Origen → Destino
         h3 = a.find('h3')
         if h3:
             route_text = h3.get_text(strip=True)
@@ -77,13 +75,11 @@ def extract_offers(html):
         else:
             origin = destination = None
 
-        # Fechas
         time_elements = a.find_all('time')
         dates = None
         if time_elements:
             dates = " - ".join(t.get_text(strip=True) for t in time_elements)
 
-        # Noches
         night_span = a.find('span', string=re.compile(r'\d.*(night|noche|día|dias|\+)', re.IGNORECASE))
         nights = parse_nights(night_span.get_text(strip=True)) if night_span else None
 
