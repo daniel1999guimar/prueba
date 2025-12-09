@@ -462,5 +462,21 @@
     "nights": 5,
     "dates": "19 - 23 Dec",
     "link": "https://www.imoova.com/en/relocations/67765"
+  },
+  {
+    "id": "68011",
+    "origin": "Paris Orly",
+    "destination": "Madrid",
+    "nights": 6,
+    "dates": "9 - 23 Dec",
+    "link": "https://www.imoova.com/en/relocations/68011"
+  },
+  {
+    "id": "68012",
+    "origin": "Malaga",
+    "destination": "Madrid",
+    "nights": 7,
+    "dates": "9 - 16 Dec",
+    "link": "https://www.imoova.com/en/relocations/68012"
   }
 ]
