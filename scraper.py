@@ -1,7 +1,6 @@
 import json
 import time
 import re
-import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -11,19 +10,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
-from selenium.webdriver.chrome.service import Service
 
 JSON_FILE = 'offers.json'
 URL = 'https://www.imoova.com/en/relocations?region=EU'
 
-# Configuración correo desde GitHub Secrets
+# Configuración correo
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-smtp_user = os.getenv("SMTP_USER")
-smtp_password = os.getenv("SMTP_PASSWORD")
+smtp_user = 'danieldelgadospain@gmail.com'
+smtp_password = 'ccjd yvwg wnol rzdd'
 from_email = smtp_user
-to_email = smtp_user
-
+to_email = 'danieldelgadospain@gmail.com'
 
 def load_previous():
     try:
@@ -32,16 +29,28 @@ def load_previous():
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
-
 def save_offers(offers):
     with open(JSON_FILE, 'w') as f:
         json.dump(offers, f, indent=2)
 
-
 def parse_nights(text):
-    match = re.findall(r'\d+', text.replace(" ", ""))
-    return sum(int(n) for n in match) if match else None
-
+    """
+    Extrae el número de noches:
+    - Si hay un '+', toma solo el número de la izquierda
+    - Si no hay '+', toma el primer número encontrado
+    """
+    text = text.replace(" ", "")
+    if '+' in text:
+        left_number = text.split('+')[0]
+        try:
+            return int(left_number)
+        except ValueError:
+            return None
+    else:
+        match = re.search(r'\d+', text)
+        if match:
+            return int(match.group())
+    return None
 
 def extract_offers(html):
     soup = BeautifulSoup(html, 'html.parser')
@@ -58,17 +67,23 @@ def extract_offers(html):
             continue
         offer_id = offer_id_match.group(1)
 
+        # Origen → Destino
         h3 = a.find('h3')
         if h3:
-            parts = h3.get_text(strip=True).split('→')
-            origin = parts[0].strip()
+            route_text = h3.get_text(strip=True)
+            parts = route_text.split('→')
+            origin = parts[0].strip() if len(parts) > 0 else None
             destination = parts[1].strip() if len(parts) > 1 else None
         else:
             origin = destination = None
 
+        # Fechas
         time_elements = a.find_all('time')
-        dates = " - ".join(t.get_text(strip=True) for t in time_elements) if time_elements else None
+        dates = None
+        if time_elements:
+            dates = " - ".join(t.get_text(strip=True) for t in time_elements)
 
+        # Noches
         night_span = a.find('span', string=re.compile(r'\d.*(night|noche|día|dias|\+)', re.IGNORECASE))
         nights = parse_nights(night_span.get_text(strip=True)) if night_span else None
 
@@ -82,7 +97,6 @@ def extract_offers(html):
         })
 
     return offers
-
 
 def send_email(new_offers):
     if not new_offers:
@@ -109,21 +123,12 @@ def send_email(new_offers):
     except Exception as e:
         print(f"Error al enviar el correo: {e}")
 
-
 def main():
-    # Configurar Chrome Headless para GitHub Actions
     options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.binary_location = "/usr/bin/chromium-browser"
-
-    driver = webdriver.Chrome(
-        service=Service("/usr/bin/chromedriver"),
-        options=options
-    )
-
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(options=options)
     driver.get(URL)
 
     WebDriverWait(driver, 20).until(
@@ -154,6 +159,8 @@ def main():
     driver.quit()
 
     offers = extract_offers(html)
+    for o in offers:
+        print(f"[DEBUG] {o['origin']} → {o['destination']} | Noches: {o['nights']} | Fechas: {o['dates']}")
 
     previous_offers = load_previous()
     previous_ids = {offer['id'] for offer in previous_offers}
@@ -169,7 +176,6 @@ def main():
         send_email(new_offers)
     else:
         print("No hay nuevas ofertas con más de 3 noches.")
-
 
 if __name__ == "__main__":
     main()
