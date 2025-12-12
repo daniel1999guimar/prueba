@@ -62,5 +62,13 @@
     "nights": 4,
     "dates": "10 - 28 Dec",
     "link": "https://www.imoova.com/en/relocations/68062"
+  },
+  {
+    "id": "68248",
+    "origin": "Frankfurt",
+    "destination": "Porto",
+    "nights": 4,
+    "dates": "12 - 28 Dec",
+    "link": "https://www.imoova.com/en/relocations/68248"
   }
 ]
