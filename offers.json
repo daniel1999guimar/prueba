@@ -78,5 +78,13 @@
     "nights": 4,
     "dates": "15 - 30 Dec",
     "link": "https://www.imoova.com/en/relocations/68335"
+  },
+  {
+    "id": "68372",
+    "origin": "Madrid",
+    "destination": "Munich",
+    "nights": 9,
+    "dates": "16 - 24 Dec",
+    "link": "https://www.imoova.com/en/relocations/68372"
   }
 ]
