@@ -1,6 +1,7 @@
 import json
 import time
 import re
+import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -14,13 +15,23 @@ from bs4 import BeautifulSoup
 JSON_FILE = 'offers.json'
 URL = 'https://www.imoova.com/en/relocations?region=EU'
 
-# Configuración correo
+# ==========================
+# CONFIGURACIÓN EMAIL (SECRETS)
+# ==========================
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-from_email = smtp_user = 'danieldelgadospain@gmail.com'
-smtp_password = 'ccjd yvwg wnol rzdd'
-to_email = 'danieldelgadospain@gmail.com'
 
+smtp_user = os.environ.get('SMTP_USER')
+smtp_password = os.environ.get('SMTP_PASSWORD')
+from_email = smtp_user
+to_email = os.environ.get('SMTP_TO', smtp_user)
+
+if not smtp_user or not smtp_password:
+    raise ValueError("Faltan variables de entorno SMTP_USER o SMTP_PASSWORD")
+
+# ==========================
+# UTILIDADES JSON
+# ==========================
 def load_previous():
     try:
         with open(JSON_FILE, 'r') as f:
@@ -32,15 +43,12 @@ def save_offers(offers):
     with open(JSON_FILE, 'w') as f:
         json.dump(offers, f, indent=2)
 
+# ==========================
+# PARSEO
+# ==========================
 def parse_nights(text):
-    """
-    Extrae SOLO el número de la izquierda.
-    Si solo hay uno, devuelve ese.
-    """
     numbers = re.findall(r'\d+', text)
-    if not numbers:
-        return None
-    return int(numbers[0])  # Solo el primero
+    return int(numbers[0]) if numbers else None
 
 def extract_offers(html):
     soup = BeautifulSoup(html, 'html.parser')
@@ -50,29 +58,31 @@ def extract_offers(html):
     print(f"[extract_offers] Ofertas encontradas: {len(offer_elements)}")
 
     for a in offer_elements:
-        href = a['href']
-        full_link = 'https://www.imoova.com' + href
-        offer_id_match = re.search(r'/relocations/(\d+)', href)
-        if not offer_id_match:
+        href = a.get('href')
+        if not href:
             continue
-        offer_id = offer_id_match.group(1)
 
-        # Origen → Destino
+        match = re.search(r'/relocations/(\d+)', href)
+        if not match:
+            continue
+
+        offer_id = match.group(1)
+        full_link = f'https://www.imoova.com{href}'
+
         h3 = a.find('h3')
+        origin = destination = None
         if h3:
-            route_text = h3.get_text(strip=True)
-            parts = route_text.split('→')
-            origin = parts[0].strip() if len(parts) > 0 else None
-            destination = parts[1].strip() if len(parts) > 1 else None
-        else:
-            origin = destination = None
+            parts = h3.get_text(strip=True).split('→')
+            if len(parts) == 2:
+                origin, destination = parts[0].strip(), parts[1].strip()
 
-        # Fechas
         time_elements = a.find_all('time')
         dates = " - ".join(t.get_text(strip=True) for t in time_elements) if time_elements else None
 
-        # Noches
-        night_span = a.find('span', string=re.compile(r'\d.*(night|noche|día|dias|\+)', re.IGNORECASE))
+        night_span = a.find(
+            'span',
+            string=re.compile(r'\d.*(night|noche|día|dias|\+)', re.IGNORECASE)
+        )
         nights = parse_nights(night_span.get_text(strip=True)) if night_span else None
 
         offers.append({
@@ -86,6 +96,9 @@ def extract_offers(html):
 
     return offers
 
+# ==========================
+# EMAIL
+# ==========================
 def send_email(new_offers):
     if not new_offers:
         return
@@ -97,7 +110,12 @@ def send_email(new_offers):
 
     body = "Se han detectado nuevas ofertas con más de 3 noches:\n\n"
     for offer in new_offers:
-        body += f"- {offer['origin']} → {offer['destination']} ({offer['nights']} noches) | Fechas: {offer['dates']} | Link: {offer['link']}\n"
+        body += (
+            f"- {offer['origin']} → {offer['destination']} "
+            f"({offer['nights']} noches) | "
+            f"Fechas: {offer['dates']} | "
+            f"Link: {offer['link']}\n"
+        )
 
     msg.attach(MIMEText(body, 'plain'))
 
@@ -111,33 +129,37 @@ def send_email(new_offers):
     except Exception as e:
         print(f"Error al enviar el correo: {e}")
 
+# ==========================
+# MAIN
+# ==========================
 def main():
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-
-    # 🔥 IMPORTANTE EN GITHUB ACTIONS 🔥
     options.binary_location = "/usr/bin/chromium-browser"
 
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
 
     WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]'))
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]')
+        )
     )
 
-    print("Haciendo scroll por tramos...\n")
+    print("Haciendo scroll por tramos...")
     last_count = 0
     same_count_attempts = 0
-    max_same_count_attempts = 10
 
-    while same_count_attempts < max_same_count_attempts:
+    while same_count_attempts < 10:
         driver.execute_script("window.scrollBy(0, 1300);")
         time.sleep(2)
 
-        elements = driver.find_elements(By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]')
+        elements = driver.find_elements(
+            By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]'
+        )
         current_count = len(elements)
         print(f"Anuncios visibles: {current_count}")
 
@@ -147,14 +169,13 @@ def main():
             same_count_attempts = 0
             last_count = current_count
 
-    print("\nScroll finalizado. Extrayendo HTML...\n")
     html = driver.page_source
     driver.quit()
 
     offers = extract_offers(html)
 
     previous_offers = load_previous()
-    previous_ids = {offer['id'] for offer in previous_offers}
+    previous_ids = {o['id'] for o in previous_offers}
 
     new_offers = [
         o for o in offers
