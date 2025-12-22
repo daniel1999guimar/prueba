@@ -142,5 +142,13 @@
     "nights": 6,
     "dates": "31 Dec - 13 Jan 26",
     "link": "https://www.imoova.com/en/relocations/68631"
+  },
+  {
+    "id": "68632",
+    "origin": "Tromso",
+    "destination": "Helsinki",
+    "nights": 5,
+    "dates": "2 - 29 Jan 26",
+    "link": "https://www.imoova.com/en/relocations/68632"
   }
 ]
