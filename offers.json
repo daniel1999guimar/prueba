@@ -158,5 +158,13 @@
     "nights": 4,
     "dates": "29 Dec - 14 Jan 26",
     "link": "https://www.imoova.com/en/relocations/68773"
+  },
+  {
+    "id": "68808",
+    "origin": "Rome",
+    "destination": "Bari",
+    "nights": 7,
+    "dates": "30 Dec - 16 Jan 26",
+    "link": "https://www.imoova.com/en/relocations/68808"
   }
 ]
