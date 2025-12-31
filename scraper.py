@@ -10,6 +10,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
 JSON_FILE = 'offers.json'
@@ -143,11 +144,17 @@ def main():
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
 
-    WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located(
-            (By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]')
+    # ⛔ CAPTURA SI NO HAY ANUNCIOS
+    try:
+        WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located(
+                (By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]')
+            )
         )
-    )
+    except TimeoutException:
+        print("No hay anuncios disponibles. Saliendo.")
+        driver.quit()
+        return
 
     print("Haciendo scroll por tramos...")
     last_count = 0
@@ -174,6 +181,11 @@ def main():
 
     offers = extract_offers(html)
 
+    # ⛔ SALIR SI NO HAY OFERTAS
+    if not offers:
+        print("No se han encontrado ofertas. Saliendo.")
+        return
+
     previous_offers = load_previous()
     previous_ids = {o['id'] for o in previous_offers}
 
@@ -191,3 +203,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
