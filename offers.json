@@ -174,5 +174,13 @@
     "nights": 9,
     "dates": "30 Dec - 12 Jan 26",
     "link": "https://www.imoova.com/en/relocations/68809"
+  },
+  {
+    "id": "68947",
+    "origin": "Marseille",
+    "destination": "Munich",
+    "nights": 6,
+    "dates": "2 - 16 Jan",
+    "link": "https://www.imoova.com/en/relocations/68947"
   }
 ]
