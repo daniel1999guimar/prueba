@@ -190,5 +190,13 @@
     "nights": 5,
     "dates": "2 - 15 Jan",
     "link": "https://www.imoova.com/en/relocations/68948"
+  },
+  {
+    "id": "69032",
+    "origin": "Vienna",
+    "destination": "Stuttgart",
+    "nights": 7,
+    "dates": "8 - 23 Jan",
+    "link": "https://www.imoova.com/en/relocations/69032"
   }
 ]
