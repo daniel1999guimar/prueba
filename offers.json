@@ -318,5 +318,77 @@
     "nights": 5,
     "dates": "3 - 11 Mar",
     "link": "https://www.imoova.com/en/relocations/69257"
+  },
+  {
+    "id": "69262",
+    "origin": "Munich",
+    "destination": "Oslo",
+    "nights": 7,
+    "dates": "6 - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/69262"
+  },
+  {
+    "id": "69261",
+    "origin": "Munich",
+    "destination": "Oslo",
+    "nights": 7,
+    "dates": "6 - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/69261"
+  },
+  {
+    "id": "69260",
+    "origin": "Munich",
+    "destination": "Oslo",
+    "nights": 7,
+    "dates": "6 - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/69260"
+  },
+  {
+    "id": "69267",
+    "origin": "Berlin",
+    "destination": "Dublin",
+    "nights": 5,
+    "dates": "1 - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/69267"
+  },
+  {
+    "id": "69266",
+    "origin": "Berlin",
+    "destination": "Dublin",
+    "nights": 5,
+    "dates": "1 - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/69266"
+  },
+  {
+    "id": "69265",
+    "origin": "Berlin",
+    "destination": "Dublin",
+    "nights": 5,
+    "dates": "1 - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/69265"
+  },
+  {
+    "id": "69264",
+    "origin": "Berlin",
+    "destination": "Dublin",
+    "nights": 5,
+    "dates": "1 - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/69264"
+  },
+  {
+    "id": "69263",
+    "origin": "Berlin",
+    "destination": "Dublin",
+    "nights": 5,
+    "dates": "1 - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/69263"
+  },
+  {
+    "id": "69259",
+    "origin": "Munich",
+    "destination": "Oslo",
+    "nights": 7,
+    "dates": "6 - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/69259"
   }
 ]
