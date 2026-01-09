@@ -390,5 +390,53 @@
     "nights": 7,
     "dates": "6 - 10 Mar",
     "link": "https://www.imoova.com/en/relocations/69259"
+  },
+  {
+    "id": "69328",
+    "origin": "Seville",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "9 - 22 Jan",
+    "link": "https://www.imoova.com/en/relocations/69328"
+  },
+  {
+    "id": "69329",
+    "origin": "Seville",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "9 - 22 Jan",
+    "link": "https://www.imoova.com/en/relocations/69329"
+  },
+  {
+    "id": "69327",
+    "origin": "Berlin",
+    "destination": "Palermo",
+    "nights": 7,
+    "dates": "6 - 19 Mar",
+    "link": "https://www.imoova.com/en/relocations/69327"
+  },
+  {
+    "id": "69326",
+    "origin": "Berlin",
+    "destination": "Catania",
+    "nights": 6,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69326"
+  },
+  {
+    "id": "69324",
+    "origin": "Berlin",
+    "destination": "Naples",
+    "nights": 5,
+    "dates": "6 - 11 Mar",
+    "link": "https://www.imoova.com/en/relocations/69324"
+  },
+  {
+    "id": "69325",
+    "origin": "Berlin",
+    "destination": "Bari",
+    "nights": 5,
+    "dates": "6 - 12 Mar",
+    "link": "https://www.imoova.com/en/relocations/69325"
   }
 ]
