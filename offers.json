@@ -670,5 +670,21 @@
     "nights": 21,
     "dates": "6 - 14 Mar",
     "link": "https://www.imoova.com/en/relocations/69516"
+  },
+  {
+    "id": "69537",
+    "origin": "Naples",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "13 - 26 Jan",
+    "link": "https://www.imoova.com/en/relocations/69537"
+  },
+  {
+    "id": "69536",
+    "origin": "Naples",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "13 - 26 Jan",
+    "link": "https://www.imoova.com/en/relocations/69536"
   }
 ]
