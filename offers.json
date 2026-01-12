@@ -646,5 +646,29 @@
     "nights": 21,
     "dates": "6 - 14 Mar",
     "link": "https://www.imoova.com/en/relocations/69515"
+  },
+  {
+    "id": "69529",
+    "origin": "Catania",
+    "destination": "Dusseldorf",
+    "nights": 6,
+    "dates": "13 - 26 Jan",
+    "link": "https://www.imoova.com/en/relocations/69529"
+  },
+  {
+    "id": "69530",
+    "origin": "Catania",
+    "destination": "Dusseldorf",
+    "nights": 6,
+    "dates": "13 - 26 Jan",
+    "link": "https://www.imoova.com/en/relocations/69530"
+  },
+  {
+    "id": "69516",
+    "origin": "Berlin",
+    "destination": "Bordeaux",
+    "nights": 21,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69516"
   }
 ]
