@@ -622,5 +622,13 @@
     "nights": 8,
     "dates": "6 - 13 Mar",
     "link": "https://www.imoova.com/en/relocations/69511"
+  },
+  {
+    "id": "69514",
+    "origin": "Berlin",
+    "destination": "Bordeaux",
+    "nights": 21,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69514"
   }
 ]
