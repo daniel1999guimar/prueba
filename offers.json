@@ -630,5 +630,21 @@
     "nights": 21,
     "dates": "6 - 14 Mar",
     "link": "https://www.imoova.com/en/relocations/69514"
+  },
+  {
+    "id": "69521",
+    "origin": "Lisbon",
+    "destination": "Rome",
+    "nights": 7,
+    "dates": "12 - 21 Jan",
+    "link": "https://www.imoova.com/en/relocations/69521"
+  },
+  {
+    "id": "69515",
+    "origin": "Berlin",
+    "destination": "Bordeaux",
+    "nights": 21,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69515"
   }
 ]
