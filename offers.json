@@ -758,5 +758,109 @@
     "nights": 21,
     "dates": "6 - 7 Mar",
     "link": "https://www.imoova.com/en/relocations/69608"
+  },
+  {
+    "id": "69611",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 5,
+    "dates": "1 - 5 Mar",
+    "link": "https://www.imoova.com/en/relocations/69611"
+  },
+  {
+    "id": "69609",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 5,
+    "dates": "1 - 5 Mar",
+    "link": "https://www.imoova.com/en/relocations/69609"
+  },
+  {
+    "id": "69607",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 5,
+    "dates": "1 - 5 Mar",
+    "link": "https://www.imoova.com/en/relocations/69607"
+  },
+  {
+    "id": "69628",
+    "origin": "London",
+    "destination": "Edinburgh",
+    "nights": 4,
+    "dates": "25 Jan - 2 Feb",
+    "link": "https://www.imoova.com/en/relocations/69628"
+  },
+  {
+    "id": "69623",
+    "origin": "Berlin",
+    "destination": "Bilbao",
+    "nights": 9,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69623"
+  },
+  {
+    "id": "69637",
+    "origin": "Florence",
+    "destination": "Madrid",
+    "nights": 8,
+    "dates": "25 Mar - 1 Apr",
+    "link": "https://www.imoova.com/en/relocations/69637"
+  },
+  {
+    "id": "69635",
+    "origin": "Florence",
+    "destination": "Madrid",
+    "nights": 8,
+    "dates": "25 Mar - 1 Apr",
+    "link": "https://www.imoova.com/en/relocations/69635"
+  },
+  {
+    "id": "69632",
+    "origin": "Florence",
+    "destination": "Madrid",
+    "nights": 8,
+    "dates": "25 Mar - 1 Apr",
+    "link": "https://www.imoova.com/en/relocations/69632"
+  },
+  {
+    "id": "69504",
+    "origin": "Berlin",
+    "destination": "Barcelona",
+    "nights": 21,
+    "dates": "6 - 15 Mar",
+    "link": "https://www.imoova.com/en/relocations/69504"
+  },
+  {
+    "id": "69503",
+    "origin": "Berlin",
+    "destination": "Barcelona",
+    "nights": 21,
+    "dates": "6 - 15 Mar",
+    "link": "https://www.imoova.com/en/relocations/69503"
+  },
+  {
+    "id": "69502",
+    "origin": "Berlin",
+    "destination": "Barcelona",
+    "nights": 21,
+    "dates": "6 - 15 Mar",
+    "link": "https://www.imoova.com/en/relocations/69502"
+  },
+  {
+    "id": "69615",
+    "origin": "Berlin",
+    "destination": "Marseille",
+    "nights": 21,
+    "dates": "6 - 12 Mar",
+    "link": "https://www.imoova.com/en/relocations/69615"
+  },
+  {
+    "id": "69612",
+    "origin": "Berlin",
+    "destination": "Paris",
+    "nights": 21,
+    "dates": "6 - 9 Mar",
+    "link": "https://www.imoova.com/en/relocations/69612"
   }
 ]
