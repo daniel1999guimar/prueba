@@ -2646,5 +2646,45 @@
     "nights": 6,
     "dates": "17 - 22 Apr",
     "link": "https://www.imoova.com/en/relocations/69832"
+  },
+  {
+    "id": "69884",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 4,
+    "dates": "27 Mar - 6 Apr",
+    "link": "https://www.imoova.com/en/relocations/69884"
+  },
+  {
+    "id": "69883",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 4,
+    "dates": "27 Mar - 6 Apr",
+    "link": "https://www.imoova.com/en/relocations/69883"
+  },
+  {
+    "id": "69882",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 4,
+    "dates": "27 Mar - 6 Apr",
+    "link": "https://www.imoova.com/en/relocations/69882"
+  },
+  {
+    "id": "69881",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 4,
+    "dates": "27 Mar - 6 Apr",
+    "link": "https://www.imoova.com/en/relocations/69881"
+  },
+  {
+    "id": "69880",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 4,
+    "dates": "27 Mar - 6 Apr",
+    "link": "https://www.imoova.com/en/relocations/69880"
   }
 ]
