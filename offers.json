@@ -1510,5 +1510,45 @@
     "nights": 4,
     "dates": "6 - 8 Mar",
     "link": "https://www.imoova.com/en/relocations/69682"
+  },
+  {
+    "id": "69716",
+    "origin": "Berlin",
+    "destination": "Paris Orly",
+    "nights": 8,
+    "dates": "1 - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/69716"
+  },
+  {
+    "id": "69714",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 5,
+    "dates": "24 Feb - 5 Mar",
+    "link": "https://www.imoova.com/en/relocations/69714"
+  },
+  {
+    "id": "69721",
+    "origin": "Munich",
+    "destination": "Paris",
+    "nights": 7,
+    "dates": "17 - 23 Apr",
+    "link": "https://www.imoova.com/en/relocations/69721"
+  },
+  {
+    "id": "69720",
+    "origin": "Munich",
+    "destination": "Paris",
+    "nights": 7,
+    "dates": "17 - 23 Apr",
+    "link": "https://www.imoova.com/en/relocations/69720"
+  },
+  {
+    "id": "69719",
+    "origin": "Munich",
+    "destination": "Paris",
+    "nights": 7,
+    "dates": "17 - 23 Apr",
+    "link": "https://www.imoova.com/en/relocations/69719"
   }
 ]
