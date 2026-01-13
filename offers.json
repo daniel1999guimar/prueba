@@ -2686,5 +2686,133 @@
     "nights": 4,
     "dates": "27 Mar - 6 Apr",
     "link": "https://www.imoova.com/en/relocations/69880"
+  },
+  {
+    "id": "69885",
+    "origin": "Berlin",
+    "destination": "Catania",
+    "nights": 6,
+    "dates": "3 - 16 Apr",
+    "link": "https://www.imoova.com/en/relocations/69885"
+  },
+  {
+    "id": "69966",
+    "origin": "Nantes",
+    "destination": "Rome",
+    "nights": 5,
+    "dates": "10 - 23 Apr",
+    "link": "https://www.imoova.com/en/relocations/69966"
+  },
+  {
+    "id": "69953",
+    "origin": "Munich",
+    "destination": "Palermo",
+    "nights": 5,
+    "dates": "17 Apr - 1 May",
+    "link": "https://www.imoova.com/en/relocations/69953"
+  },
+  {
+    "id": "69942",
+    "origin": "Munich",
+    "destination": "Catania",
+    "nights": 5,
+    "dates": "17 - 27 Apr",
+    "link": "https://www.imoova.com/en/relocations/69942"
+  },
+  {
+    "id": "69952",
+    "origin": "Munich",
+    "destination": "Olbia",
+    "nights": 5,
+    "dates": "3 - 9 Apr",
+    "link": "https://www.imoova.com/en/relocations/69952"
+  },
+  {
+    "id": "69942",
+    "origin": "Munich",
+    "destination": "Catania",
+    "nights": 5,
+    "dates": "17 - 27 Apr",
+    "link": "https://www.imoova.com/en/relocations/69942"
+  },
+  {
+    "id": "69898",
+    "origin": "Berlin",
+    "destination": "Naples",
+    "nights": 5,
+    "dates": "8 - 18 May",
+    "link": "https://www.imoova.com/en/relocations/69898"
+  },
+  {
+    "id": "69967",
+    "origin": "Nantes",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "17 - 25 Apr",
+    "link": "https://www.imoova.com/en/relocations/69967"
+  },
+  {
+    "id": "69925",
+    "origin": "Florence",
+    "destination": "Palermo",
+    "nights": 4,
+    "dates": "25 Mar - 2 Apr",
+    "link": "https://www.imoova.com/en/relocations/69925"
+  },
+  {
+    "id": "69913",
+    "origin": "Florence",
+    "destination": "Cagliari",
+    "nights": 4,
+    "dates": "25 - 31 Mar",
+    "link": "https://www.imoova.com/en/relocations/69913"
+  },
+  {
+    "id": "69916",
+    "origin": "Florence",
+    "destination": "Catania",
+    "nights": 4,
+    "dates": "25 - 31 Mar",
+    "link": "https://www.imoova.com/en/relocations/69916"
+  },
+  {
+    "id": "69914",
+    "origin": "Florence",
+    "destination": "Catania",
+    "nights": 4,
+    "dates": "18 - 24 Mar",
+    "link": "https://www.imoova.com/en/relocations/69914"
+  },
+  {
+    "id": "69901",
+    "origin": "Berlin",
+    "destination": "Rome",
+    "nights": 4,
+    "dates": "1 - 9 Mar",
+    "link": "https://www.imoova.com/en/relocations/69901"
+  },
+  {
+    "id": "69900",
+    "origin": "Berlin",
+    "destination": "Pisa",
+    "nights": 4,
+    "dates": "1 - 11 Mar",
+    "link": "https://www.imoova.com/en/relocations/69900"
+  },
+  {
+    "id": "69902",
+    "origin": "Berlin",
+    "destination": "Rome",
+    "nights": 4,
+    "dates": "10 - 18 Apr",
+    "link": "https://www.imoova.com/en/relocations/69902"
+  },
+  {
+    "id": "69907",
+    "origin": "Berlin",
+    "destination": "Turin",
+    "nights": 4,
+    "dates": "1 - 9 Mar",
+    "link": "https://www.imoova.com/en/relocations/69907"
   }
 ]
