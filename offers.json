@@ -726,5 +726,21 @@
     "nights": 18,
     "dates": "24 - 25 Jan",
     "link": "https://www.imoova.com/en/relocations/69584"
+  },
+  {
+    "id": "69594",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 5,
+    "dates": "1 - 5 Mar",
+    "link": "https://www.imoova.com/en/relocations/69594"
+  },
+  {
+    "id": "69592",
+    "origin": "Berlin",
+    "destination": "Madrid",
+    "nights": 12,
+    "dates": "20 - 31 May",
+    "link": "https://www.imoova.com/en/relocations/69592"
   }
 ]
