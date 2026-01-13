@@ -742,5 +742,21 @@
     "nights": 12,
     "dates": "20 - 31 May",
     "link": "https://www.imoova.com/en/relocations/69592"
+  },
+  {
+    "id": "69610",
+    "origin": "Frankfurt",
+    "destination": "Paris",
+    "nights": 21,
+    "dates": "6 - 7 Mar",
+    "link": "https://www.imoova.com/en/relocations/69610"
+  },
+  {
+    "id": "69608",
+    "origin": "Frankfurt",
+    "destination": "Paris",
+    "nights": 21,
+    "dates": "6 - 7 Mar",
+    "link": "https://www.imoova.com/en/relocations/69608"
   }
 ]
