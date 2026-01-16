@@ -48,8 +48,18 @@ def save_offers(offers):
 # PARSEO
 # ==========================
 def parse_nights(text):
-    numbers = re.findall(r'\d+', text)
-    return int(numbers[0]) if numbers else None
+    """
+    Regla:
+    - '7 + 3 noches' -> 7
+    - '21+' -> 21
+    - '7 días' -> 7
+    """
+    if not text:
+        return None
+
+    text = text.lower().strip()
+    match = re.search(r'\d+', text)
+    return int(match.group()) if match else None
 
 def extract_offers(html):
     soup = BeautifulSoup(html, 'html.parser')
@@ -80,10 +90,12 @@ def extract_offers(html):
         time_elements = a.find_all('time')
         dates = " - ".join(t.get_text(strip=True) for t in time_elements) if time_elements else None
 
+        # ⬇️ SOLO noches / días / 21+
         night_span = a.find(
             'span',
-            string=re.compile(r'\d.*(night|noche|día|dias|\+)', re.IGNORECASE)
+            string=re.compile(r'(noche|night|día|dias|\d+\+)', re.IGNORECASE)
         )
+
         nights = parse_nights(night_span.get_text(strip=True)) if night_span else None
 
         offers.append({
@@ -144,7 +156,7 @@ def main():
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
 
-    # ⛔ CAPTURA SI NO HAY ANUNCIOS
+    # ⛔ SALIR SI NO HAY ANUNCIOS
     try:
         WebDriverWait(driver, 20).until(
             EC.presence_of_element_located(
@@ -181,7 +193,6 @@ def main():
 
     offers = extract_offers(html)
 
-    # ⛔ SALIR SI NO HAY OFERTAS
     if not offers:
         print("No se han encontrado ofertas. Saliendo.")
         return
@@ -203,4 +214,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
