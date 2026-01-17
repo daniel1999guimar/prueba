@@ -982,5 +982,13 @@
     "nights": 5,
     "dates": "17 - 22 Jan",
     "link": "https://www.imoova.com/en/relocations/69329"
+  },
+  {
+    "id": "69327",
+    "origin": "Berlin",
+    "destination": "Palermo",
+    "nights": 7,
+    "dates": "6 - 19 Mar",
+    "link": "https://www.imoova.com/en/relocations/69327"
   }
 ]
