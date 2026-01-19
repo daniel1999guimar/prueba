@@ -1014,5 +1014,13 @@
     "nights": 21,
     "dates": "6 - 26 Mar",
     "link": "https://www.imoova.com/en/relocations/69839"
+  },
+  {
+    "id": "69725",
+    "origin": "Munich",
+    "destination": "Paris",
+    "nights": 4,
+    "dates": "19 - 23 Jan",
+    "link": "https://www.imoova.com/en/relocations/69725"
   }
 ]
