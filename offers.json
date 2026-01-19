@@ -1038,5 +1038,93 @@
     "nights": 4,
     "dates": "27 Mar - 3 Apr",
     "link": "https://www.imoova.com/en/relocations/70400"
+  },
+  {
+    "id": "69876",
+    "origin": "Berlin",
+    "destination": "Tenerife",
+    "nights": 26,
+    "dates": "1 - 26 Mar",
+    "link": "https://www.imoova.com/en/relocations/69876"
+  },
+  {
+    "id": "69874",
+    "origin": "Berlin",
+    "destination": "Tenerife",
+    "nights": 26,
+    "dates": "1 - 26 Mar",
+    "link": "https://www.imoova.com/en/relocations/69874"
+  },
+  {
+    "id": "69867",
+    "origin": "Florence",
+    "destination": "Tenerife",
+    "nights": 22,
+    "dates": "20 Mar - 11 Apr",
+    "link": "https://www.imoova.com/en/relocations/69867"
+  },
+  {
+    "id": "69866",
+    "origin": "Florence",
+    "destination": "Tenerife",
+    "nights": 22,
+    "dates": "20 Mar - 11 Apr",
+    "link": "https://www.imoova.com/en/relocations/69866"
+  },
+  {
+    "id": "69848",
+    "origin": "Florence",
+    "destination": "Tenerife",
+    "nights": 22,
+    "dates": "27 Mar - 18 Apr",
+    "link": "https://www.imoova.com/en/relocations/69848"
+  },
+  {
+    "id": "69847",
+    "origin": "Florence",
+    "destination": "Tenerife",
+    "nights": 22,
+    "dates": "27 Mar - 18 Apr",
+    "link": "https://www.imoova.com/en/relocations/69847"
+  },
+  {
+    "id": "69804",
+    "origin": "Munich",
+    "destination": "Palma",
+    "nights": 16,
+    "dates": "3 - 18 Apr",
+    "link": "https://www.imoova.com/en/relocations/69804"
+  },
+  {
+    "id": "69802",
+    "origin": "Munich",
+    "destination": "Palma",
+    "nights": 16,
+    "dates": "3 - 18 Apr",
+    "link": "https://www.imoova.com/en/relocations/69802"
+  },
+  {
+    "id": "69801",
+    "origin": "Munich",
+    "destination": "Palma",
+    "nights": 16,
+    "dates": "10 - 25 Apr",
+    "link": "https://www.imoova.com/en/relocations/69801"
+  },
+  {
+    "id": "69800",
+    "origin": "Munich",
+    "destination": "Palma",
+    "nights": 16,
+    "dates": "10 - 25 Apr",
+    "link": "https://www.imoova.com/en/relocations/69800"
+  },
+  {
+    "id": "69799",
+    "origin": "Munich",
+    "destination": "Palma",
+    "nights": 16,
+    "dates": "10 - 25 Apr",
+    "link": "https://www.imoova.com/en/relocations/69799"
   }
 ]
