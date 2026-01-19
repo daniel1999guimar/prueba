@@ -1030,5 +1030,13 @@
     "nights": 6,
     "dates": "6 - 14 Mar",
     "link": "https://www.imoova.com/en/relocations/69326"
+  },
+  {
+    "id": "70400",
+    "origin": "Nantes",
+    "destination": "Edinburgh",
+    "nights": 4,
+    "dates": "27 Mar - 3 Apr",
+    "link": "https://www.imoova.com/en/relocations/70400"
   }
 ]
