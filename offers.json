@@ -1022,5 +1022,13 @@
     "nights": 4,
     "dates": "19 - 23 Jan",
     "link": "https://www.imoova.com/en/relocations/69725"
+  },
+  {
+    "id": "69326",
+    "origin": "Berlin",
+    "destination": "Catania",
+    "nights": 6,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69326"
   }
 ]
