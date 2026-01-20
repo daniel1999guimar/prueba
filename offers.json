@@ -1222,5 +1222,13 @@
     "nights": 4,
     "dates": "20 Jan - 2 Feb",
     "link": "https://www.imoova.com/en/relocations/69102"
+  },
+  {
+    "id": "70467",
+    "origin": "Brussels",
+    "destination": "Faro",
+    "nights": 8,
+    "dates": "20 - 28 Jan",
+    "link": "https://www.imoova.com/en/relocations/70467"
   }
 ]
