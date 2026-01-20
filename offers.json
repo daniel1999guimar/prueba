@@ -1230,5 +1230,53 @@
     "nights": 8,
     "dates": "20 - 28 Jan",
     "link": "https://www.imoova.com/en/relocations/70467"
+  },
+  {
+    "id": "69687",
+    "origin": "Berlin",
+    "destination": "Madrid",
+    "nights": 12,
+    "dates": "8 - 19 Apr",
+    "link": "https://www.imoova.com/en/relocations/69687"
+  },
+  {
+    "id": "69488",
+    "origin": "Berlin",
+    "destination": "Valencia",
+    "nights": 12,
+    "dates": "6 - 17 Mar",
+    "link": "https://www.imoova.com/en/relocations/69488"
+  },
+  {
+    "id": "69623",
+    "origin": "Berlin",
+    "destination": "Bilbao",
+    "nights": 9,
+    "dates": "6 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/69623"
+  },
+  {
+    "id": "69481",
+    "origin": "Berlin",
+    "destination": "Madrid",
+    "nights": 12,
+    "dates": "6 - 18 Mar",
+    "link": "https://www.imoova.com/en/relocations/69481"
+  },
+  {
+    "id": "69484",
+    "origin": "Berlin",
+    "destination": "Madrid",
+    "nights": 12,
+    "dates": "6 - 18 Mar",
+    "link": "https://www.imoova.com/en/relocations/69484"
+  },
+  {
+    "id": "69483",
+    "origin": "Berlin",
+    "destination": "Madrid",
+    "nights": 12,
+    "dates": "6 - 18 Mar",
+    "link": "https://www.imoova.com/en/relocations/69483"
   }
 ]
