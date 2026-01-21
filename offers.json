@@ -1286,5 +1286,21 @@
     "nights": 21,
     "dates": "6 - 26 Mar",
     "link": "https://www.imoova.com/en/relocations/69852"
+  },
+  {
+    "id": "69834",
+    "origin": "Berlin",
+    "destination": "A Coru\u00f1a",
+    "nights": 14,
+    "dates": "6 - 19 Mar",
+    "link": "https://www.imoova.com/en/relocations/69834"
+  },
+  {
+    "id": "69860",
+    "origin": "Berlin",
+    "destination": "Tenerife",
+    "nights": 21,
+    "dates": "6 - 26 Mar",
+    "link": "https://www.imoova.com/en/relocations/69860"
   }
 ]
