@@ -1326,5 +1326,93 @@
     "nights": 15,
     "dates": "6 - 21 Mar",
     "link": "https://www.imoova.com/en/relocations/69477"
+  },
+  {
+    "id": "69782",
+    "origin": "Florence",
+    "destination": "Palma",
+    "nights": 13,
+    "dates": "6 - 18 Mar",
+    "link": "https://www.imoova.com/en/relocations/69782"
+  },
+  {
+    "id": "69788",
+    "origin": "Florence",
+    "destination": "Palma",
+    "nights": 13,
+    "dates": "20 Mar - 2 Apr",
+    "link": "https://www.imoova.com/en/relocations/69788"
+  },
+  {
+    "id": "69490",
+    "origin": "Berlin",
+    "destination": "Valencia",
+    "nights": 12,
+    "dates": "6 - 17 Mar",
+    "link": "https://www.imoova.com/en/relocations/69490"
+  },
+  {
+    "id": "69797",
+    "origin": "Munich",
+    "destination": "Palma",
+    "nights": 16,
+    "dates": "10 - 25 Apr",
+    "link": "https://www.imoova.com/en/relocations/69797"
+  },
+  {
+    "id": "69479",
+    "origin": "Berlin",
+    "destination": "Seville",
+    "nights": 15,
+    "dates": "6 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/69479"
+  },
+  {
+    "id": "69478",
+    "origin": "Berlin",
+    "destination": "Seville",
+    "nights": 15,
+    "dates": "6 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/69478"
+  },
+  {
+    "id": "69796",
+    "origin": "Florence",
+    "destination": "Palma",
+    "nights": 13,
+    "dates": "20 Mar - 2 Apr",
+    "link": "https://www.imoova.com/en/relocations/69796"
+  },
+  {
+    "id": "69793",
+    "origin": "Florence",
+    "destination": "Palma",
+    "nights": 13,
+    "dates": "20 Mar - 2 Apr",
+    "link": "https://www.imoova.com/en/relocations/69793"
+  },
+  {
+    "id": "69787",
+    "origin": "Florence",
+    "destination": "Palma",
+    "nights": 13,
+    "dates": "20 Mar - 2 Apr",
+    "link": "https://www.imoova.com/en/relocations/69787"
+  },
+  {
+    "id": "69785",
+    "origin": "Berlin",
+    "destination": "Palma",
+    "nights": 14,
+    "dates": "6 - 20 Mar",
+    "link": "https://www.imoova.com/en/relocations/69785"
+  },
+  {
+    "id": "69790",
+    "origin": "Florence",
+    "destination": "Palma",
+    "nights": 13,
+    "dates": "20 Mar - 2 Apr",
+    "link": "https://www.imoova.com/en/relocations/69790"
   }
 ]
