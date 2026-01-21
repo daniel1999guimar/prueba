@@ -1302,5 +1302,13 @@
     "nights": 21,
     "dates": "6 - 26 Mar",
     "link": "https://www.imoova.com/en/relocations/69860"
+  },
+  {
+    "id": "70582",
+    "origin": "Stockholm",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "21 Jan - 5 Feb",
+    "link": "https://www.imoova.com/en/relocations/70582"
   }
 ]
