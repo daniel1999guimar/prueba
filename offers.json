@@ -1446,5 +1446,13 @@
     "nights": 26,
     "dates": "1 - 26 Mar",
     "link": "https://www.imoova.com/en/relocations/69871"
+  },
+  {
+    "id": "70714",
+    "origin": "Lisbon",
+    "destination": "Barcelona",
+    "nights": 4,
+    "dates": "23 Jan - 7 Feb",
+    "link": "https://www.imoova.com/en/relocations/70714"
   }
 ]
