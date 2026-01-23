@@ -1454,5 +1454,21 @@
     "nights": 4,
     "dates": "23 Jan - 7 Feb",
     "link": "https://www.imoova.com/en/relocations/70714"
+  },
+  {
+    "id": "70716",
+    "origin": "Edinburgh",
+    "destination": "London",
+    "nights": 4,
+    "dates": "27 Jan - 9 Feb",
+    "link": "https://www.imoova.com/en/relocations/70716"
+  },
+  {
+    "id": "70715",
+    "origin": "Edinburgh",
+    "destination": "London",
+    "nights": 4,
+    "dates": "27 Jan - 6 Feb",
+    "link": "https://www.imoova.com/en/relocations/70715"
   }
 ]
