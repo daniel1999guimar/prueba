@@ -1502,5 +1502,13 @@
     "nights": 4,
     "dates": "27 Jan - 13 Feb",
     "link": "https://www.imoova.com/en/relocations/71059"
+  },
+  {
+    "id": "71080",
+    "origin": "Munich",
+    "destination": "Madrid",
+    "nights": 6,
+    "dates": "26 Jan - 8 Feb",
+    "link": "https://www.imoova.com/en/relocations/71080"
   }
 ]
