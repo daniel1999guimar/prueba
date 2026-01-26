@@ -1510,5 +1510,13 @@
     "nights": 6,
     "dates": "26 Jan - 8 Feb",
     "link": "https://www.imoova.com/en/relocations/71080"
+  },
+  {
+    "id": "69734",
+    "origin": "Berlin",
+    "destination": "Bastia",
+    "nights": 11,
+    "dates": "1 - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/69734"
   }
 ]
