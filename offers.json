@@ -1526,5 +1526,13 @@
     "nights": 4,
     "dates": "28 Jan - 9 Feb",
     "link": "https://www.imoova.com/en/relocations/71369"
+  },
+  {
+    "id": "71371",
+    "origin": "Dusseldorf",
+    "destination": "Porto",
+    "nights": 13,
+    "dates": "28 Jan - 10 Feb",
+    "link": "https://www.imoova.com/en/relocations/71371"
   }
 ]
