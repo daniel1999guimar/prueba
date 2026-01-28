@@ -1534,5 +1534,29 @@
     "nights": 13,
     "dates": "28 Jan - 10 Feb",
     "link": "https://www.imoova.com/en/relocations/71371"
+  },
+  {
+    "id": "71370",
+    "origin": "Milan",
+    "destination": "Paris",
+    "nights": 6,
+    "dates": "28 Jan - 10 Feb",
+    "link": "https://www.imoova.com/en/relocations/71370"
+  },
+  {
+    "id": "69489",
+    "origin": "Berlin",
+    "destination": "Valencia",
+    "nights": 12,
+    "dates": "6 - 17 Mar",
+    "link": "https://www.imoova.com/en/relocations/69489"
+  },
+  {
+    "id": "69482",
+    "origin": "Berlin",
+    "destination": "Madrid",
+    "nights": 12,
+    "dates": "6 - 18 Mar",
+    "link": "https://www.imoova.com/en/relocations/69482"
   }
 ]
