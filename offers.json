@@ -1558,5 +1558,21 @@
     "nights": 12,
     "dates": "6 - 18 Mar",
     "link": "https://www.imoova.com/en/relocations/69482"
+  },
+  {
+    "id": "71373",
+    "origin": "Lyon",
+    "destination": "Madrid",
+    "nights": 13,
+    "dates": "28 Jan - 10 Feb",
+    "link": "https://www.imoova.com/en/relocations/71373"
+  },
+  {
+    "id": "71372",
+    "origin": "Venice",
+    "destination": "Paris",
+    "nights": 20,
+    "dates": "3 - 23 Feb",
+    "link": "https://www.imoova.com/en/relocations/71372"
   }
 ]
