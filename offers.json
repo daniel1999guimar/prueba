@@ -1574,5 +1574,13 @@
     "nights": 20,
     "dates": "3 - 23 Feb",
     "link": "https://www.imoova.com/en/relocations/71372"
+  },
+  {
+    "id": "71077",
+    "origin": "Geneva",
+    "destination": "Lyon",
+    "nights": 6,
+    "dates": "29 Jan - 4 Feb",
+    "link": "https://www.imoova.com/en/relocations/71077"
   }
 ]
