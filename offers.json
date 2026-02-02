@@ -1758,5 +1758,93 @@
     "nights": 8,
     "dates": "2 Feb - 8 Mar",
     "link": "https://www.imoova.com/en/relocations/71746"
+  },
+  {
+    "id": "71750",
+    "origin": "Milan",
+    "destination": "Bergen",
+    "nights": 7,
+    "dates": "10 Feb - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/71750"
+  },
+  {
+    "id": "71737",
+    "origin": "Venice",
+    "destination": "Bergen",
+    "nights": 7,
+    "dates": "3 Feb - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/71737"
+  },
+  {
+    "id": "71733",
+    "origin": "Venice",
+    "destination": "Bergen",
+    "nights": 7,
+    "dates": "3 Feb - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/71733"
+  },
+  {
+    "id": "71740",
+    "origin": "Milan",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "3 Feb - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/71740"
+  },
+  {
+    "id": "71738",
+    "origin": "Milan",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "3 Feb - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/71738"
+  },
+  {
+    "id": "71734",
+    "origin": "Venice",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "3 Feb - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/71734"
+  },
+  {
+    "id": "71752",
+    "origin": "Berlin",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "1 - 11 Mar",
+    "link": "https://www.imoova.com/en/relocations/71752"
+  },
+  {
+    "id": "71697",
+    "origin": "Lisbon",
+    "destination": "Faro",
+    "nights": 18,
+    "dates": "12 - 14 Feb",
+    "link": "https://www.imoova.com/en/relocations/71697"
+  },
+  {
+    "id": "71517",
+    "origin": "Venice",
+    "destination": "Amsterdam",
+    "nights": 6,
+    "dates": "3 - 7 Feb",
+    "link": "https://www.imoova.com/en/relocations/71517"
+  },
+  {
+    "id": "69493",
+    "origin": "Berlin",
+    "destination": "Valencia",
+    "nights": 12,
+    "dates": "6 - 17 Mar",
+    "link": "https://www.imoova.com/en/relocations/69493"
+  },
+  {
+    "id": "69491",
+    "origin": "Berlin",
+    "destination": "Valencia",
+    "nights": 12,
+    "dates": "6 - 17 Mar",
+    "link": "https://www.imoova.com/en/relocations/69491"
   }
 ]
