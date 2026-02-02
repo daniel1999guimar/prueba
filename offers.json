@@ -1662,5 +1662,101 @@
     "nights": 10,
     "dates": "1 - 8 Mar",
     "link": "https://www.imoova.com/en/relocations/71736"
+  },
+  {
+    "id": "71754",
+    "origin": "Paris Orly",
+    "destination": "Barcelona",
+    "nights": 30,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71754"
+  },
+  {
+    "id": "71749",
+    "origin": "Malaga",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71749"
+  },
+  {
+    "id": "71747",
+    "origin": "Malaga",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71747"
+  },
+  {
+    "id": "71744",
+    "origin": "Olbia",
+    "destination": "Tromso",
+    "nights": 13,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71744"
+  },
+  {
+    "id": "71743",
+    "origin": "Olbia",
+    "destination": "Oslo",
+    "nights": 9,
+    "dates": "1 - 9 Mar",
+    "link": "https://www.imoova.com/en/relocations/71743"
+  },
+  {
+    "id": "71748",
+    "origin": "Bergamo",
+    "destination": "Trondheim",
+    "nights": 8,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71748"
+  },
+  {
+    "id": "71741",
+    "origin": "Bergamo",
+    "destination": "Trondheim",
+    "nights": 8,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71741"
+  },
+  {
+    "id": "71745",
+    "origin": "Milan",
+    "destination": "Trondheim",
+    "nights": 7,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71745"
+  },
+  {
+    "id": "71742",
+    "origin": "Hamburg",
+    "destination": "Helsinki",
+    "nights": 6,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71742"
+  },
+  {
+    "id": "71753",
+    "origin": "Paris",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "15 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71753"
+  },
+  {
+    "id": "71751",
+    "origin": "Barcelona",
+    "destination": "Oslo",
+    "nights": 8,
+    "dates": "2 Feb - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/71751"
+  },
+  {
+    "id": "71746",
+    "origin": "Barcelona",
+    "destination": "Oslo",
+    "nights": 8,
+    "dates": "2 Feb - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/71746"
   }
 ]
