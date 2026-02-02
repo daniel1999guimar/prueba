@@ -1606,5 +1606,13 @@
     "nights": 10,
     "dates": "29 Jan - 10 Feb",
     "link": "https://www.imoova.com/en/relocations/71440"
+  },
+  {
+    "id": "71725",
+    "origin": "Palma",
+    "destination": "Split",
+    "nights": 6,
+    "dates": "3 Feb - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/71725"
   }
 ]
