@@ -1614,5 +1614,53 @@
     "nights": 6,
     "dates": "3 Feb - 14 Mar",
     "link": "https://www.imoova.com/en/relocations/71725"
+  },
+  {
+    "id": "71739",
+    "origin": "Seville",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71739"
+  },
+  {
+    "id": "71735",
+    "origin": "Catania",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71735"
+  },
+  {
+    "id": "71732",
+    "origin": "Catania",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71732"
+  },
+  {
+    "id": "71731",
+    "origin": "Catania",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "2 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71731"
+  },
+  {
+    "id": "71730",
+    "origin": "Catania",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71730"
+  },
+  {
+    "id": "71736",
+    "origin": "Rome",
+    "destination": "Oslo",
+    "nights": 10,
+    "dates": "1 - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/71736"
   }
 ]
