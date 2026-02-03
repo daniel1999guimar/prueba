@@ -2190,5 +2190,93 @@
     "nights": 5,
     "dates": "1 - 13 Mar",
     "link": "https://www.imoova.com/en/relocations/71951"
+  },
+  {
+    "id": "71970",
+    "origin": "Stuttgart",
+    "destination": "Tromso",
+    "nights": 10,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71970"
+  },
+  {
+    "id": "71968",
+    "origin": "Palma",
+    "destination": "Oslo",
+    "nights": 10,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71968"
+  },
+  {
+    "id": "71967",
+    "origin": "Palma",
+    "destination": "Oslo",
+    "nights": 10,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71967"
+  },
+  {
+    "id": "71964",
+    "origin": "Naples",
+    "destination": "Tromso",
+    "nights": 13,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71964"
+  },
+  {
+    "id": "71963",
+    "origin": "Naples",
+    "destination": "Tromso",
+    "nights": 13,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71963"
+  },
+  {
+    "id": "71961",
+    "origin": "Naples",
+    "destination": "Trondheim",
+    "nights": 9,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71961"
+  },
+  {
+    "id": "71959",
+    "origin": "Naples",
+    "destination": "Bergen",
+    "nights": 9,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71959"
+  },
+  {
+    "id": "71958",
+    "origin": "Naples",
+    "destination": "Oslo",
+    "nights": 8,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71958"
+  },
+  {
+    "id": "71957",
+    "origin": "Bergamo",
+    "destination": "Trondheim",
+    "nights": 8,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71957"
+  },
+  {
+    "id": "71962",
+    "origin": "Amsterdam",
+    "destination": "Helsinki",
+    "nights": 7,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71962"
+  },
+  {
+    "id": "71975",
+    "origin": "Bergamo",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "12 - 20 Mar",
+    "link": "https://www.imoova.com/en/relocations/71975"
   }
 ]
