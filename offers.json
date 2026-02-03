@@ -1846,5 +1846,109 @@
     "nights": 12,
     "dates": "6 - 17 Mar",
     "link": "https://www.imoova.com/en/relocations/69491"
+  },
+  {
+    "id": "71896",
+    "origin": "Malaga",
+    "destination": "Bergen",
+    "nights": 11,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71896"
+  },
+  {
+    "id": "71895",
+    "origin": "Bergamo",
+    "destination": "Tromso",
+    "nights": 11,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71895"
+  },
+  {
+    "id": "71891",
+    "origin": "Milan",
+    "destination": "Tromso",
+    "nights": 11,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71891"
+  },
+  {
+    "id": "71890",
+    "origin": "Milan",
+    "destination": "Tromso",
+    "nights": 11,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71890"
+  },
+  {
+    "id": "71888",
+    "origin": "Rome",
+    "destination": "Tromso",
+    "nights": 12,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71888"
+  },
+  {
+    "id": "71886",
+    "origin": "Florence",
+    "destination": "Tromso",
+    "nights": 11,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71886"
+  },
+  {
+    "id": "71887",
+    "origin": "Seville",
+    "destination": "Oslo",
+    "nights": 9,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71887"
+  },
+  {
+    "id": "71897",
+    "origin": "Hamburg",
+    "destination": "Helsinki",
+    "nights": 6,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71897"
+  },
+  {
+    "id": "71893",
+    "origin": "Hamburg",
+    "destination": "Helsinki",
+    "nights": 6,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71893"
+  },
+  {
+    "id": "71892",
+    "origin": "Hamburg",
+    "destination": "Helsinki",
+    "nights": 6,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71892"
+  },
+  {
+    "id": "71885",
+    "origin": "Hamburg",
+    "destination": "Helsinki",
+    "nights": 6,
+    "dates": "3 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71885"
+  },
+  {
+    "id": "71894",
+    "origin": "Vienna",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "1 - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/71894"
+  },
+  {
+    "id": "71889",
+    "origin": "Bari",
+    "destination": "Tromso",
+    "nights": 13,
+    "dates": "3 Feb - 5 Mar",
+    "link": "https://www.imoova.com/en/relocations/71889"
   }
 ]
