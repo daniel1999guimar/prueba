@@ -2278,5 +2278,21 @@
     "nights": 6,
     "dates": "12 - 20 Mar",
     "link": "https://www.imoova.com/en/relocations/71975"
+  },
+  {
+    "id": "72234",
+    "origin": "Venice",
+    "destination": "Krakow",
+    "nights": 6,
+    "dates": "6 Feb - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/72234"
+  },
+  {
+    "id": "72209",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 6,
+    "dates": "6 Feb - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/72209"
   }
 ]
