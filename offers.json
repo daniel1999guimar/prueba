@@ -2294,5 +2294,29 @@
     "nights": 6,
     "dates": "6 Feb - 8 Mar",
     "link": "https://www.imoova.com/en/relocations/72209"
+  },
+  {
+    "id": "72336",
+    "origin": "Geneva",
+    "destination": "Madrid",
+    "nights": 5,
+    "dates": "6 - 16 Feb",
+    "link": "https://www.imoova.com/en/relocations/72336"
+  },
+  {
+    "id": "72335",
+    "origin": "Geneva",
+    "destination": "Madrid",
+    "nights": 5,
+    "dates": "6 - 17 Feb",
+    "link": "https://www.imoova.com/en/relocations/72335"
+  },
+  {
+    "id": "72334",
+    "origin": "Geneva",
+    "destination": "Madrid",
+    "nights": 5,
+    "dates": "6 - 17 Feb",
+    "link": "https://www.imoova.com/en/relocations/72334"
   }
 ]
