@@ -2350,5 +2350,213 @@
     "nights": 5,
     "dates": "19 - 28 Mar",
     "link": "https://www.imoova.com/en/relocations/72903"
+  },
+  {
+    "id": "72907",
+    "origin": "Milan",
+    "destination": "Tromso",
+    "nights": 11,
+    "dates": "22 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/72907"
+  },
+  {
+    "id": "72925",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72925"
+  },
+  {
+    "id": "72923",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72923"
+  },
+  {
+    "id": "72922",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72922"
+  },
+  {
+    "id": "72921",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72921"
+  },
+  {
+    "id": "72920",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72920"
+  },
+  {
+    "id": "72919",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72919"
+  },
+  {
+    "id": "72918",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72918"
+  },
+  {
+    "id": "72917",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "21 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72917"
+  },
+  {
+    "id": "72941",
+    "origin": "Munich",
+    "destination": "Stockholm",
+    "nights": 5,
+    "dates": "28 Apr - 7 May",
+    "link": "https://www.imoova.com/en/relocations/72941"
+  },
+  {
+    "id": "72934",
+    "origin": "Munich",
+    "destination": "Stockholm",
+    "nights": 5,
+    "dates": "14 - 23 Apr",
+    "link": "https://www.imoova.com/en/relocations/72934"
+  },
+  {
+    "id": "72933",
+    "origin": "Munich",
+    "destination": "Stockholm",
+    "nights": 5,
+    "dates": "14 - 23 Apr",
+    "link": "https://www.imoova.com/en/relocations/72933"
+  },
+  {
+    "id": "72926",
+    "origin": "Munich",
+    "destination": "Stockholm",
+    "nights": 5,
+    "dates": "31 Mar - 9 Apr",
+    "link": "https://www.imoova.com/en/relocations/72926"
+  },
+  {
+    "id": "72924",
+    "origin": "Berlin",
+    "destination": "Glasgow",
+    "nights": 5,
+    "dates": "23 Mar - 4 Apr",
+    "link": "https://www.imoova.com/en/relocations/72924"
+  },
+  {
+    "id": "72944",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "2 - 8 May",
+    "link": "https://www.imoova.com/en/relocations/72944"
+  },
+  {
+    "id": "72943",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "2 - 8 May",
+    "link": "https://www.imoova.com/en/relocations/72943"
+  },
+  {
+    "id": "72942",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "2 - 8 May",
+    "link": "https://www.imoova.com/en/relocations/72942"
+  },
+  {
+    "id": "72916",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "28 Feb - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/72916"
+  },
+  {
+    "id": "72915",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "28 Feb - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/72915"
+  },
+  {
+    "id": "72914",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "28 Feb - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/72914"
+  },
+  {
+    "id": "72913",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "28 Feb - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/72913"
+  },
+  {
+    "id": "72912",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "14 - 20 Feb",
+    "link": "https://www.imoova.com/en/relocations/72912"
+  },
+  {
+    "id": "72911",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "14 - 20 Feb",
+    "link": "https://www.imoova.com/en/relocations/72911"
+  },
+  {
+    "id": "72910",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "14 - 20 Feb",
+    "link": "https://www.imoova.com/en/relocations/72910"
+  },
+  {
+    "id": "72909",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "14 - 20 Feb",
+    "link": "https://www.imoova.com/en/relocations/72909"
+  },
+  {
+    "id": "72908",
+    "origin": "Berlin",
+    "destination": "Stockholm",
+    "nights": 4,
+    "dates": "14 - 20 Feb",
+    "link": "https://www.imoova.com/en/relocations/72908"
   }
 ]
