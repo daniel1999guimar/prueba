@@ -2558,5 +2558,77 @@
     "nights": 4,
     "dates": "14 - 20 Feb",
     "link": "https://www.imoova.com/en/relocations/72908"
+  },
+  {
+    "id": "73230",
+    "origin": "Berlin",
+    "destination": "Palermo",
+    "nights": 9,
+    "dates": "11 - 26 Apr",
+    "link": "https://www.imoova.com/en/relocations/73230"
+  },
+  {
+    "id": "73239",
+    "origin": "Berlin",
+    "destination": "Bari",
+    "nights": 7,
+    "dates": "24 May - 2 Jun",
+    "link": "https://www.imoova.com/en/relocations/73239"
+  },
+  {
+    "id": "73216",
+    "origin": "Florence",
+    "destination": "Hamburg",
+    "nights": 5,
+    "dates": "9 - 15 Apr",
+    "link": "https://www.imoova.com/en/relocations/73216"
+  },
+  {
+    "id": "73233",
+    "origin": "Nantes",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "2 - 6 May",
+    "link": "https://www.imoova.com/en/relocations/73233"
+  },
+  {
+    "id": "73210",
+    "origin": "Florence",
+    "destination": "Frankfurt",
+    "nights": 4,
+    "dates": "9 - 13 Apr",
+    "link": "https://www.imoova.com/en/relocations/73210"
+  },
+  {
+    "id": "73203",
+    "origin": "Nantes",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "4 - 8 Apr",
+    "link": "https://www.imoova.com/en/relocations/73203"
+  },
+  {
+    "id": "73182",
+    "origin": "Berlin",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "22 - 25 Mar",
+    "link": "https://www.imoova.com/en/relocations/73182"
+  },
+  {
+    "id": "73208",
+    "origin": "Florence",
+    "destination": "Hamburg",
+    "nights": 5,
+    "dates": "5 - 11 Apr",
+    "link": "https://www.imoova.com/en/relocations/73208"
+  },
+  {
+    "id": "73199",
+    "origin": "Florence",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "2 - 7 Apr",
+    "link": "https://www.imoova.com/en/relocations/73199"
   }
 ]
