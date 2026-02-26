@@ -2646,5 +2646,21 @@
     "nights": 4,
     "dates": "26 Feb - 4 Mar",
     "link": "https://www.imoova.com/en/relocations/75273"
+  },
+  {
+    "id": "75274",
+    "origin": "Malm\u00f6",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "26 Feb - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/75274"
+  },
+  {
+    "id": "75275",
+    "origin": "Stockholm",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "26 Feb - 6 Mar",
+    "link": "https://www.imoova.com/en/relocations/75275"
   }
 ]
