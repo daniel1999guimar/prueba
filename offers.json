@@ -2638,5 +2638,13 @@
     "nights": 5,
     "dates": "7 - 16 May",
     "link": "https://www.imoova.com/en/relocations/73336"
+  },
+  {
+    "id": "75273",
+    "origin": "Berlin",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "26 Feb - 4 Mar",
+    "link": "https://www.imoova.com/en/relocations/75273"
   }
 ]
