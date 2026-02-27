@@ -3054,5 +3054,45 @@
     "nights": 4,
     "dates": "2 - 6 May",
     "link": "https://www.imoova.com/en/relocations/77363"
+  },
+  {
+    "id": "78333",
+    "origin": "Bergen",
+    "destination": "Tromso",
+    "nights": 7,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/78333"
+  },
+  {
+    "id": "78340",
+    "origin": "Oslo",
+    "destination": "Tromso",
+    "nights": 6,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/78340"
+  },
+  {
+    "id": "78339",
+    "origin": "Oslo",
+    "destination": "Tromso",
+    "nights": 6,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/78339"
+  },
+  {
+    "id": "78338",
+    "origin": "Oslo",
+    "destination": "Tromso",
+    "nights": 6,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/78338"
+  },
+  {
+    "id": "78337",
+    "origin": "Oslo",
+    "destination": "Tromso",
+    "nights": 6,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/78337"
   }
 ]
