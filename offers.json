@@ -3118,5 +3118,77 @@
     "nights": 5,
     "dates": "27 Feb - 13 Mar",
     "link": "https://www.imoova.com/en/relocations/78351"
+  },
+  {
+    "id": "78372",
+    "origin": "Naples",
+    "destination": "Oslo",
+    "nights": 8,
+    "dates": "27 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/78372"
+  },
+  {
+    "id": "78391",
+    "origin": "Berlin",
+    "destination": "Inverness",
+    "nights": 6,
+    "dates": "14 - 26 Mar",
+    "link": "https://www.imoova.com/en/relocations/78391"
+  },
+  {
+    "id": "78401",
+    "origin": "Berlin",
+    "destination": "Glasgow",
+    "nights": 5,
+    "dates": "14 - 24 Mar",
+    "link": "https://www.imoova.com/en/relocations/78401"
+  },
+  {
+    "id": "78371",
+    "origin": "Paris",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "27 Feb - 13 Mar",
+    "link": "https://www.imoova.com/en/relocations/78371"
+  },
+  {
+    "id": "78400",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 4,
+    "dates": "14 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/78400"
+  },
+  {
+    "id": "78399",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 4,
+    "dates": "14 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/78399"
+  },
+  {
+    "id": "78398",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 4,
+    "dates": "14 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/78398"
+  },
+  {
+    "id": "78397",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 4,
+    "dates": "14 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/78397"
+  },
+  {
+    "id": "78396",
+    "origin": "Berlin",
+    "destination": "Bristol",
+    "nights": 4,
+    "dates": "14 - 21 Mar",
+    "link": "https://www.imoova.com/en/relocations/78396"
   }
 ]
