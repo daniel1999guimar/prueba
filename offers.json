@@ -2662,5 +2662,109 @@
     "nights": 4,
     "dates": "26 Feb - 6 Mar",
     "link": "https://www.imoova.com/en/relocations/75275"
+  },
+  {
+    "id": "76730",
+    "origin": "Stockholm",
+    "destination": "Seville",
+    "nights": 10,
+    "dates": "27 Feb - 9 Mar",
+    "link": "https://www.imoova.com/en/relocations/76730"
+  },
+  {
+    "id": "76726",
+    "origin": "Venice",
+    "destination": "Valencia",
+    "nights": 4,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/76726"
+  },
+  {
+    "id": "76725",
+    "origin": "Brussels",
+    "destination": "Valencia",
+    "nights": 4,
+    "dates": "27 Feb - 3 Mar",
+    "link": "https://www.imoova.com/en/relocations/76725"
+  },
+  {
+    "id": "76713",
+    "origin": "Berlin",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "5 - 8 Apr",
+    "link": "https://www.imoova.com/en/relocations/76713"
+  },
+  {
+    "id": "76684",
+    "origin": "Nantes",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "2 - 6 May",
+    "link": "https://www.imoova.com/en/relocations/76684"
+  },
+  {
+    "id": "76698",
+    "origin": "Munich",
+    "destination": "Palermo",
+    "nights": 7,
+    "dates": "3 - 15 May",
+    "link": "https://www.imoova.com/en/relocations/76698"
+  },
+  {
+    "id": "76712",
+    "origin": "Berlin",
+    "destination": "Olbia",
+    "nights": 6,
+    "dates": "5 - 12 Apr",
+    "link": "https://www.imoova.com/en/relocations/76712"
+  },
+  {
+    "id": "76683",
+    "origin": "Nantes",
+    "destination": "Munich",
+    "nights": 4,
+    "dates": "2 - 6 May",
+    "link": "https://www.imoova.com/en/relocations/76683"
+  },
+  {
+    "id": "76728",
+    "origin": "Munich",
+    "destination": "Lisbon",
+    "nights": 6,
+    "dates": "27 Feb - 10 Mar",
+    "link": "https://www.imoova.com/en/relocations/76728"
+  },
+  {
+    "id": "76707",
+    "origin": "Venice",
+    "destination": "Geneva",
+    "nights": 4,
+    "dates": "5 - 12 Mar",
+    "link": "https://www.imoova.com/en/relocations/76707"
+  },
+  {
+    "id": "76682",
+    "origin": "Berlin",
+    "destination": "Geneva",
+    "nights": 4,
+    "dates": "2 - 6 Apr",
+    "link": "https://www.imoova.com/en/relocations/76682"
+  },
+  {
+    "id": "76708",
+    "origin": "Venice",
+    "destination": "Geneva",
+    "nights": 4,
+    "dates": "5 - 12 Mar",
+    "link": "https://www.imoova.com/en/relocations/76708"
+  },
+  {
+    "id": "76700",
+    "origin": "Bari",
+    "destination": "Geneva",
+    "nights": 4,
+    "dates": "3 - 11 May",
+    "link": "https://www.imoova.com/en/relocations/76700"
   }
 ]
