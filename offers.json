@@ -3214,5 +3214,13 @@
     "nights": 4,
     "dates": "5 - 20 Mar",
     "link": "https://www.imoova.com/en/relocations/78865"
+  },
+  {
+    "id": "78866",
+    "origin": "Berlin",
+    "destination": "Bilbao",
+    "nights": 5,
+    "dates": "2 - 8 Mar",
+    "link": "https://www.imoova.com/en/relocations/78866"
   }
 ]
