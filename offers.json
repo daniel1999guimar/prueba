@@ -4054,5 +4054,45 @@
     "nights": 5,
     "dates": "7 - 11 Mar",
     "link": "https://www.imoova.com/en/relocations/79984"
+  },
+  {
+    "id": "80116",
+    "origin": "Seville",
+    "destination": "Bordeaux",
+    "nights": 4,
+    "dates": "8 - 15 Mar",
+    "link": "https://www.imoova.com/en/relocations/80116"
+  },
+  {
+    "id": "80036",
+    "origin": "Malaga",
+    "destination": "A Coru\u00f1a",
+    "nights": 4,
+    "dates": "8 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/80036"
+  },
+  {
+    "id": "79835",
+    "origin": "Bilbao",
+    "destination": "Nice",
+    "nights": 4,
+    "dates": "8 - 15 Mar",
+    "link": "https://www.imoova.com/en/relocations/79835"
+  },
+  {
+    "id": "79814",
+    "origin": "Bergamo",
+    "destination": "Bordeaux",
+    "nights": 4,
+    "dates": "8 - 12 Mar",
+    "link": "https://www.imoova.com/en/relocations/79814"
+  },
+  {
+    "id": "79805",
+    "origin": "Barcelona",
+    "destination": "A Coru\u00f1a",
+    "nights": 4,
+    "dates": "8 - 14 Mar",
+    "link": "https://www.imoova.com/en/relocations/79805"
   }
 ]
