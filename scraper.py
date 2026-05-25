@@ -21,9 +21,6 @@ URL = 'https://www.imoova.com/es/relocations/europe'
 BASE_URL = 'https://www.imoova.com'
 OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
 
-# ==========================
-# CONFIGURACION EMAIL (SECRETS)
-# ==========================
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 
@@ -36,9 +33,6 @@ if not smtp_user or not smtp_password:
     raise ValueError("Faltan variables de entorno SMTP_USER o SMTP_PASSWORD")
 
 
-# ==========================
-# UTILIDADES JSON
-# ==========================
 def load_previous():
     try:
         with open(JSON_FILE, 'r', encoding='utf-8') as f:
@@ -50,26 +44,6 @@ def load_previous():
 def save_offers(offers):
     with open(JSON_FILE, 'w', encoding='utf-8') as f:
         json.dump(offers, f, indent=2, ensure_ascii=False)
-
-
-# ==========================
-# PARSEO
-# ==========================
-def parse_nights(text):
-    """
-    Ejemplos:
-    - '7 + 3 noches' -> 7
-    - '7 dias' -> 7
-    - '7 días' -> 7
-
-    Nota: no usamos '21+' porque suele ser edad minima, no noches.
-    """
-    if not text:
-        return None
-
-    text = text.lower().strip()
-    match = re.search(r'\d+', text)
-    return int(match.group()) if match else None
 
 
 def extract_offer_id(href):
@@ -101,14 +75,21 @@ def extract_origin_destination(a):
 
 
 def extract_nights(a):
-    spans = a.find_all('span')
+    text = a.get_text(" ", strip=True).lower()
 
-    for span in spans:
-        text = span.get_text(" ", strip=True)
-        text_lower = text.lower()
+    match = re.search(
+        r'(\d+)\s*\+\s*\d+\s*(noche|noches|night|nights|día|días|dia|dias|day|days)',
+        text
+    )
+    if match:
+        return int(match.group(1))
 
-        if re.search(r'\b(noche|noches|night|nights|dia|dias|día|días|day|days)\b', text_lower):
-            return parse_nights(text)
+    match = re.search(
+        r'(\d+)\s*(noche|noches|night|nights|día|días|dia|dias|day|days)',
+        text
+    )
+    if match:
+        return int(match.group(1))
 
     return None
 
@@ -154,9 +135,6 @@ def extract_offers(html):
     return offers
 
 
-# ==========================
-# EMAIL
-# ==========================
 def send_email(new_offers):
     if not new_offers:
         return
@@ -189,9 +167,6 @@ def send_email(new_offers):
         print(f"Error al enviar el correo: {e}")
 
 
-# ==========================
-# MAIN
-# ==========================
 def main():
     options = Options()
     options.add_argument('--headless=new')
@@ -199,7 +174,6 @@ def main():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
 
-    # En Linux suele ser necesario. En Windows o Mac normalmente puedes comentarlo.
     if os.path.exists("/usr/bin/chromium-browser"):
         options.binary_location = "/usr/bin/chromium-browser"
 
@@ -242,6 +216,11 @@ def main():
         print("No se han encontrado ofertas. Saliendo.")
         return
 
+    print("Ofertas con mas de 3 noches encontradas:")
+    for offer in offers:
+        if offer['nights'] is not None and offer['nights'] > 3:
+            print(offer)
+
     previous_offers = load_previous()
     previous_ids = {o['id'] for o in previous_offers}
 
@@ -249,7 +228,7 @@ def main():
         o for o in offers
         if o['id'] not in previous_ids
         and o['nights'] is not None
-        and o['nights'] > 3
+        and o['nights'] > 5
     ]
 
     if new_offers:
@@ -257,7 +236,7 @@ def main():
         save_offers(previous_offers + new_offers)
         send_email(new_offers)
     else:
-        print("No hay nuevas ofertas con mas de 3 noches.")
+        print("No hay nuevas ofertas con mas de 5 noches.")
 
 
 if __name__ == "__main__":
