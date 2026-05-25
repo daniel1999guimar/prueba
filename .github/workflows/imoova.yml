@@ -5,13 +5,16 @@ on:
     - cron: "*/30 * * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -19,20 +22,20 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y chromium-browser chromium-chromedriver
+          python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Ejecutar script
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_TO: ${{ secrets.SMTP_TO }}
         run: python3 scraper.py
 
-      - name: Commit updated offers.json
+      - name: Commit updated JSON files
         run: |
           git config --global user.email "bot@github.com"
           git config --global user.name "GitHub Action Bot"
-          git add offers.json
-          git commit -m "Update offers.json" || echo "No changes to commit"
+          git add offers.json city_coords.json
+          git commit -m "Update scraper data" || echo "No changes to commit"
           git push origin HEAD:main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
