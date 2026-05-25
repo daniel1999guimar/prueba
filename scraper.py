@@ -5,19 +5,24 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+
 from bs4 import BeautifulSoup
 
+
 JSON_FILE = 'offers.json'
-URL = 'https://www.imoova.com/en/relocations?region=EU'
+URL = 'https://www.imoova.com/es/relocations/europe'
+BASE_URL = 'https://www.imoova.com'
+OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
 
 # ==========================
-# CONFIGURACIÓN EMAIL (SECRETS)
+# CONFIGURACION EMAIL (SECRETS)
 # ==========================
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
@@ -30,29 +35,34 @@ to_email = os.environ.get('SMTP_TO', smtp_user)
 if not smtp_user or not smtp_password:
     raise ValueError("Faltan variables de entorno SMTP_USER o SMTP_PASSWORD")
 
+
 # ==========================
 # UTILIDADES JSON
 # ==========================
 def load_previous():
     try:
-        with open(JSON_FILE, 'r') as f:
+        with open(JSON_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
+
 def save_offers(offers):
-    with open(JSON_FILE, 'w') as f:
-        json.dump(offers, f, indent=2)
+    with open(JSON_FILE, 'w', encoding='utf-8') as f:
+        json.dump(offers, f, indent=2, ensure_ascii=False)
+
 
 # ==========================
 # PARSEO
 # ==========================
 def parse_nights(text):
     """
-    Regla:
+    Ejemplos:
     - '7 + 3 noches' -> 7
-    - '21+' -> 21
+    - '7 dias' -> 7
     - '7 días' -> 7
+
+    Nota: no usamos '21+' porque suele ser edad minima, no noches.
     """
     if not text:
         return None
@@ -61,11 +71,53 @@ def parse_nights(text):
     match = re.search(r'\d+', text)
     return int(match.group()) if match else None
 
+
+def extract_offer_id(href):
+    match = re.search(r'(RLC\d+)', href, re.IGNORECASE)
+    if match:
+        return match.group(1).upper()
+
+    return href.rstrip('/').split('/')[-1]
+
+
+def extract_origin_destination(a):
+    h3 = a.find('h3')
+    if not h3:
+        return None, None
+
+    text = h3.get_text(" ", strip=True)
+
+    if '→' in text:
+        parts = text.split('→', 1)
+    elif ' to ' in text.lower():
+        parts = re.split(r'\s+to\s+', text, maxsplit=1, flags=re.IGNORECASE)
+    else:
+        return text, None
+
+    if len(parts) != 2:
+        return text, None
+
+    return parts[0].strip(), parts[1].strip()
+
+
+def extract_nights(a):
+    spans = a.find_all('span')
+
+    for span in spans:
+        text = span.get_text(" ", strip=True)
+        text_lower = text.lower()
+
+        if re.search(r'\b(noche|noches|night|nights|dia|dias|día|días|day|days)\b', text_lower):
+            return parse_nights(text)
+
+    return None
+
+
 def extract_offers(html):
     soup = BeautifulSoup(html, 'html.parser')
     offers = []
 
-    offer_elements = soup.select('ul.grid li a[href^="/en/relocations/"]')
+    offer_elements = soup.select(OFFER_SELECTOR)
     print(f"[extract_offers] Ofertas encontradas: {len(offer_elements)}")
 
     for a in offer_elements:
@@ -73,30 +125,22 @@ def extract_offers(html):
         if not href:
             continue
 
-        match = re.search(r'/relocations/(\d+)', href)
-        if not match:
-            continue
+        offer_id = extract_offer_id(href)
 
-        offer_id = match.group(1)
-        full_link = f'https://www.imoova.com{href}'
+        if href.startswith('http'):
+            full_link = href
+        else:
+            full_link = f'{BASE_URL}{href}'
 
-        h3 = a.find('h3')
-        origin = destination = None
-        if h3:
-            parts = h3.get_text(strip=True).split('→')
-            if len(parts) == 2:
-                origin, destination = parts[0].strip(), parts[1].strip()
+        origin, destination = extract_origin_destination(a)
 
         time_elements = a.find_all('time')
-        dates = " - ".join(t.get_text(strip=True) for t in time_elements) if time_elements else None
+        dates = " - ".join(
+            t.get_text(" ", strip=True)
+            for t in time_elements
+        ) if time_elements else None
 
-        # ⬇️ SOLO noches / días / 21+
-        night_span = a.find(
-            'span',
-            string=re.compile(r'(noche|night|día|dias|\d+\+)', re.IGNORECASE)
-        )
-
-        nights = parse_nights(night_span.get_text(strip=True)) if night_span else None
+        nights = extract_nights(a)
 
         offers.append({
             'id': offer_id,
@@ -108,6 +152,7 @@ def extract_offers(html):
         })
 
     return offers
+
 
 # ==========================
 # EMAIL
@@ -121,7 +166,8 @@ def send_email(new_offers):
     msg['To'] = to_email
     msg['Subject'] = f"Nuevas ofertas imoova ({len(new_offers)})"
 
-    body = "Se han detectado nuevas ofertas con más de 3 noches:\n\n"
+    body = "Se han detectado nuevas ofertas con mas de 3 noches:\n\n"
+
     for offer in new_offers:
         body += (
             f"- {offer['origin']} → {offer['destination']} "
@@ -130,7 +176,7 @@ def send_email(new_offers):
             f"Link: {offer['link']}\n"
         )
 
-    msg.attach(MIMEText(body, 'plain'))
+    msg.attach(MIMEText(body, 'plain', 'utf-8'))
 
     try:
         server = smtplib.SMTP(smtp_server, smtp_port)
@@ -142,26 +188,27 @@ def send_email(new_offers):
     except Exception as e:
         print(f"Error al enviar el correo: {e}")
 
+
 # ==========================
 # MAIN
 # ==========================
 def main():
     options = Options()
-    options.add_argument('--headless')
+    options.add_argument('--headless=new')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    options.binary_location = "/usr/bin/chromium-browser"
+
+    # En Linux suele ser necesario. En Windows o Mac normalmente puedes comentarlo.
+    if os.path.exists("/usr/bin/chromium-browser"):
+        options.binary_location = "/usr/bin/chromium-browser"
 
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
 
-    # ⛔ SALIR SI NO HAY ANUNCIOS
     try:
         WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located(
-                (By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]')
-            )
+            EC.presence_of_element_located((By.CSS_SELECTOR, OFFER_SELECTOR))
         )
     except TimeoutException:
         print("No hay anuncios disponibles. Saliendo.")
@@ -176,9 +223,7 @@ def main():
         driver.execute_script("window.scrollBy(0, 1300);")
         time.sleep(2)
 
-        elements = driver.find_elements(
-            By.CSS_SELECTOR, 'ul.grid li a[href^="/en/relocations/"]'
-        )
+        elements = driver.find_elements(By.CSS_SELECTOR, OFFER_SELECTOR)
         current_count = len(elements)
         print(f"Anuncios visibles: {current_count}")
 
@@ -202,7 +247,9 @@ def main():
 
     new_offers = [
         o for o in offers
-        if o['id'] not in previous_ids and o['nights'] and o['nights'] > 3
+        if o['id'] not in previous_ids
+        and o['nights'] is not None
+        and o['nights'] > 3
     ]
 
     if new_offers:
@@ -210,7 +257,8 @@ def main():
         save_offers(previous_offers + new_offers)
         send_email(new_offers)
     else:
-        print("No hay nuevas ofertas con más de 3 noches.")
+        print("No hay nuevas ofertas con mas de 3 noches.")
+
 
 if __name__ == "__main__":
     main()
