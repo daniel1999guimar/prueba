@@ -3,7 +3,8 @@ import time
 import re
 import os
 import smtplib
-import math
+import html
+import requests
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -23,12 +24,14 @@ from bs4 import BeautifulSoup
 
 JSON_FILE = 'offers.json'
 COORDS_FILE = 'city_coords.json'
+ROUTES_FILE = 'route_cache.json'
 
 URL = 'https://www.imoova.com/es/relocations/europe'
 BASE_URL = 'https://www.imoova.com'
 OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
 
 MIN_NIGHTS = 4
+USER_AGENT = 'imoova-scraper-alert/1.0'
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
@@ -45,16 +48,6 @@ if not smtp_user or not smtp_password:
 def log(message):
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f"[{now}] {message}")
-
-
-def sort_by_shortest_distance(offers):
-    return sorted(
-        offers,
-        key=lambda offer: (
-            offer.get('distance_km') is None,
-            offer.get('distance_km') or 999999
-        )
-    )
 
 
 def load_json(path, default):
@@ -85,6 +78,16 @@ def save_offers(offers):
 
 def normalize_space(text):
     return re.sub(r'\s+', ' ', text or '').strip()
+
+
+def sort_by_shortest_route(offers):
+    return sorted(
+        offers,
+        key=lambda offer: (
+            offer.get('route_distance_km') is None,
+            offer.get('route_distance_km') or 999999
+        )
+    )
 
 
 def extract_offer_id(href):
@@ -160,6 +163,15 @@ def save_coords_cache(cache):
     save_json(COORDS_FILE, cache)
 
 
+def load_route_cache():
+    data = load_json(ROUTES_FILE, {})
+    return data if isinstance(data, dict) else {}
+
+
+def save_route_cache(cache):
+    save_json(ROUTES_FILE, cache)
+
+
 def geocode_city(city, cache, geolocator):
     if not city:
         return None
@@ -184,51 +196,101 @@ def geocode_city(city, cache, geolocator):
     }
 
     cache[key] = coords
-    time.sleep(1)
+    time.sleep(1.1)
 
     return coords
 
 
-def haversine_km(coord1, coord2):
-    if not coord1 or not coord2:
+def get_driving_route(origin_coords, destination_coords):
+    if not origin_coords or not destination_coords:
         return None
 
-    lat1 = math.radians(coord1['lat'])
-    lon1 = math.radians(coord1['lon'])
-    lat2 = math.radians(coord2['lat'])
-    lon2 = math.radians(coord2['lon'])
-
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-
-    a = (
-        math.sin(dlat / 2) ** 2
-        + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    coords = (
+        f"{origin_coords['lon']},{origin_coords['lat']};"
+        f"{destination_coords['lon']},{destination_coords['lat']}"
     )
 
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    url = (
+        f"https://router.project-osrm.org/route/v1/driving/{coords}"
+        "?overview=false&steps=true&alternatives=false"
+    )
 
-    return round(6371 * c)
+    response = requests.get(url, headers={'User-Agent': USER_AGENT}, timeout=25)
+    response.raise_for_status()
+
+    data = response.json()
+
+    if data.get('code') != 'Ok' or not data.get('routes'):
+        return None
+
+    route = data['routes'][0]
+    steps = []
+
+    for leg in route.get('legs', []):
+        steps.extend(leg.get('steps', []))
+
+    ferry_steps = [
+        step for step in steps
+        if (step.get('mode') or '').lower() == 'ferry'
+    ]
+
+    ferry_names = []
+    for step in ferry_steps:
+        name = normalize_space(step.get('name'))
+        if name and name not in ferry_names:
+            ferry_names.append(name)
+
+    return {
+        'route_distance_km': round(route.get('distance', 0) / 1000),
+        'route_duration_hours': round(route.get('duration', 0) / 3600, 1),
+        'route_has_ferry': bool(ferry_steps),
+        'ferry_names': ferry_names
+    }
 
 
-def add_distance_to_offers(offers):
-    cache = load_coords_cache()
-    geolocator = Nominatim(user_agent="imoova_scraper_email_alert")
+def add_route_info_to_offers(offers):
+    coords_cache = load_coords_cache()
+    route_cache = load_route_cache()
+    geolocator = Nominatim(user_agent=USER_AGENT)
 
     for offer in offers:
         origin = offer.get('origin')
         destination = offer.get('destination')
 
-        origin_coords = geocode_city(origin, cache, geolocator)
-        destination_coords = geocode_city(destination, cache, geolocator)
+        route_key = f"{origin}|{destination}".lower()
 
-        offer['distance_km'] = haversine_km(origin_coords, destination_coords)
+        if route_key in route_cache:
+            offer.update(route_cache[route_key])
+            continue
 
-    save_coords_cache(cache)
+        origin_coords = geocode_city(origin, coords_cache, geolocator)
+        destination_coords = geocode_city(destination, coords_cache, geolocator)
+
+        try:
+            route_info = get_driving_route(origin_coords, destination_coords)
+        except requests.RequestException as e:
+            log(f"No se pudo calcular ruta {origin} -> {destination}: {e}")
+            route_info = None
+
+        if not route_info:
+            route_info = {
+                'route_distance_km': None,
+                'route_duration_hours': None,
+                'route_has_ferry': False,
+                'ferry_names': []
+            }
+
+        offer.update(route_info)
+        route_cache[route_key] = route_info
+
+        time.sleep(0.3)
+
+    save_coords_cache(coords_cache)
+    save_route_cache(route_cache)
 
 
-def extract_offers(html):
-    soup = BeautifulSoup(html, 'html.parser')
+def extract_offers(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
     offers = []
     seen_ids = set()
 
@@ -263,78 +325,101 @@ def extract_offers(html):
     return offers
 
 
-def build_email_html(new_offers):
-    rows = ""
+def build_offer_card(offer):
+    origin = html.escape(offer.get('origin') or 'Origen desconocido')
+    destination = html.escape(offer.get('destination') or 'Destino desconocido')
+    dates = html.escape(offer.get('dates') or 'Sin fechas')
+    link = html.escape(offer.get('link') or '#')
+    nights = offer.get('nights') or '-'
 
-    sorted_offers = sort_by_shortest_distance(new_offers)
+    distance = offer.get('route_distance_km')
+    duration = offer.get('route_duration_hours')
+    has_ferry = offer.get('route_has_ferry')
+    ferry_names = offer.get('ferry_names') or []
 
-    for offer in sorted_offers:
-        origin = offer.get('origin') or 'Origen desconocido'
-        destination = offer.get('destination') or 'Destino desconocido'
-        nights = offer.get('nights') or '-'
-        dates = offer.get('dates') or 'Sin fechas'
-        link = offer.get('link')
-        distance = offer.get('distance_km')
+    distance_text = f"{distance:,} km".replace(",", ".") if distance else "No disponible"
+    duration_text = f"{duration} h" if duration else "No disponible"
 
-        distance_text = f"{distance:,} km".replace(",", ".") if distance else "No disponible"
+    if has_ferry:
+        if ferry_names:
+            ferry_text = "Sí: " + ", ".join(html.escape(name) for name in ferry_names[:3])
+        else:
+            ferry_text = "Sí"
+        ferry_badge = f"""
+            <span style="display:inline-block;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:5px 9px;border-radius:6px;font-size:12px;font-weight:700;">
+                Barco: {ferry_text}
+            </span>
+        """
+    else:
+        ferry_badge = """
+            <span style="display:inline-block;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;padding:5px 9px;border-radius:6px;font-size:12px;font-weight:700;">
+                Sin barco detectado
+            </span>
+        """
 
-        rows += f"""
-        <tr>
-            <td style="padding:14px 12px;border-bottom:1px solid #e5e7eb;">
-                <div style="font-size:16px;font-weight:700;color:#111827;">
-                    {origin} → {destination}
-                </div>
-                <div style="font-size:13px;color:#6b7280;margin-top:4px;">
-                    {dates}
-                </div>
-            </td>
-            <td style="padding:14px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">
-                <span style="display:inline-block;background:#dcfce7;color:#166534;padding:6px 10px;border-radius:999px;font-weight:700;">
+    return f"""
+    <div style="border:1px solid #e5e7eb;border-radius:8px;background:#ffffff;margin:0 0 14px;overflow:hidden;">
+        <div style="padding:16px 18px;">
+            <div style="font-size:18px;font-weight:800;color:#111827;line-height:1.3;">
+                {origin} → {destination}
+            </div>
+
+            <div style="font-size:13px;color:#6b7280;margin-top:5px;">
+                {dates}
+            </div>
+
+            <div style="margin-top:12px;">
+                <span style="display:inline-block;background:#dcfce7;color:#166534;border:1px solid #bbf7d0;padding:5px 9px;border-radius:6px;font-size:12px;font-weight:700;">
                     {nights} noches
                 </span>
-            </td>
-            <td style="padding:14px 12px;border-bottom:1px solid #e5e7eb;text-align:center;color:#374151;font-weight:700;">
-                {distance_text}
-            </td>
-            <td style="padding:14px 12px;border-bottom:1px solid #e5e7eb;text-align:right;">
-                <a href="{link}" style="background:#2563eb;color:#ffffff;text-decoration:none;padding:9px 12px;border-radius:6px;font-weight:700;">
-                    Ver oferta
-                </a>
-            </td>
-        </tr>
-        """
+                <span style="display:inline-block;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;padding:5px 9px;border-radius:6px;font-size:12px;font-weight:700;margin-left:5px;">
+                    {distance_text}
+                </span>
+                <span style="display:inline-block;background:#f8fafc;color:#334155;border:1px solid #e2e8f0;padding:5px 9px;border-radius:6px;font-size:12px;font-weight:700;margin-left:5px;">
+                    {duration_text}
+                </span>
+                <span style="display:inline-block;margin-left:5px;">
+                    {ferry_badge}
+                </span>
+            </div>
+
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;">
+                <tr>
+                    <td bgcolor="#2563eb" style="border-radius:6px;">
+                        <a href="{link}" target="_blank" style="display:inline-block;padding:11px 16px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;white-space:nowrap;">
+                            Ver oferta
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    """
+
+
+def build_email_html(new_offers):
+    sorted_offers = sort_by_shortest_route(new_offers)
+    cards = "".join(build_offer_card(offer) for offer in sorted_offers)
 
     return f"""
     <html>
     <body style="margin:0;padding:0;background:#f3f4f6;font-family:Arial,sans-serif;color:#111827;">
-        <div style="max-width:860px;margin:0 auto;padding:24px;">
-            <div style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
-                <div style="padding:22px 24px;background:#111827;color:#ffffff;">
-                    <h1 style="margin:0;font-size:22px;">
-                        Nuevas ofertas Imoova
-                    </h1>
-                    <p style="margin:8px 0 0;color:#d1d5db;font-size:14px;">
-                        {len(new_offers)} nuevas ofertas con más de {MIN_NIGHTS} noches, ordenadas por distancia más corta.
-                    </p>
-                </div>
+        <div style="max-width:760px;margin:0 auto;padding:22px;">
+            <div style="padding:22px 24px;background:#111827;color:#ffffff;border-radius:8px 8px 0 0;">
+                <h1 style="margin:0;font-size:22px;line-height:1.25;">
+                    Nuevas ofertas Imoova
+                </h1>
+                <p style="margin:8px 0 0;color:#d1d5db;font-size:14px;line-height:1.5;">
+                    {len(new_offers)} nuevas ofertas con más de {MIN_NIGHTS} noches, ordenadas por distancia en coche.
+                </p>
+            </div>
 
-                <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;background:#ffffff;">
-                    <thead>
-                        <tr style="background:#f9fafb;">
-                            <th align="left" style="padding:12px;color:#6b7280;font-size:12px;text-transform:uppercase;">Ruta</th>
-                            <th align="center" style="padding:12px;color:#6b7280;font-size:12px;text-transform:uppercase;">Noches</th>
-                            <th align="center" style="padding:12px;color:#6b7280;font-size:12px;text-transform:uppercase;">Distancia</th>
-                            <th align="right" style="padding:12px;color:#6b7280;font-size:12px;text-transform:uppercase;">Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {rows}
-                    </tbody>
-                </table>
+            <div style="padding:16px;background:#ffffff;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;">
+                {cards}
+            </div>
 
-                <div style="padding:16px 24px;color:#6b7280;font-size:12px;background:#f9fafb;">
-                    Distancia aproximada en línea recta entre ciudades. Puede diferir mucho de la ruta real por carretera o ferry.
-                </div>
+            <div style="padding:15px 18px;color:#6b7280;font-size:12px;line-height:1.5;background:#f9fafb;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;">
+                Distancia y duración aproximadas por ruta en coche usando OSRM/OpenStreetMap. Si aparece barco, la ruta calculada incluye al menos un tramo ferry.
             </div>
         </div>
     </body>
@@ -343,19 +428,21 @@ def build_email_html(new_offers):
 
 
 def build_email_text(new_offers):
-    sorted_offers = sort_by_shortest_distance(new_offers)
-
-    body = f"Se han detectado {len(sorted_offers)} nuevas ofertas con mas de {MIN_NIGHTS} noches, ordenadas por distancia mas corta:\n\n"
+    sorted_offers = sort_by_shortest_route(new_offers)
+    body = f"Se han detectado {len(sorted_offers)} nuevas ofertas con mas de {MIN_NIGHTS} noches, ordenadas por distancia en coche:\n\n"
 
     for offer in sorted_offers:
-        distance = offer.get('distance_km')
-        distance_text = f"{distance} km" if distance else "Distancia no disponible"
+        ferry_text = "Si" if offer.get('route_has_ferry') else "No"
+        if offer.get('route_has_ferry') and offer.get('ferry_names'):
+            ferry_text += f" ({', '.join(offer.get('ferry_names'))})"
 
         body += (
             f"- {offer.get('origin')} → {offer.get('destination')}\n"
             f"  Noches: {offer.get('nights')}\n"
             f"  Fechas: {offer.get('dates')}\n"
-            f"  Distancia aproximada: {distance_text}\n"
+            f"  Distancia coche: {offer.get('route_distance_km') or 'No disponible'} km\n"
+            f"  Duracion aprox: {offer.get('route_duration_hours') or 'No disponible'} h\n"
+            f"  Barco: {ferry_text}\n"
             f"  Link: {offer.get('link')}\n\n"
         )
 
@@ -371,11 +458,8 @@ def send_email(new_offers):
     msg['To'] = to_email
     msg['Subject'] = f"Imoova: {len(new_offers)} nuevas ofertas de mas de {MIN_NIGHTS} noches"
 
-    text_body = build_email_text(new_offers)
-    html_body = build_email_html(new_offers)
-
-    msg.attach(MIMEText(text_body, 'plain', 'utf-8'))
-    msg.attach(MIMEText(html_body, 'html', 'utf-8'))
+    msg.attach(MIMEText(build_email_text(new_offers), 'plain', 'utf-8'))
+    msg.attach(MIMEText(build_email_html(new_offers), 'html', 'utf-8'))
 
     try:
         with smtplib.SMTP(smtp_server, smtp_port) as server:
@@ -447,7 +531,7 @@ def main():
 
     try:
         driver = create_driver()
-        html = load_all_offers(driver)
+        html_content = load_all_offers(driver)
     except WebDriverException as e:
         log(f"Error con Selenium/ChromeDriver: {e}")
         return
@@ -455,10 +539,10 @@ def main():
         if driver:
             driver.quit()
 
-    if not html:
+    if not html_content:
         return
 
-    offers = extract_offers(html)
+    offers = extract_offers(html_content)
 
     if not offers:
         log("No se han encontrado ofertas. Saliendo.")
@@ -482,7 +566,7 @@ def main():
     log(f"Ofertas nuevas con mas de {MIN_NIGHTS} noches: {len(new_offers)}")
 
     if new_offers:
-        add_distance_to_offers(new_offers)
+        add_route_info_to_offers(new_offers)
         send_email(new_offers)
     else:
         log(f"No hay nuevas ofertas con mas de {MIN_NIGHTS} noches.")
