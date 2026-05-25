@@ -486,5 +486,237 @@
     "nights": 4,
     "dates": "8 Jun - 10 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/edinburgh-to-bristol-RLC105892"
+  },
+  {
+    "id": "RLC106279",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 11,
+    "dates": "27 May - 6 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106279"
+  },
+  {
+    "id": "RLC106258",
+    "origin": "Nantes",
+    "destination": "Edinburgh",
+    "nights": 4,
+    "dates": "27 May - 28 May",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-edinburgh-RLC106258"
+  },
+  {
+    "id": "RLC106259",
+    "origin": "Nantes",
+    "destination": "Inverness",
+    "nights": 4,
+    "dates": "27 May - 22 May",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-inverness-RLC106259"
+  },
+  {
+    "id": "RLC106271",
+    "origin": "Bergamo",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 30 May",
+    "link": "https://www.imoova.com/es/relocations/deal/bergamo-to-oslo-RLC106271"
+  },
+  {
+    "id": "RLC106270",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 4,
+    "dates": "27 May - 30 May",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106270"
+  },
+  {
+    "id": "RLC106256",
+    "origin": "Barcelona",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 25 May",
+    "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-oslo-RLC106256"
+  },
+  {
+    "id": "RLC106257",
+    "origin": "Naples",
+    "destination": "Trondheim",
+    "nights": 4,
+    "dates": "27 May - 30 May",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-trondheim-RLC106257"
+  },
+  {
+    "id": "RLC106255",
+    "origin": "Barcelona",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 25 May",
+    "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-oslo-RLC106255"
+  },
+  {
+    "id": "RLC106254",
+    "origin": "Barcelona",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 25 May",
+    "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-oslo-RLC106254"
+  },
+  {
+    "id": "RLC106253",
+    "origin": "Olbia",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 26 May",
+    "link": "https://www.imoova.com/es/relocations/deal/olbia-to-oslo-RLC106253"
+  },
+  {
+    "id": "RLC106252",
+    "origin": "Milan",
+    "destination": "Bergen",
+    "nights": 4,
+    "dates": "27 May - 25 May",
+    "link": "https://www.imoova.com/es/relocations/deal/milan-to-bergen-RLC106252"
+  },
+  {
+    "id": "RLC106250",
+    "origin": "Rome",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 25 May",
+    "link": "https://www.imoova.com/es/relocations/deal/rome-to-oslo-RLC106250"
+  },
+  {
+    "id": "RLC106249",
+    "origin": "Pisa",
+    "destination": "Oslo",
+    "nights": 4,
+    "dates": "27 May - 25 May",
+    "link": "https://www.imoova.com/es/relocations/deal/pisa-to-oslo-RLC106249"
+  },
+  {
+    "id": "RLC106264",
+    "origin": "Nantes",
+    "destination": "London",
+    "nights": 4,
+    "dates": "27 May - 30 May",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-london-RLC106264"
+  },
+  {
+    "id": "RLC106292",
+    "origin": "Valencia",
+    "destination": "Tromso",
+    "nights": 18,
+    "dates": "7 Jun - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/valencia-to-tromso-RLC106292"
+  },
+  {
+    "id": "RLC106289",
+    "origin": "Nantes",
+    "destination": "Edinburgh",
+    "nights": 10,
+    "dates": "27 May - 29 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-edinburgh-RLC106289"
+  },
+  {
+    "id": "RLC106288",
+    "origin": "Nantes",
+    "destination": "Edinburgh",
+    "nights": 10,
+    "dates": "27 May - 1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-edinburgh-RLC106288"
+  },
+  {
+    "id": "RLC106285",
+    "origin": "Nantes",
+    "destination": "Edinburgh",
+    "nights": 10,
+    "dates": "27 May - 19 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-edinburgh-RLC106285"
+  },
+  {
+    "id": "RLC106281",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 12,
+    "dates": "27 May - 8 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106281"
+  },
+  {
+    "id": "RLC106284",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 12,
+    "dates": "27 May - 11 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106284"
+  },
+  {
+    "id": "RLC106277",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 12,
+    "dates": "27 May - 12 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106277"
+  },
+  {
+    "id": "RLC106278",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 8,
+    "dates": "27 May - 3 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106278"
+  },
+  {
+    "id": "RLC106274",
+    "origin": "Nantes",
+    "destination": "Dublin",
+    "nights": 7,
+    "dates": "27 May - 2 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-dublin-RLC106274"
+  },
+  {
+    "id": "RLC106261",
+    "origin": "Palma",
+    "destination": "Oslo",
+    "nights": 7,
+    "dates": "4 Jun - 10 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/palma-to-oslo-RLC106261"
+  },
+  {
+    "id": "RLC106248",
+    "origin": "Nantes",
+    "destination": "Inverness",
+    "nights": 9,
+    "dates": "27 May - 1 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-inverness-RLC106248"
+  },
+  {
+    "id": "RLC106260",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 4,
+    "dates": "27 May - 24 May",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-glasgow-RLC106260"
+  },
+  {
+    "id": "RLC106265",
+    "origin": "Stockholm",
+    "destination": "Malmö",
+    "nights": 4,
+    "dates": "27 May - 30 May",
+    "link": "https://www.imoova.com/es/relocations/deal/stockholm-to-malmo-RLC106265"
+  },
+  {
+    "id": "RLC106290",
+    "origin": "Edinburgh",
+    "destination": "Bristol",
+    "nights": 4,
+    "dates": "13 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/edinburgh-to-bristol-RLC106290"
+  },
+  {
+    "id": "RLC106262",
+    "origin": "Stockholm",
+    "destination": "Malmö",
+    "nights": 4,
+    "dates": "27 May - 5 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/stockholm-to-malmo-RLC106262"
   }
 ]
