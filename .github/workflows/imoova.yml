@@ -36,6 +36,6 @@ jobs:
         run: |
           git config --global user.email "bot@github.com"
           git config --global user.name "GitHub Action Bot"
-          git add offers.json city_coords.json
+          git add offers.json city_coords.json route_cache.json
           git commit -m "Update scraper data" || echo "No changes to commit"
           git push origin HEAD:main
