@@ -15,11 +15,16 @@ from selenium.common.exceptions import TimeoutException
 
 from bs4 import BeautifulSoup
 
-
 JSON_FILE = 'offers.json'
 URL = 'https://www.imoova.com/es/relocations/europe'
 BASE_URL = 'https://www.imoova.com'
 OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
+
+# LISTA NEGRA: Si el origen o destino contiene alguna de estas ciudades, se elimina automáticamente
+CIUDADES_PROHIBIDAS = [
+    "LONDON", "DUBLIN", "EDINBURGH", "MANCHESTER", 
+    "BRISTOL", "STOCKHOLM", "BELFAST", "CORK", "INVERNESS"
+]
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
@@ -50,7 +55,6 @@ def extract_offer_id(href):
     match = re.search(r'(RLC\d+)', href, re.IGNORECASE)
     if match:
         return match.group(1).upper()
-
     return href.rstrip('/').split('/')[-1]
 
 
@@ -95,11 +99,11 @@ def extract_nights(a):
 
 
 def extract_offers(html):
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'lxml')
     offers = []
 
     offer_elements = soup.select(OFFER_SELECTOR)
-    print(f"[extract_offers] Ofertas encontradas: {len(offer_elements)}")
+    print(f"[extract_offers] Ofertas encontradas en lista principal: {len(offer_elements)}")
 
     for a in offer_elements:
         href = a.get('href')
@@ -135,6 +139,30 @@ def extract_offers(html):
     return offers
 
 
+def extract_km_from_deal(driver, url):
+    """
+    Entra a la oferta individual y raspea los kilómetros exactos del texto de Imoova.
+    """
+    try:
+        driver.get(url)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'km')]"))
+        )
+        
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        paragraphs = soup.find_all('p', class_=lambda c: c and 'text-sm' in c)
+        for p in paragraphs:
+            text = p.get_text(strip=True).lower()
+            match = re.search(r'(\d+)\s*km', text)
+            if match:
+                return int(match.group(1))
+                
+    except Exception as e:
+        print(f"   [Error] No se pudieron extraer los km de {url}: {e}")
+        
+    return None
+
+
 def send_email(new_offers):
     if not new_offers:
         return
@@ -144,14 +172,15 @@ def send_email(new_offers):
     msg['To'] = to_email
     msg['Subject'] = f"Nuevas ofertas imoova ({len(new_offers)})"
 
-    body = "Se han detectado nuevas ofertas con mas de 3 noches:\n\n"
+    body = "Se han detectado nuevas ofertas con mas de 3 noches y rutas deseadas:\n\n"
 
     for offer in new_offers:
+        km_str = f"{offer['distance_km']} km" if offer.get('distance_km') else "No especificados"
         body += (
-            f"- {offer['origin']} → {offer['destination']} "
-            f"({offer['nights']} noches) | "
-            f"Fechas: {offer['dates']} | "
-            f"Link: {offer['link']}\n"
+            f"- {offer['origin']} → {offer['destination']} \n"
+            f"  Distancia oficial: {km_str}\n"
+            f"  Duración: {offer['nights']} noches | Fechas: {offer['dates']}\n"
+            f"  Link: {offer['link']}\n\n"
         )
 
     msg.attach(MIMEText(body, 'plain', 'utf-8'))
@@ -208,35 +237,53 @@ def main():
             last_count = current_count
 
     html = driver.page_source
-    driver.quit()
 
     offers = extract_offers(html)
 
     if not offers:
         print("No se han encontrado ofertas. Saliendo.")
+        driver.quit()
         return
-
-    print("Ofertas con mas de 3 noches encontradas:")
-    for offer in offers:
-        if offer['nights'] is not None and offer['nights'] > 3:
-            print(offer)
 
     previous_offers = load_previous()
     previous_ids = {o['id'] for o in previous_offers}
 
-    new_offers = [
+    potential_new_offers = [
         o for o in offers
         if o['id'] not in previous_ids
         and o['nights'] is not None
         and o['nights'] > 3
     ]
 
+    new_offers = []
+    
+    for offer in potential_new_offers:
+        orig_upper = offer['origin'].upper() if offer['origin'] else ""
+        dest_upper = offer['destination'].upper() if offer['destination'] else ""
+        
+        # FILTRO DE CIUDADES PROHIBIDAS (Lista negra directa)
+        # Si el origen o el destino contienen alguna palabra de la lista negra, saltamos el anuncio inmediatamente
+        if any(ciudad in orig_upper for ciudad in CIUDADES_PROHIBIDAS) or any(ciudad in dest_upper for ciudad in CIUDADES_PROHIBIDAS):
+            print(f"   [Lista Negra] Saltando oferta bloqueada: {offer['origin']} → {offer['destination']}")
+            continue
+            
+        print(f"Abriendo detalle de oferta válida: {offer['id']} ({offer['origin']} -> {offer['destination']})")
+        
+        # Extraemos los km de la página interna del trayecto continental
+        km = extract_km_from_deal(driver, offer['link'])
+
+        offer['distance_km'] = km
+        new_offers.append(offer)
+        time.sleep(1)
+
+    driver.quit()
+
     if new_offers:
         print(f"Nuevas ofertas detectadas: {len(new_offers)}")
         save_offers(previous_offers + new_offers)
         send_email(new_offers)
     else:
-        print("No hay nuevas ofertas con mas de 3 noches.")
+        print("No hay nuevas ofertas terrestres que cumplan los requisitos de ciudad y noches.")
 
 
 if __name__ == "__main__":
