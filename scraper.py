@@ -1,4 +1,3 @@
-```python
 import json
 import time
 import re
@@ -532,4 +531,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
