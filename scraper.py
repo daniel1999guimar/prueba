@@ -15,11 +15,16 @@ from selenium.common.exceptions import TimeoutException
 
 from bs4 import BeautifulSoup
 
-
 JSON_FILE = 'offers.json'
 URL = 'https://www.imoova.com/es/relocations/europe'
 BASE_URL = 'https://www.imoova.com'
 OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
+
+# LISTA NEGRA: Si el origen o destino contiene alguna de estas ciudades, se elimina automáticamente
+CIUDADES_PROHIBIDAS = [
+    "LONDON", "DUBLIN", "EDINBURGH", "MANCHESTER", 
+    "BRISTOL", "STOCKHOLM", "BELFAST", "CORK", "INVERNESS"
+]
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
@@ -50,7 +55,6 @@ def extract_offer_id(href):
     match = re.search(r'(RLC\d+)', href, re.IGNORECASE)
     if match:
         return match.group(1).upper()
-
     return href.rstrip('/').split('/')[-1]
 
 
@@ -94,37 +98,12 @@ def extract_nights(a):
     return None
 
 
-def extract_distance(a):
-    """Extrae los kilómetros de la oferta directamente desde la página del listado principal."""
-    # En el listado general, obtenemos todo el bloque de texto de la tarjeta
-    text = a.get_text(" ", strip=True).lower()
-    
-    # Buscamos patrones numéricos que terminen en km dentro de la tarjeta (ej: "1356 km", "2247km")
-    km_match = re.search(r'([\d.,\s]+)\s*km', text)
-    if km_match:
-        # Limpiamos puntos, comas o espacios raros del número de km inicial
-        num_str = re.sub(r'[\s.,]', '', km_match.group(1))
-        # Si la tarjeta concatena cosas estilo "2247km+100km", el split o regex inicial
-        # se asegura de quedarse solo con el primer bloque numérico limpio.
-        if num_str.isdigit():
-            return int(num_str)
-            
-    # Fallback por si en el listado de Europa algunas rutas vienen expresadas en millas
-    miles_match = re.search(r'([\d.,\s]+)\s*(miles|mi|millas)', text)
-    if miles_match:
-        num_str = re.sub(r'[\s.,]', '', miles_match.group(1))
-        if num_str.isdigit():
-            return int(int(num_str) * 1.609)
-            
-    return 0
-
-
 def extract_offers(html):
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'lxml')
     offers = []
 
     offer_elements = soup.select(OFFER_SELECTOR)
-    print(f"[extract_offers] Ofertas encontradas: {len(offer_elements)}")
+    print(f"[extract_offers] Ofertas encontradas en lista principal: {len(offer_elements)}")
 
     for a in offer_elements:
         href = a.get('href')
@@ -147,19 +126,41 @@ def extract_offers(html):
         ) if time_elements else None
 
         nights = extract_nights(a)
-        distance = extract_distance(a)
 
         offers.append({
             'id': offer_id,
             'origin': origin,
             'destination': destination,
             'nights': nights,
-            'distance': distance,
             'dates': dates,
             'link': full_link
         })
 
     return offers
+
+
+def extract_km_from_deal(driver, url):
+    """
+    Entra a la oferta individual y raspea los kilómetros exactos del texto de Imoova.
+    """
+    try:
+        driver.get(url)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'km')]"))
+        )
+        
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        paragraphs = soup.find_all('p', class_=lambda c: c and 'text-sm' in c)
+        for p in paragraphs:
+            text = p.get_text(strip=True).lower()
+            match = re.search(r'(\d+)\s*km', text)
+            if match:
+                return int(match.group(1))
+                
+    except Exception as e:
+        print(f"   [Error] No se pudieron extraer los km de {url}: {e}")
+        
+    return None
 
 
 def send_email(new_offers):
@@ -169,85 +170,20 @@ def send_email(new_offers):
     msg = MIMEMultipart()
     msg['From'] = from_email
     msg['To'] = to_email
-    msg['Subject'] = f"🔔 Nuevas ofertas Imoova ({len(new_offers)}) - Ordenadas por Km"
+    msg['Subject'] = f"Nuevas ofertas imoova ({len(new_offers)})"
 
-    html_body = f"""
-    <html>
-    <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333333; background-color: #f4f6f8; margin: 0; padding: 20px;">
-        <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e1e4e8;">
-            
-            <div style="background-color: #1a73e8; padding: 24px; text-align: center;">
-                <h2 style="color: #ffffff; margin: 0; font-size: 22px; font-weight: 600; letter-spacing: 0.5px;">
-                    Nuevas Ofertas Detectadas (+3 noches)
-                </h2>
-                <p style="color: #e8f0fe; margin: 6px 0 0 0; font-size: 14px;">
-                    Filtradas automáticamente y ordenadas de menor a mayor distancia permitida.
-                </p>
-            </div>
-            
-            <div style="padding: 24px;">
-                <p style="font-size: 15px; line-height: 1.5; color: #5f6368; margin-top: 0;">
-                    Se han encontrado los siguientes trayectos disponibles que cumplen con tus criterios:
-                </p>
-                
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 16px; min-width: 500px;">
-                        <thead>
-                            <tr style="background-color: #f8f9fa; border-bottom: 2px solid #e1e4e8;">
-                                <th style="text-align: left; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Ruta</th>
-                                <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Distancia Incluida</th>
-                                <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Noches</th>
-                                <th style="text-align: left; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Fechas Disponibles</th>
-                                <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-    """
+    body = "Se han detectado nuevas ofertas con mas de 3 noches y rutas deseadas:\n\n"
 
     for offer in new_offers:
-        dist_display = f"{offer['distance']} km" if offer['distance'] > 0 else "No especificado"
-        
-        html_body += f"""
-                            <tr style="border-bottom: 1px solid #f1f3f4; font-size: 14px;">
-                                <td style="padding: 14px 8px; font-weight: 500; color: #1a73e8;">
-                                    {offer['origin']} <span style="color: #9aa0a6;">➔</span> {offer['destination']}
-                                </td>
-                                <td style="padding: 14px 8px; text-align: center; color: #3c4043; font-weight: bold;">
-                                    {dist_display}
-                                </td>
-                                <td style="padding: 14px 8px; text-align: center; color: #3c4043;">
-                                    <span style="background-color: #e6f4ea; color: #137333; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">
-                                        {offer['nights']} noches
-                                    </span>
-                                </td>
-                                <td style="padding: 14px 8px; color: #5f6368; white-space: nowrap;">
-                                    {offer['dates'] if offer['dates'] else 'No especificadas'}
-                                </td>
-                                <td style="padding: 14px 8px; text-align: center;">
-                                    <a href="{offer['link']}" style="background-color: #1a73e8; color: #ffffff; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: 500; display: inline-block;">
-                                        Ver Oferta
-                                    </a>
-                                </td>
-                            </tr>
-        """
+        km_str = f"{offer['distance_km']} km" if offer.get('distance_km') else "No especificados"
+        body += (
+            f"- {offer['origin']} → {offer['destination']} \n"
+            f"  Distancia oficial: {km_str}\n"
+            f"  Duración: {offer['nights']} noches | Fechas: {offer['dates']}\n"
+            f"  Link: {offer['link']}\n\n"
+        )
 
-    html_body += """
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <div style="background-color: #f8f9fa; padding: 16px; text-align: center; border-top: 1px solid #e1e4e8;">
-                <p style="margin: 0; font-size: 12px; color: #9aa0a6;">
-                    Este es un aviso automático generado por tu scraper de Imoova.
-                </p>
-            </div>
-        </div>
-    </body>
-    </html>
-    """
-
-    msg.attach(MIMEText(html_body, 'html', 'utf-8'))
+    msg.attach(MIMEText(body, 'plain', 'utf-8'))
 
     try:
         server = smtplib.SMTP(smtp_server, smtp_port)
@@ -301,37 +237,53 @@ def main():
             last_count = current_count
 
     html = driver.page_source
-    driver.quit()
 
     offers = extract_offers(html)
 
     if not offers:
         print("No se han encontrado ofertas. Saliendo.")
+        driver.quit()
         return
-
-    # Filtrar las ofertas de más de 3 noches
-    valid_offers = [o for o in offers if o['nights'] is not None and o['nights'] > 3]
-    
-    # Ordenar de menor a mayor km
-    valid_offers.sort(key=lambda x: x['distance'])
-
-    print("Ofertas con mas de 3 noches encontradas (Ordenadas por menor Km):")
-    for offer in valid_offers:
-        dist_txt = f"{offer['distance']} km" if offer['distance'] > 0 else "N/D"
-        print(f"{offer['origin']} -> {offer['destination']} ({dist_txt}, {offer['nights']} noches)")
 
     previous_offers = load_previous()
     previous_ids = {o['id'] for o in previous_offers}
 
-    # Filtrar solo las nuevas manteniendo el orden por distancia
-    new_offers = [o for o in valid_offers if o['id'] not in previous_ids]
+    potential_new_offers = [
+        o for o in offers
+        if o['id'] not in previous_ids
+        and o['nights'] is not None
+        and o['nights'] > 3
+    ]
+
+    new_offers = []
+    
+    for offer in potential_new_offers:
+        orig_upper = offer['origin'].upper() if offer['origin'] else ""
+        dest_upper = offer['destination'].upper() if offer['destination'] else ""
+        
+        # FILTRO DE CIUDADES PROHIBIDAS (Lista negra directa)
+        # Si el origen o el destino contienen alguna palabra de la lista negra, saltamos el anuncio inmediatamente
+        if any(ciudad in orig_upper for ciudad in CIUDADES_PROHIBIDAS) or any(ciudad in dest_upper for ciudad in CIUDADES_PROHIBIDAS):
+            print(f"   [Lista Negra] Saltando oferta bloqueada: {offer['origin']} → {offer['destination']}")
+            continue
+            
+        print(f"Abriendo detalle de oferta válida: {offer['id']} ({offer['origin']} -> {offer['destination']})")
+        
+        # Extraemos los km de la página interna del trayecto continental
+        km = extract_km_from_deal(driver, offer['link'])
+
+        offer['distance_km'] = km
+        new_offers.append(offer)
+        time.sleep(1)
+
+    driver.quit()
 
     if new_offers:
         print(f"Nuevas ofertas detectadas: {len(new_offers)}")
         save_offers(previous_offers + new_offers)
         send_email(new_offers)
     else:
-        print("No hay nuevas ofertas con mas de 3 noches.")
+        print("No hay nuevas ofertas terrestres que cumplan los requisitos de ciudad y noches.")
 
 
 if __name__ == "__main__":
