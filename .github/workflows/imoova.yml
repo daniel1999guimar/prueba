@@ -19,28 +19,30 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y chromium-browser chromium-chromedriver
-          pip install selenium beautifulsoup4 requests
+          pip install -r requirements.txt
 
       - name: Ejecutar script
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          # Si usas un correo de destino diferente a tu SMTP_USER, puedes añadirlo en tus secrets como SMTP_TO
-          SMTP_TO: ${{ secrets.SMTP_TO }} 
+          SMTP_TO: ${{ secrets.SMTP_TO }}
         run: python3 scraper.py
 
-      - name: Commit updated files (offers and distances)
+      - name: Commit updated offers.json
         run: |
           git config --global user.email "bot@github.com"
           git config --global user.name "GitHub Action Bot"
           
-          # IMPORTANTE: Añadimos tanto el JSON de ofertas como el de las distancias guardadas
+          # Añadimos el archivo de ofertas actualizado
           git add offers.json
-          if [ -f "imoova_distances.json" ]; then
-            git add imoova_distances.json
-          fi
           
-          git commit -m "Update offers and distances cache" || echo "No changes to commit"
+          # Guarda los cambios localmente
+          git commit -m "Update offers.json" || echo "No changes to commit"
+          
+          # Trae lo que haya en la web y fusiona de forma segura antes de subir
+          git pull --rebase origin main
+          
+          # Sube el archivo final a tu repositorio
           git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
