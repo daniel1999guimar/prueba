@@ -95,33 +95,24 @@ def extract_nights(a):
 
 
 def extract_distance(a):
-    """Extrae los kilómetros permitidos del anuncio buscando patrones de números seguidos de 'km' o 'mi'."""
-    # Obtenemos todo el texto interno estructurado del elemento <a>
+    """Extrae los kilómetros principales del anuncio buscando el primer número antes de 'km'."""
     text = a.get_text(" ", strip=True).lower()
     
-    # Intentar buscar "X km" o "Xkm" (ej. 1200 km, 1500km)
-    km_match = re.search(r'([\d.,\s]+)\s*km', text)
+    # Captura el primer grupo de números (y puntos si los hay) que anteceden a 'km'
+    km_match = re.search(r'([\d.]+)\s*km', text)
     if km_match:
-        # Limpiar espacios, puntos y comas para dejar solo el número entero
-        num_str = re.sub(r'[\s.,]', '', km_match.group(1))
+        num_str = km_match.group(1).replace('.', '')
         if num_str.isdigit():
             return int(num_str)
         
-    # Si la web está en inglés en ese tramo y viene en millas ("miles" o "mi")
-    miles_match = re.search(r'([\d.,\s]+)\s*(miles|mi|millas)', text)
+    # Conversión por si viene en millas
+    miles_match = re.search(r'([\d.]+)\s*(miles|mi|millas)', text)
     if miles_match:
-        num_str = re.sub(r'[\s.,]', '', miles_match.group(1))
+        num_str = miles_match.group(1).replace('.', '')
         if num_str.isdigit():
-            return int(int(num_str) * 1.609) # Conversión exacta a Km
+            return int(int(num_str) * 1.609)
         
-    # Si no encuentra ninguna métrica, intentamos buscar cualquier número de 3 o 4 cifras aislado que no sea el ID
-    numbers = re.findall(r'\b\d{3,4}\b', text)
-    for num in numbers:
-        # Filtramos para asegurarnos que no choque con noches comunes (ej: 3, 4, 5)
-        if int(num) > 100: 
-            return int(num)
-
-    return 0  # Si no hay distancia especificada, lo dejamos en 0 para que no rompa
+    return 0
 
 
 def extract_offers(html):
