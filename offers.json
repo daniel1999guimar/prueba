@@ -718,5 +718,13 @@
     "nights": 4,
     "dates": "27 May - 5 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/stockholm-to-malmo-RLC106262"
+  },
+  {
+    "id": "RLC035884",
+    "origin": "Bilbao",
+    "destination": "Hannover",
+    "nights": 5,
+    "dates": "26 May - 28 Jan 25",
+    "link": "https://www.imoova.com/es/relocations/deal/bilbao-to-hannover-RLC035884"
   }
 ]
