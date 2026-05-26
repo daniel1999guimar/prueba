@@ -3,7 +3,6 @@ import time
 import re
 import os
 import smtplib
-import requests  # <-- Necesario para la API gratuita de mapas OSRM
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -17,10 +16,15 @@ from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
 JSON_FILE = 'offers.json'
-DISTANCES_CACHE_FILE = 'imoova_distances.json'  # <-- Guardará los km entre ciudades para no repetir cálculos
 URL = 'https://www.imoova.com/es/relocations/europe'
 BASE_URL = 'https://www.imoova.com'
 OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
+
+# LISTA NEGRA: Si el origen o destino contiene alguna de estas ciudades, se elimina automáticamente
+CIUDADES_PROHIBIDAS = [
+    "LONDON", "DUBLIN", "EDINBURGH", "MANCHESTER", 
+    "BRISTOL", "STOCKHOLM", "BELFAST", "CORK", "INVERNESS"
+]
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
@@ -32,89 +36,6 @@ to_email = os.environ.get('SMTP_TO', smtp_user)
 
 if not smtp_user or not smtp_password:
     raise ValueError("Faltan variables de entorno SMTP_USER o SMTP_PASSWORD")
-
-
-# Coordenadas aproximadas de las oficinas de Imoova en Europa para OSRM
-# Esto evita tener que usar un geocodificador lento.
-COORDENADAS_OFICINAS = {
-    "LONDON": "-0.1278,51.5074", "DUBLIN": "-6.2603,53.3498", "PARIS": "2.3522,48.8566",
-    "BARCELONA": "2.1734,41.3851", "MADRID": "-3.7038,40.4167", "MUNICH": "11.5820,48.1351",
-    "AMSTERDAM": "4.8952,52.3702", "BRUSSELS": "4.3517,50.8503", "LISBON": "-9.1393,38.7223",
-    "PORTO": "-8.6291,41.1579", "MILAN": "9.1900,45.4642", "ROME": "12.4964,41.9028",
-    "FRANKFURT": "8.6821,50.1109", "BERLIN": "13.4050,52.5200", "LYON": "4.8357,45.7640",
-    "MARSEILLE": "5.3698,43.2965", "VIENNA": "16.3738,48.2082", "ZURICH": "8.5417,47.3769",
-    "GENEVA": "6.1432,46.2044", "PRAGUE": "14.4378,50.0755", "WARSAW": "21.0122,52.2297",
-    "SPLIT": "16.4402,43.5081", "EDINBURGH": "-3.1883,55.9533", "BIRMINGHAM": "-1.8904,52.4862",
-    "BRISTOL": "-2.5879,51.4545", "MANCHESTER": "-2.2426,53.4808", "CORK": "-8.4756,51.8985",
-    "BELFAST": "-5.9301,54.5973", "VALENCIA": "-0.3763,39.4699", "MALAGA": "-4.4203,36.7213",
-    "BILBAO": "-2.9350,43.2630", "SEVILLE": "-5.9845,37.3891", "BORDEAUX": "-0.5792,44.8378",
-    "NICE": "7.2620,43.7102", "FARO": "-7.9304,37.0179", "HAMBURG": "9.9937,53.5511",
-    "DUSSELDORF": "6.7735,51.2277", "COLOGNE": "6.9583,50.9375", "STUTTGART": "9.1813,48.7758"
-}
-
-def load_distances_cache():
-    if os.path.exists(DISTANCES_CACHE_FILE):
-        try:
-            with open(DISTANCES_CACHE_FILE, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except:
-            return {}
-    return {}
-
-def save_distances_cache(cache):
-    with open(DISTANCES_CACHE_FILE, 'w', encoding='utf-8') as f:
-        json.dump(cache, f, indent=2, ensure_ascii=False)
-
-def get_exact_road_distance(origin, destination, cache):
-    """
-    Obtiene los km exactos por carretera utilizando la API de OSRM.
-    Si la ruta no es posible por tierra (ej. Londres -> Dublín), devuelve -1.
-    """
-    if not origin or not destination:
-        return None
-
-    orig_key = origin.upper().strip()
-    dest_key = destination.upper().strip()
-    route_key = f"{orig_key}→{dest_key}"
-
-    # 1. Intentar obtenerlo desde el caché local para máxima velocidad
-    if route_key in cache:
-        return cache[route_key]
-
-    # 2. Buscar las coordenadas preconfiguradas
-    coord_orig = COORDENADAS_OFICINAS.get(orig_key)
-    coord_dest = COORDENADAS_OFICINAS.get(dest_key)
-
-    # Si la oficina es nueva y no está en el diccionario, intentamos limpiar el texto para buscar coincidencia parcial
-    if not coord_orig or not coord_dest:
-        for depto, coords in COORDENADAS_OFICINAS.items():
-            if depto in orig_key: coord_orig = coords
-            if depto in dest_key: coord_dest = coords
-
-    # Si aun así no tenemos coordenadas, no podemos calcular mediante OSRM de forma directa
-    if not coord_orig or not coord_dest:
-        return None
-
-    # 3. Consultar al servidor público de OSRM (OpenStreetMap Routing)
-    try:
-        url = f"http://router.project-osrm.org/route/v1/driving/{coord_orig};{coord_dest}?overview=false"
-        response = requests.get(url, timeout=5)
-        
-        if response.status_code == 200:
-            data = response.json()
-            if data.get('code') == 'Ok' and data.get('routes'):
-                # OSRM devuelve metros, convertimos a Kilómetros reales de conducción
-                dist_km = round(data['routes'][0]['distance'] / 1000, 1)
-                cache[route_key] = dist_km
-                save_distances_cache(cache)
-                return dist_km
-    except Exception as e:
-        print(f"[Distancia] Error al conectar con OSRM para {route_key}: {e}")
-
-    # Si OSRM responde que no hay ruta (porque hay un océano en medio como Londres-Dublín), guardamos -1
-    cache[route_key] = -1
-    save_distances_cache(cache)
-    return -1
 
 
 def load_previous():
@@ -178,11 +99,11 @@ def extract_nights(a):
 
 
 def extract_offers(html):
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'lxml')
     offers = []
 
     offer_elements = soup.select(OFFER_SELECTOR)
-    print(f"[extract_offers] Ofertas encontradas: {len(offer_elements)}")
+    print(f"[extract_offers] Ofertas encontradas en lista principal: {len(offer_elements)}")
 
     for a in offer_elements:
         href = a.get('href')
@@ -218,6 +139,30 @@ def extract_offers(html):
     return offers
 
 
+def extract_km_from_deal(driver, url):
+    """
+    Entra a la oferta individual y raspea los kilómetros exactos del texto de Imoova.
+    """
+    try:
+        driver.get(url)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'km')]"))
+        )
+        
+        soup = BeautifulSoup(driver.page_source, 'lxml')
+        paragraphs = soup.find_all('p', class_=lambda c: c and 'text-sm' in c)
+        for p in paragraphs:
+            text = p.get_text(strip=True).lower()
+            match = re.search(r'(\d+)\s*km', text)
+            if match:
+                return int(match.group(1))
+                
+    except Exception as e:
+        print(f"   [Error] No se pudieron extraer los km de {url}: {e}")
+        
+    return None
+
+
 def send_email(new_offers):
     if not new_offers:
         return
@@ -227,12 +172,13 @@ def send_email(new_offers):
     msg['To'] = to_email
     msg['Subject'] = f"Nuevas ofertas imoova ({len(new_offers)})"
 
-    body = "Se han detectado nuevas ofertas con mas de 3 noches y viables por carretera:\n\n"
+    body = "Se han detectado nuevas ofertas con mas de 3 noches y rutas deseadas:\n\n"
 
     for offer in new_offers:
+        km_str = f"{offer['distance_km']} km" if offer.get('distance_km') else "No especificados"
         body += (
             f"- {offer['origin']} → {offer['destination']} \n"
-            f"  Distancia exacta por carretera: {offer['distance_km']} km\n"
+            f"  Distancia oficial: {km_str}\n"
             f"  Duración: {offer['nights']} noches | Fechas: {offer['dates']}\n"
             f"  Link: {offer['link']}\n\n"
         )
@@ -291,47 +237,53 @@ def main():
             last_count = current_count
 
     html = driver.page_source
-    driver.quit()
 
     offers = extract_offers(html)
 
     if not offers:
         print("No se han encontrado ofertas. Saliendo.")
+        driver.quit()
         return
 
     previous_offers = load_previous()
     previous_ids = {o['id'] for o in previous_offers}
-    
-    # Cargamos el archivo de caché de distancias
-    distances_cache = load_distances_cache()
+
+    potential_new_offers = [
+        o for o in offers
+        if o['id'] not in previous_ids
+        and o['nights'] is not None
+        and o['nights'] > 3
+    ]
 
     new_offers = []
     
-    for offer in offers:
-        # Filtro inicial básico
-        if offer['id'] in previous_ids:
-            continue
-        if offer['nights'] is None or offer['nights'] <= 3:
-            continue
-
-        # CALCULO DE KM REALES
-        km_reales = get_exact_road_distance(offer['origin'], offer['destination'], distances_cache)
+    for offer in potential_new_offers:
+        orig_upper = offer['origin'].upper() if offer['origin'] else ""
+        dest_upper = offer['destination'].upper() if offer['destination'] else ""
         
-        # Si devuelve -1 significa que OSRM determinó que NO hay conexión por carretera (Ej: Londres -> Dublín)
-        if km_reales == -1 or km_reales is None:
-            print(f"   [Filtro Km] Descartada ruta marítima/imposible: {offer['origin']} → {offer['destination']}")
+        # FILTRO DE CIUDADES PROHIBIDAS (Lista negra directa)
+        # Si el origen o el destino contienen alguna palabra de la lista negra, saltamos el anuncio inmediatamente
+        if any(ciudad in orig_upper for ciudad in CIUDADES_PROHIBIDAS) or any(ciudad in dest_upper for ciudad in CIUDADES_PROHIBIDAS):
+            print(f"   [Lista Negra] Saltando oferta bloqueada: {offer['origin']} → {offer['destination']}")
             continue
+            
+        print(f"Abriendo detalle de oferta válida: {offer['id']} ({offer['origin']} -> {offer['destination']})")
+        
+        # Extraemos los km de la página interna del trayecto continental
+        km = extract_km_from_deal(driver, offer['link'])
 
-        # Si es válida, le asignamos los km y la preparamos para el mail
-        offer['distance_km'] = km_reales
+        offer['distance_km'] = km
         new_offers.append(offer)
+        time.sleep(1)
+
+    driver.quit()
 
     if new_offers:
-        print(f"Nuevas ofertas válidas detectadas: {len(new_offers)}")
+        print(f"Nuevas ofertas detectadas: {len(new_offers)}")
         save_offers(previous_offers + new_offers)
         send_email(new_offers)
     else:
-        print("No hay nuevas ofertas terrestres válidas en esta ejecución.")
+        print("No hay nuevas ofertas terrestres que cumplan los requisitos de ciudad y noches.")
 
 
 if __name__ == "__main__":
