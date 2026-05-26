@@ -95,23 +95,33 @@ def extract_nights(a):
 
 
 def extract_distance(a):
-    """Extrae la distancia en km o millas y la devuelve siempre como un entero (Km aproximados)."""
+    """Extrae los kilómetros permitidos del anuncio buscando patrones de números seguidos de 'km' o 'mi'."""
+    # Obtenemos todo el texto interno estructurado del elemento <a>
     text = a.get_text(" ", strip=True).lower()
     
-    # Busca patrones tipo "1500 km" o "1500km"
-    km_match = re.search(r'([\d.,]+)\s*km', text)
+    # Intentar buscar "X km" o "Xkm" (ej. 1200 km, 1500km)
+    km_match = re.search(r'([\d.,\s]+)\s*km', text)
     if km_match:
-        # Quitamos puntos o comas de millares si los hay
-        num_str = km_match.group(1).replace('.', '').replace(',', '')
-        return int(num_str)
+        # Limpiar espacios, puntos y comas para dejar solo el número entero
+        num_str = re.sub(r'[\s.,]', '', km_match.group(1))
+        if num_str.isdigit():
+            return int(num_str)
         
-    # Si viene en millas, lo convertimos a km de forma aproximada (* 1.6)
-    miles_match = re.search(r'([\d.,]+)\s*(miles|mi|millas)', text)
+    # Si la web está en inglés en ese tramo y viene en millas ("miles" o "mi")
+    miles_match = re.search(r'([\d.,\s]+)\s*(miles|mi|millas)', text)
     if miles_match:
-        num_str = miles_match.group(1).replace('.', '').replace(',', '')
-        return int(int(num_str) * 1.6)
+        num_str = re.sub(r'[\s.,]', '', miles_match.group(1))
+        if num_str.isdigit():
+            return int(int(num_str) * 1.609) # Conversión exacta a Km
         
-    return 999999  # Valor por defecto muy alto si no encuentra la distancia para no romper el orden
+    # Si no encuentra ninguna métrica, intentamos buscar cualquier número de 3 o 4 cifras aislado que no sea el ID
+    numbers = re.findall(r'\b\d{3,4}\b', text)
+    for num in numbers:
+        # Filtramos para asegurarnos que no choque con noches comunes (ej: 3, 4, 5)
+        if int(num) > 100: 
+            return int(num)
+
+    return 0  # Si no hay distancia especificada, lo dejamos en 0 para que no rompa
 
 
 def extract_offers(html):
@@ -166,23 +176,20 @@ def send_email(new_offers):
     msg['To'] = to_email
     msg['Subject'] = f"🔔 Nuevas ofertas Imoova ({len(new_offers)}) - Ordenadas por Km"
 
-    # Construcción de la plantilla HTML con diseño limpio y responsive
     html_body = f"""
     <html>
     <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333333; background-color: #f4f6f8; margin: 0; padding: 20px;">
         <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e1e4e8;">
             
-            <!-- Encabezado -->
             <div style="background-color: #1a73e8; padding: 24px; text-align: center;">
                 <h2 style="color: #ffffff; margin: 0; font-size: 22px; font-weight: 600; letter-spacing: 0.5px;">
                     Nuevas Ofertas Detectadas (+3 noches)
                 </h2>
                 <p style="color: #e8f0fe; margin: 6px 0 0 0; font-size: 14px;">
-                    Filtradas automáticamente y ordenadas de menor a mayor distancia.
+                    Filtradas automáticamente y ordenadas de menor a mayor distancia permitida.
                 </p>
             </div>
             
-            <!-- Contenido -->
             <div style="padding: 24px;">
                 <p style="font-size: 15px; line-height: 1.5; color: #5f6368; margin-top: 0;">
                     Se han encontrado los siguientes trayectos disponibles que cumplen con tus criterios:
@@ -193,7 +200,7 @@ def send_email(new_offers):
                         <thead>
                             <tr style="background-color: #f8f9fa; border-bottom: 2px solid #e1e4e8;">
                                 <th style="text-align: left; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Ruta</th>
-                                <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Distancia</th>
+                                <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Distancia Incluida</th>
                                 <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Noches</th>
                                 <th style="text-align: left; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Fechas Disponibles</th>
                                 <th style="text-align: center; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #202124;">Acción</th>
@@ -203,7 +210,7 @@ def send_email(new_offers):
     """
 
     for offer in new_offers:
-        dist_display = f"{offer['distance']} km" if offer['distance'] != 999999 else "N/D"
+        dist_display = f"{offer['distance']} km" if offer['distance'] > 0 else "No especificado"
         
         html_body += f"""
                             <tr style="border-bottom: 1px solid #f1f3f4; font-size: 14px;">
@@ -235,7 +242,6 @@ def send_email(new_offers):
                 </div>
             </div>
             
-            <!-- Pie de página -->
             <div style="background-color: #f8f9fa; padding: 16px; text-align: center; border-top: 1px solid #e1e4e8;">
                 <p style="margin: 0; font-size: 12px; color: #9aa0a6;">
                     Este es un aviso automático generado por tu scraper de Imoova.
@@ -308,25 +314,26 @@ def main():
         print("No se han encontrado ofertas. Saliendo.")
         return
 
-    # Filtrar y ordenar todas las ofertas locales que tengan más de 3 noches por distancia
+    # Filtrar las ofertas de más de 3 noches
     valid_offers = [o for o in offers if o['nights'] is not None and o['nights'] > 3]
+    
+    # Ordenar de menor a mayor km
     valid_offers.sort(key=lambda x: x['distance'])
 
     print("Ofertas con mas de 3 noches encontradas (Ordenadas por menor Km):")
     for offer in valid_offers:
-        print(f"{offer['origin']} -> {offer['destination']} ({offer['distance']} km, {offer['nights']} noches)")
+        dist_txt = f"{offer['distance']} km" if offer['distance'] > 0 else "N/D"
+        print(f"{offer['origin']} -> {offer['destination']} ({dist_txt}, {offer['nights']} noches)")
 
     previous_offers = load_previous()
     previous_ids = {o['id'] for o in previous_offers}
 
-    # Filtrar solo las nuevas, manteniendo el orden por distancia
+    # Filtrar solo las nuevas manteniendo el orden por distancia
     new_offers = [o for o in valid_offers if o['id'] not in previous_ids]
 
     if new_offers:
         print(f"Nuevas ofertas detectadas: {len(new_offers)}")
-        # Guardamos en el JSON combinando anteriores y nuevas
         save_offers(previous_offers + new_offers)
-        # Enviamos el correo con las nuevas ofertas ordenadas por Km
         send_email(new_offers)
     else:
         print("No hay nuevas ofertas con mas de 3 noches.")
