@@ -3,6 +3,7 @@ import time
 import re
 import os
 import smtplib
+
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -15,10 +16,14 @@ from selenium.common.exceptions import TimeoutException
 
 from bs4 import BeautifulSoup
 
+
 JSON_FILE = 'offers.json'
+
 URL = 'https://www.imoova.com/es/relocations/europe'
 BASE_URL = 'https://www.imoova.com'
+
 OFFER_SELECTOR = 'ul.grid li a[href*="/relocations/deal/"]'
+
 
 # LISTA NEGRA
 CIUDADES_PROHIBIDAS = [
@@ -33,6 +38,7 @@ CIUDADES_PROHIBIDAS = [
     "INVERNESS"
 ]
 
+
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 
@@ -42,25 +48,42 @@ smtp_password = os.environ.get('SMTP_PASSWORD')
 from_email = smtp_user
 to_email = os.environ.get('SMTP_TO', smtp_user)
 
+
 if not smtp_user or not smtp_password:
-    raise ValueError("Faltan variables de entorno SMTP_USER o SMTP_PASSWORD")
+    raise ValueError(
+        "Faltan variables de entorno SMTP_USER o SMTP_PASSWORD"
+    )
 
 
 def load_previous():
+
     try:
+
         with open(JSON_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
+
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
 
 def save_offers(offers):
+
     with open(JSON_FILE, 'w', encoding='utf-8') as f:
-        json.dump(offers, f, indent=2, ensure_ascii=False)
+        json.dump(
+            offers,
+            f,
+            indent=2,
+            ensure_ascii=False
+        )
 
 
 def extract_offer_id(href):
-    match = re.search(r'(RLC\d+)', href, re.IGNORECASE)
+
+    match = re.search(
+        r'(RLC\d+)',
+        href,
+        re.IGNORECASE
+    )
 
     if match:
         return match.group(1).upper()
@@ -69,6 +92,7 @@ def extract_offer_id(href):
 
 
 def extract_origin_destination(a):
+
     h3 = a.find('h3')
 
     if not h3:
@@ -97,6 +121,7 @@ def extract_origin_destination(a):
 
 
 def extract_nights(a):
+
     text = a.get_text(" ", strip=True).lower()
 
     match = re.search(
@@ -119,13 +144,17 @@ def extract_nights(a):
 
 
 def extract_offers(html):
+
     soup = BeautifulSoup(html, 'lxml')
 
     offers = []
 
     offer_elements = soup.select(OFFER_SELECTOR)
 
-    print(f"[extract_offers] Ofertas encontradas: {len(offer_elements)}")
+    print(
+        f"[extract_offers] "
+        f"Ofertas encontradas: {len(offer_elements)}"
+    )
 
     for a in offer_elements:
 
@@ -185,15 +214,24 @@ def extract_km_from_deal(driver, url):
 
         for p in paragraphs:
 
-            text = p.get_text(strip=True).lower()
+            text = p.get_text(
+                strip=True
+            ).lower()
 
-            match = re.search(r'(\d+)\s*km', text)
+            match = re.search(
+                r'(\d+)\s*km',
+                text
+            )
 
             if match:
                 return int(match.group(1))
 
     except Exception as e:
-        print(f"[Error] No se pudieron extraer km de {url}: {e}")
+
+        print(
+            f"[Error] "
+            f"No se pudieron extraer km de {url}: {e}"
+        )
 
     return None
 
@@ -207,7 +245,11 @@ def send_email(new_offers):
 
     msg['From'] = from_email
     msg['To'] = to_email
-    msg['Subject'] = f"🚐 Nuevas ofertas Imoova ({len(new_offers)})"
+
+    msg['Subject'] = (
+        f"Imoova • "
+        f"{len(new_offers)} nuevas ofertas"
+    )
 
     html = f"""
     <html>
@@ -218,85 +260,68 @@ def send_email(new_offers):
 
             body {{
                 font-family: Arial, sans-serif;
-                background: #f4f6f9;
+                background: #f7f7f7;
                 margin: 0;
                 padding: 20px;
-                color: #222;
+                color: #111;
             }}
 
             .container {{
-                max-width: 850px;
+                max-width: 700px;
                 margin: auto;
             }}
 
             .header {{
-                background: linear-gradient(135deg, #1565c0, #1e88e5);
-                color: white;
-                padding: 30px;
-                border-radius: 16px;
-                text-align: center;
-                margin-bottom: 25px;
+                font-size: 22px;
+                font-weight: bold;
+                margin-bottom: 6px;
             }}
 
-            .header h1 {{
-                margin: 0;
-                font-size: 30px;
-            }}
-
-            .header p {{
-                margin-top: 10px;
-                opacity: 0.9;
-                font-size: 15px;
+            .subtitle {{
+                color: #666;
+                font-size: 14px;
+                margin-bottom: 20px;
             }}
 
             .offer {{
                 background: white;
-                border-radius: 16px;
-                padding: 22px;
-                margin-bottom: 20px;
-                box-shadow: 0 5px 12px rgba(0,0,0,0.08);
-                border-left: 6px solid #1e88e5;
+                border-radius: 10px;
+                padding: 14px 16px;
+                margin-bottom: 8px;
+                border: 1px solid #ececec;
             }}
 
             .route {{
-                font-size: 24px;
-                font-weight: bold;
-                color: #1565c0;
-                margin-bottom: 16px;
+                font-size: 17px;
+                font-weight: 600;
+                margin-bottom: 5px;
             }}
 
-            .pill {{
+            .meta {{
+                font-size: 13px;
+                color: #666;
+                line-height: 1.4;
+            }}
+
+            .km {{
+                color: #111;
+                font-weight: 600;
+            }}
+
+            .link {{
                 display: inline-block;
-                background: #e3f2fd;
+                margin-top: 7px;
                 color: #1565c0;
-                padding: 7px 14px;
-                border-radius: 999px;
-                font-weight: bold;
-                margin-bottom: 14px;
-                font-size: 14px;
-            }}
-
-            .info {{
-                margin-bottom: 10px;
-                font-size: 15px;
-            }}
-
-            .btn {{
-                display: inline-block;
-                margin-top: 14px;
-                background: #1e88e5;
-                color: white !important;
                 text-decoration: none;
-                padding: 12px 18px;
-                border-radius: 8px;
-                font-weight: bold;
+                font-size: 13px;
+                font-weight: 600;
             }}
 
             .footer {{
+                margin-top: 18px;
+                color: #999;
+                font-size: 12px;
                 text-align: center;
-                color: #777;
-                margin-top: 30px;
-                font-size: 13px;
             }}
 
         </style>
@@ -308,13 +333,11 @@ def send_email(new_offers):
         <div class="container">
 
             <div class="header">
-                <h1>🚐 Nuevas ofertas Imoova</h1>
+                🚐 Nuevas ofertas Imoova
+            </div>
 
-                <p>
-                    Se han detectado
-                    <strong>{len(new_offers)}</strong>
-                    nuevas rutas ordenadas por distancia oficial.
-                </p>
+            <div class="subtitle">
+                {len(new_offers)} nuevas rutas detectadas
             </div>
     """
 
@@ -322,7 +345,10 @@ def send_email(new_offers):
 
         km = offer.get('distance_km')
 
-        km_text = f"{km} km" if km else "No especificado"
+        if km:
+            km_text = f"{km} km"
+        else:
+            km_text = "Sin km"
 
         nights = offer.get('nights') or "?"
         dates = offer.get('dates') or "Sin fechas"
@@ -335,20 +361,17 @@ def send_email(new_offers):
                     {offer['origin']} → {offer['destination']}
                 </div>
 
-                <div class="pill">
-                    📏 {km_text}
+                <div class="meta">
+                    <span class="km">📏 {km_text}</span>
+                    · 🌙 {nights} noches
+                    · 📅 {dates}
                 </div>
 
-                <div class="info">
-                    🌙 <strong>Noches:</strong> {nights}
-                </div>
-
-                <div class="info">
-                    📅 <strong>Fechas:</strong> {dates}
-                </div>
-
-                <a href="{offer['link']}" class="btn">
-                    Ver oferta
+                <a
+                    href="{offer['link']}"
+                    class="link"
+                >
+                    Ver oferta →
                 </a>
 
             </div>
@@ -357,7 +380,7 @@ def send_email(new_offers):
     html += """
 
             <div class="footer">
-                Generado automáticamente por tu scraper Imoova
+                Scraper Imoova
             </div>
 
         </div>
@@ -367,24 +390,39 @@ def send_email(new_offers):
     </html>
     """
 
-    msg.attach(MIMEText(html, 'html', 'utf-8'))
+    msg.attach(
+        MIMEText(
+            html,
+            'html',
+            'utf-8'
+        )
+    )
 
     try:
 
-        server = smtplib.SMTP(smtp_server, smtp_port)
+        server = smtplib.SMTP(
+            smtp_server,
+            smtp_port
+        )
 
         server.starttls()
 
-        server.login(smtp_user, smtp_password)
+        server.login(
+            smtp_user,
+            smtp_password
+        )
 
         server.send_message(msg)
 
         server.quit()
 
-        print("Correo HTML enviado correctamente.")
+        print("Correo enviado correctamente.")
 
     except Exception as e:
-        print(f"Error al enviar el correo: {e}")
+
+        print(
+            f"Error al enviar correo: {e}"
+        )
 
 
 def main():
@@ -397,9 +435,13 @@ def main():
     options.add_argument('--disable-dev-shm-usage')
 
     if os.path.exists("/usr/bin/chromium-browser"):
-        options.binary_location = "/usr/bin/chromium-browser"
+        options.binary_location = (
+            "/usr/bin/chromium-browser"
+        )
 
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(
+        options=options
+    )
 
     driver.get(URL)
 
@@ -407,13 +449,18 @@ def main():
 
         WebDriverWait(driver, 20).until(
             EC.presence_of_element_located(
-                (By.CSS_SELECTOR, OFFER_SELECTOR)
+                (
+                    By.CSS_SELECTOR,
+                    OFFER_SELECTOR
+                )
             )
         )
 
     except TimeoutException:
 
-        print("No hay anuncios disponibles.")
+        print(
+            "No hay anuncios disponibles."
+        )
 
         driver.quit()
 
@@ -426,7 +473,9 @@ def main():
 
     while same_count_attempts < 10:
 
-        driver.execute_script("window.scrollBy(0, 1300);")
+        driver.execute_script(
+            "window.scrollBy(0, 1300);"
+        )
 
         time.sleep(2)
 
@@ -437,7 +486,10 @@ def main():
 
         current_count = len(elements)
 
-        print(f"Anuncios visibles: {current_count}")
+        print(
+            f"Anuncios visibles: "
+            f"{current_count}"
+        )
 
         if current_count == last_count:
             same_count_attempts += 1
@@ -451,7 +503,9 @@ def main():
 
     if not offers:
 
-        print("No se han encontrado ofertas.")
+        print(
+            "No se han encontrado ofertas."
+        )
 
         driver.quit()
 
@@ -459,7 +513,10 @@ def main():
 
     previous_offers = load_previous()
 
-    previous_ids = {o['id'] for o in previous_offers}
+    previous_ids = {
+        o['id']
+        for o in previous_offers
+    }
 
     potential_new_offers = [
 
@@ -474,16 +531,32 @@ def main():
 
     for offer in potential_new_offers:
 
-        orig_upper = offer['origin'].upper() if offer['origin'] else ""
-        dest_upper = offer['destination'].upper() if offer['destination'] else ""
+        orig_upper = (
+            offer['origin'].upper()
+            if offer['origin']
+            else ""
+        )
+
+        dest_upper = (
+            offer['destination'].upper()
+            if offer['destination']
+            else ""
+        )
 
         # FILTRO LISTA NEGRA
-        if any(ciudad in orig_upper for ciudad in CIUDADES_PROHIBIDAS) \
-                or any(ciudad in dest_upper for ciudad in CIUDADES_PROHIBIDAS):
+        if any(
+            ciudad in orig_upper
+            for ciudad in CIUDADES_PROHIBIDAS
+        ) or any(
+            ciudad in dest_upper
+            for ciudad in CIUDADES_PROHIBIDAS
+        ):
 
             print(
                 f"[Lista Negra] Saltando: "
-                f"{offer['origin']} → {offer['destination']}"
+                f"{offer['origin']} "
+                f"→ "
+                f"{offer['destination']}"
             )
 
             continue
@@ -491,15 +564,15 @@ def main():
         print(
             f"Abriendo detalle: "
             f"{offer['id']} "
-            f"({offer['origin']} -> {offer['destination']})"
+            f"({offer['origin']} "
+            f"-> "
+            f"{offer['destination']})"
         )
 
-        km = extract_km_from_deal(driver, offer['link'])
-
-        # Ignorar anuncios sin kilómetros
-        if km is None:
-            print("Sin km detectados. Saltando.")
-            continue
+        km = extract_km_from_deal(
+            driver,
+            offer['link']
+        )
 
         offer['distance_km'] = km
 
@@ -507,25 +580,34 @@ def main():
 
         time.sleep(1)
 
-    # ORDENAR POR DISTANCIA
+    # PRIMERO SIN KM, LUEGO ORDENADOS POR KM
     new_offers.sort(
-        key=lambda x: x['distance_km']
+        key=lambda x: (
+            x.get('distance_km') is not None,
+            x.get('distance_km', 999999)
+        )
     )
 
     driver.quit()
 
     if new_offers:
 
-        print(f"Nuevas ofertas detectadas: {len(new_offers)}")
+        print(
+            f"Nuevas ofertas detectadas: "
+            f"{len(new_offers)}"
+        )
 
-        save_offers(previous_offers + new_offers)
+        save_offers(
+            previous_offers + new_offers
+        )
 
         send_email(new_offers)
 
     else:
 
         print(
-            "No hay nuevas ofertas que cumplan los requisitos."
+            "No hay nuevas ofertas "
+            "que cumplan los requisitos."
         )
 
 
