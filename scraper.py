@@ -95,23 +95,27 @@ def extract_nights(a):
 
 
 def extract_distance(a):
-    """Extrae los kilómetros principales del anuncio buscando el primer número antes de 'km'."""
+    """Extrae los kilómetros de la oferta directamente desde la página del listado principal."""
+    # En el listado general, obtenemos todo el bloque de texto de la tarjeta
     text = a.get_text(" ", strip=True).lower()
     
-    # Captura el primer grupo de números (y puntos si los hay) que anteceden a 'km'
-    km_match = re.search(r'([\d.]+)\s*km', text)
+    # Buscamos patrones numéricos que terminen en km dentro de la tarjeta (ej: "1356 km", "2247km")
+    km_match = re.search(r'([\d.,\s]+)\s*km', text)
     if km_match:
-        num_str = km_match.group(1).replace('.', '')
+        # Limpiamos puntos, comas o espacios raros del número de km inicial
+        num_str = re.sub(r'[\s.,]', '', km_match.group(1))
+        # Si la tarjeta concatena cosas estilo "2247km+100km", el split o regex inicial
+        # se asegura de quedarse solo con el primer bloque numérico limpio.
         if num_str.isdigit():
             return int(num_str)
-        
-    # Conversión por si viene en millas
-    miles_match = re.search(r'([\d.]+)\s*(miles|mi|millas)', text)
+            
+    # Fallback por si en el listado de Europa algunas rutas vienen expresadas en millas
+    miles_match = re.search(r'([\d.,\s]+)\s*(miles|mi|millas)', text)
     if miles_match:
-        num_str = miles_match.group(1).replace('.', '')
+        num_str = re.sub(r'[\s.,]', '', miles_match.group(1))
         if num_str.isdigit():
             return int(int(num_str) * 1.609)
-        
+            
     return 0
 
 
