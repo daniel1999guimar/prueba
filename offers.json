@@ -394,5 +394,14 @@
     "dates": "29 May - 3 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-tromso-RLC106471",
     "distance_km": 5244
+  },
+  {
+    "id": "RLC035884",
+    "origin": "Bilbao",
+    "destination": "Hannover",
+    "nights": 5,
+    "dates": "26 May - 28 Jan 25",
+    "link": "https://www.imoova.com/es/relocations/deal/bilbao-to-hannover-RLC035884",
+    "distance_km": null
   }
 ]
