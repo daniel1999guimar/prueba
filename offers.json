@@ -403,5 +403,14 @@
     "dates": "29 May - 3 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-tromso-RLC106471",
     "distance_km": 5244
+  },
+  {
+    "id": "RLC106292",
+    "origin": "Valencia",
+    "destination": "Tromso",
+    "nights": 18,
+    "dates": "7 Jun - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/valencia-to-tromso-RLC106292",
+    "distance_km": 4980
   }
 ]
