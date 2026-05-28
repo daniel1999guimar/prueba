@@ -790,5 +790,14 @@
     "dates": "28 May - 11 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-berlin-RLC106614",
     "distance_km": 2838
+  },
+  {
+    "id": "RLC106551",
+    "origin": "A Coruña",
+    "destination": "Valencia",
+    "nights": 5,
+    "dates": "29 May - 3 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/a-corua-to-valencia-RLC106551",
+    "distance_km": 950
   }
 ]
