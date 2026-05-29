@@ -1123,5 +1123,455 @@
     "dates": "1 Jun - 6 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-tromso-RLC106801",
     "distance_km": 5244
+  },
+  {
+    "id": "RLC106902",
+    "origin": "Florence",
+    "destination": "Lyon",
+    "nights": 4,
+    "dates": "2 Jun - 8 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/florence-to-lyon-RLC106902",
+    "distance_km": 738
+  },
+  {
+    "id": "RLC106992",
+    "origin": "Brussels",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "20 Jun - 30 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/brussels-to-berlin-RLC106992",
+    "distance_km": 758
+  },
+  {
+    "id": "RLC106985",
+    "origin": "Bologna",
+    "destination": "Cagliari",
+    "nights": 4,
+    "dates": "10 Jun - 15 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bologna-to-cagliari-RLC106985",
+    "distance_km": 772
+  },
+  {
+    "id": "RLC106904",
+    "origin": "Munich",
+    "destination": "Paris",
+    "nights": 4,
+    "dates": "2 Jun - 9 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-paris-RLC106904",
+    "distance_km": 840
+  },
+  {
+    "id": "RLC106905",
+    "origin": "Munich",
+    "destination": "Paris Orly",
+    "nights": 4,
+    "dates": "2 Jun - 10 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-paris-orly-RLC106905",
+    "distance_km": 848
+  },
+  {
+    "id": "RLC106944",
+    "origin": "Hamburg",
+    "destination": "Warsaw",
+    "nights": 4,
+    "dates": "1 Jun - 7 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/hamburg-to-warsaw-RLC106944",
+    "distance_km": 853
+  },
+  {
+    "id": "RLC106954",
+    "origin": "Nantes",
+    "destination": "Frankfurt",
+    "nights": 5,
+    "dates": "1 Jun - 8 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-frankfurt-RLC106954",
+    "distance_km": 946
+  },
+  {
+    "id": "RLC106901",
+    "origin": "A Coruña",
+    "destination": "Valencia",
+    "nights": 5,
+    "dates": "2 Jun - 11 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/a-corua-to-valencia-RLC106901",
+    "distance_km": 950
+  },
+  {
+    "id": "RLC106914",
+    "origin": "Nantes",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "15 Jun - 19 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-barcelona-RLC106914",
+    "distance_km": 975
+  },
+  {
+    "id": "RLC106908",
+    "origin": "Nantes",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "2 Jun - 10 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-barcelona-RLC106908",
+    "distance_km": 975
+  },
+  {
+    "id": "RLC106946",
+    "origin": "Bordeaux",
+    "destination": "Milan",
+    "nights": 5,
+    "dates": "1 Jun - 5 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bordeaux-to-milan-RLC106946",
+    "distance_km": 1000
+  },
+  {
+    "id": "RLC106994",
+    "origin": "Berlin",
+    "destination": "Milan",
+    "nights": 5,
+    "dates": "8 Jun - 14 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-milan-RLC106994",
+    "distance_km": 1036
+  },
+  {
+    "id": "RLC106988",
+    "origin": "Berlin",
+    "destination": "Milan",
+    "nights": 5,
+    "dates": "16 Jun - 22 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-milan-RLC106988",
+    "distance_km": 1036
+  },
+  {
+    "id": "RLC106903",
+    "origin": "Nantes",
+    "destination": "Madrid",
+    "nights": 5,
+    "dates": "2 Jun - 10 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-madrid-RLC106903",
+    "distance_km": 1037
+  },
+  {
+    "id": "RLC106915",
+    "origin": "Berlin",
+    "destination": "Paris",
+    "nights": 5,
+    "dates": "17 Jun - 25 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-paris-RLC106915",
+    "distance_km": 1056
+  },
+  {
+    "id": "RLC106976",
+    "origin": "Munich",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "1 Jun - 12 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-warsaw-RLC106976",
+    "distance_km": 1076
+  },
+  {
+    "id": "RLC106990",
+    "origin": "Berlin",
+    "destination": "Bergamo",
+    "nights": 5,
+    "dates": "17 Jun - 22 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-bergamo-RLC106990",
+    "distance_km": 1078
+  },
+  {
+    "id": "RLC106953",
+    "origin": "Nantes",
+    "destination": "Milan",
+    "nights": 5,
+    "dates": "1 Jun - 7 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-milan-RLC106953",
+    "distance_km": 1088
+  },
+  {
+    "id": "RLC106968",
+    "origin": "Stuttgart",
+    "destination": "Warsaw",
+    "nights": 6,
+    "dates": "1 Jun - 9 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/stuttgart-to-warsaw-RLC106968",
+    "distance_km": 1121
+  },
+  {
+    "id": "RLC106965",
+    "origin": "Nantes",
+    "destination": "Bergamo",
+    "nights": 6,
+    "dates": "1 Jun - 11 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-bergamo-RLC106965",
+    "distance_km": 1129
+  },
+  {
+    "id": "RLC106989",
+    "origin": "Berlin",
+    "destination": "Venice",
+    "nights": 6,
+    "dates": "16 Jun - 24 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-venice-RLC106989",
+    "distance_km": 1131
+  },
+  {
+    "id": "RLC106983",
+    "origin": "Berlin",
+    "destination": "Venice",
+    "nights": 6,
+    "dates": "8 Jun - 16 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-venice-RLC106983",
+    "distance_km": 1131
+  },
+  {
+    "id": "RLC106942",
+    "origin": "Berlin",
+    "destination": "Venice",
+    "nights": 6,
+    "dates": "8 Jun - 16 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-venice-RLC106942",
+    "distance_km": 1131
+  },
+  {
+    "id": "RLC106975",
+    "origin": "Palermo",
+    "destination": "Split",
+    "nights": 6,
+    "dates": "1 Jun - 5 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-split-RLC106975",
+    "distance_km": 1168
+  },
+  {
+    "id": "RLC106984",
+    "origin": "Bari",
+    "destination": "Zagreb",
+    "nights": 6,
+    "dates": "18 Jun - 22 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bari-to-zagreb-RLC106984",
+    "distance_km": 1182
+  },
+  {
+    "id": "RLC106952",
+    "origin": "Nantes",
+    "destination": "Munich",
+    "nights": 6,
+    "dates": "1 Jun - 7 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-munich-RLC106952",
+    "distance_km": 1216
+  },
+  {
+    "id": "RLC106986",
+    "origin": "Berlin",
+    "destination": "Florence",
+    "nights": 6,
+    "dates": "8 Jun - 15 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-florence-RLC106986",
+    "distance_km": 1247
+  },
+  {
+    "id": "RLC106957",
+    "origin": "Munich",
+    "destination": "Cagliari",
+    "nights": 6,
+    "dates": "3 Jun - 13 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-cagliari-RLC106957",
+    "distance_km": 1291
+  },
+  {
+    "id": "RLC106941",
+    "origin": "Brussels",
+    "destination": "Warsaw",
+    "nights": 6,
+    "dates": "1 Jun - 5 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/brussels-to-warsaw-RLC106941",
+    "distance_km": 1297
+  },
+  {
+    "id": "RLC106911",
+    "origin": "Brussels",
+    "destination": "Barcelona",
+    "nights": 7,
+    "dates": "2 Jun - 14 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/brussels-to-barcelona-RLC106911",
+    "distance_km": 1338
+  },
+  {
+    "id": "RLC106951",
+    "origin": "Nantes",
+    "destination": "Venice",
+    "nights": 7,
+    "dates": "1 Jun - 10 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-venice-RLC106951",
+    "distance_km": 1348
+  },
+  {
+    "id": "RLC106956",
+    "origin": "Nantes",
+    "destination": "Florence",
+    "nights": 7,
+    "dates": "1 Jun - 5 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-florence-RLC106956",
+    "distance_km": 1402
+  },
+  {
+    "id": "RLC106920",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 7,
+    "dates": "2 Jun - 7 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-glasgow-RLC106920",
+    "distance_km": 1425
+  },
+  {
+    "id": "RLC106927",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 7,
+    "dates": "2 Jun - 8 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-glasgow-RLC106927",
+    "distance_km": 1425
+  },
+  {
+    "id": "RLC106998",
+    "origin": "Nantes",
+    "destination": "Berlin",
+    "nights": 7,
+    "dates": "1 Jun - 12 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-berlin-RLC106998",
+    "distance_km": 1430
+  },
+  {
+    "id": "RLC106963",
+    "origin": "Florence",
+    "destination": "Hamburg",
+    "nights": 7,
+    "dates": "1 Jun - 9 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/florence-to-hamburg-RLC106963",
+    "distance_km": 1452
+  },
+  {
+    "id": "RLC106962",
+    "origin": "Berlin",
+    "destination": "Rome",
+    "nights": 8,
+    "dates": "8 Jun - 17 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-rome-RLC106962",
+    "distance_km": 1503
+  },
+  {
+    "id": "RLC106961",
+    "origin": "Berlin",
+    "destination": "Olbia",
+    "nights": 8,
+    "dates": "8 Jun - 17 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-olbia-RLC106961",
+    "distance_km": 1618
+  },
+  {
+    "id": "RLC107000",
+    "origin": "Olbia",
+    "destination": "Berlin",
+    "nights": 8,
+    "dates": "6 Jun - 17 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/olbia-to-berlin-RLC107000",
+    "distance_km": 1618
+  },
+  {
+    "id": "RLC107002",
+    "origin": "Cagliari",
+    "destination": "Dusseldorf",
+    "nights": 9,
+    "dates": "7 Jun - 11 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/cagliari-to-dusseldorf-RLC107002",
+    "distance_km": 1704
+  },
+  {
+    "id": "RLC106997",
+    "origin": "Bilbao",
+    "destination": "Hamburg",
+    "nights": 9,
+    "dates": "1 Jun - 6 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bilbao-to-hamburg-RLC106997",
+    "distance_km": 1811
+  },
+  {
+    "id": "RLC106932",
+    "origin": "Bologna",
+    "destination": "Oslo",
+    "nights": 11,
+    "dates": "3 Jun - 20 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bologna-to-oslo-RLC106932",
+    "distance_km": 2144
+  },
+  {
+    "id": "RLC106935",
+    "origin": "Florence",
+    "destination": "Glasgow",
+    "nights": 11,
+    "dates": "8 Jun - 13 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/florence-to-glasgow-RLC106935",
+    "distance_km": 2221
+  },
+  {
+    "id": "RLC106991",
+    "origin": "Berlin",
+    "destination": "Palermo",
+    "nights": 12,
+    "dates": "17 Jun - 2 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-palermo-RLC106991",
+    "distance_km": 2401
+  },
+  {
+    "id": "RLC106937",
+    "origin": "Venice",
+    "destination": "Bergen",
+    "nights": 12,
+    "dates": "11 Jun - 24 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/venice-to-bergen-RLC106937",
+    "distance_km": 2442
+  },
+  {
+    "id": "RLC106931",
+    "origin": "Rome",
+    "destination": "Oslo",
+    "nights": 13,
+    "dates": "2 Jun - 14 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/rome-to-oslo-RLC106931",
+    "distance_km": 2521
+  },
+  {
+    "id": "RLC106930",
+    "origin": "Olbia",
+    "destination": "Oslo",
+    "nights": 13,
+    "dates": "2 Jun - 15 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/olbia-to-oslo-RLC106930",
+    "distance_km": 2534
+  },
+  {
+    "id": "RLC106936",
+    "origin": "Naples",
+    "destination": "Oslo",
+    "nights": 14,
+    "dates": "9 Jun - 27 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-oslo-RLC106936",
+    "distance_km": 2720
+  },
+  {
+    "id": "RLC106919",
+    "origin": "Palma",
+    "destination": "Oslo",
+    "nights": 7,
+    "dates": "4 Jun - 12 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/palma-to-oslo-RLC106919",
+    "distance_km": 2877
+  },
+  {
+    "id": "RLC106938",
+    "origin": "Malaga",
+    "destination": "Tromso",
+    "nights": 26,
+    "dates": "2 Jun - 7 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/malaga-to-tromso-RLC106938",
+    "distance_km": 5244
   }
 ]
