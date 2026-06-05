@@ -2743,5 +2743,95 @@
     "dates": "8 Jun - 16 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/oslo-to-tromso-RLC107837",
     "distance_km": null
+  },
+  {
+    "id": "RLC107870",
+    "origin": "Bologna",
+    "destination": "Cagliari",
+    "nights": 4,
+    "dates": "10 Jun - 15 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bologna-to-cagliari-RLC107870",
+    "distance_km": 972
+  },
+  {
+    "id": "RLC107846",
+    "origin": "Nantes",
+    "destination": "Frankfurt",
+    "nights": 5,
+    "dates": "8 Jun - 15 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-frankfurt-RLC107846",
+    "distance_km": 1146
+  },
+  {
+    "id": "RLC107854",
+    "origin": "Bordeaux",
+    "destination": "Milan",
+    "nights": 5,
+    "dates": "8 Jun - 12 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bordeaux-to-milan-RLC107854",
+    "distance_km": 1200
+  },
+  {
+    "id": "RLC107869",
+    "origin": "Bologna",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "8 Jun - 12 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bologna-to-dusseldorf-RLC107869",
+    "distance_km": 1278
+  },
+  {
+    "id": "RLC107853",
+    "origin": "Nantes",
+    "destination": "Milan",
+    "nights": 5,
+    "dates": "8 Jun - 14 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-milan-RLC107853",
+    "distance_km": 1288
+  },
+  {
+    "id": "RLC107848",
+    "origin": "Nantes",
+    "destination": "Bergamo",
+    "nights": 6,
+    "dates": "8 Jun - 18 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-bergamo-RLC107848",
+    "distance_km": 1329
+  },
+  {
+    "id": "RLC107844",
+    "origin": "Nantes",
+    "destination": "Munich",
+    "nights": 6,
+    "dates": "8 Jun - 14 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-munich-RLC107844",
+    "distance_km": 1416
+  },
+  {
+    "id": "RLC107847",
+    "origin": "Munich",
+    "destination": "Cagliari",
+    "nights": 6,
+    "dates": "8 Jun - 18 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-cagliari-RLC107847",
+    "distance_km": 1491
+  },
+  {
+    "id": "RLC107851",
+    "origin": "Nantes",
+    "destination": "Venice",
+    "nights": 7,
+    "dates": "8 Jun - 17 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-venice-RLC107851",
+    "distance_km": 1548
+  },
+  {
+    "id": "RLC107871",
+    "origin": "Cagliari",
+    "destination": "Dusseldorf",
+    "nights": 9,
+    "dates": "16 Jun - 20 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/cagliari-to-dusseldorf-RLC107871",
+    "distance_km": 1904
   }
 ]
