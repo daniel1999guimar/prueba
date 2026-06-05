@@ -3157,5 +3157,23 @@
     "dates": "13 Jun - 17 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/bordeaux-to-bari-RLC107885",
     "distance_km": 2056
+  },
+  {
+    "id": "RLC107952",
+    "origin": "Nantes",
+    "destination": "Glasgow",
+    "nights": 7,
+    "dates": "10 Jun - 14 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-glasgow-RLC107952",
+    "distance_km": 1435
+  },
+  {
+    "id": "RLC107963",
+    "origin": "Berlin",
+    "destination": "Amsterdam",
+    "nights": 11,
+    "dates": "10 Jun - 28 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/berlin-to-amsterdam-RLC107963",
+    "distance_km": 2152
   }
 ]
