@@ -2734,5 +2734,14 @@
     "dates": "5 Jun - 20 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/berlin-to-malaga-RLC107616",
     "distance_km": 3037
+  },
+  {
+    "id": "RLC107837",
+    "origin": "Oslo",
+    "destination": "Tromso",
+    "nights": 4,
+    "dates": "8 Jun - 16 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-tromso-RLC107837",
+    "distance_km": null
   }
 ]
