@@ -3472,5 +3472,14 @@
     "dates": "9 Jun - 13 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-hamburg-RLC108145",
     "distance_km": 1976
+  },
+  {
+    "id": "RLC108191",
+    "origin": "Madrid",
+    "destination": "Brussels",
+    "nights": 8,
+    "dates": "9 Jun - 18 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/madrid-to-brussels-RLC108191",
+    "distance_km": 1778
   }
 ]
