@@ -4165,5 +4165,23 @@
     "dates": "16 Jun - 2 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/palermo-to-paris-orly-RLC108765",
     "distance_km": 2525
+  },
+  {
+    "id": "RLC108826",
+    "origin": "Bari",
+    "destination": "Bergamo",
+    "nights": 5,
+    "dates": "16 Jun - 23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/bari-to-bergamo-RLC108826",
+    "distance_km": 1107
+  },
+  {
+    "id": "RLC108833",
+    "origin": "Paris",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "3 Jul - 7 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/paris-to-berlin-RLC108833",
+    "distance_km": 1255
   }
 ]
