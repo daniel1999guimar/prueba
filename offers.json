@@ -4435,5 +4435,14 @@
     "dates": "16 Jun - 20 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/paris-to-hamburg-RLC109077",
     "distance_km": 1102
+  },
+  {
+    "id": "RLC109141",
+    "origin": "Cologne",
+    "destination": "Nantes",
+    "nights": 4,
+    "dates": "16 Jun - 22 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/cologne-to-nantes-RLC109141",
+    "distance_km": 1079
   }
 ]
