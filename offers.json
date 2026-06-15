@@ -4417,5 +4417,23 @@
     "dates": "16 Jun - 28 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/venice-to-trondheim-RLC109154",
     "distance_km": 2865
+  },
+  {
+    "id": "RLC109143",
+    "origin": "Cologne",
+    "destination": "Nantes",
+    "nights": 4,
+    "dates": "16 Jun - 22 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/cologne-to-nantes-RLC109143",
+    "distance_km": 1079
+  },
+  {
+    "id": "RLC109077",
+    "origin": "Paris",
+    "destination": "Hamburg",
+    "nights": 5,
+    "dates": "16 Jun - 20 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/paris-to-hamburg-RLC109077",
+    "distance_km": 1102
   }
 ]
