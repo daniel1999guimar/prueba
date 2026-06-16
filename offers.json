@@ -4813,5 +4813,14 @@
     "dates": "17 Jun - 1 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/berlin-to-malaga-RLC109442",
     "distance_km": 3237
+  },
+  {
+    "id": "RLC109462",
+    "origin": "Barcelona",
+    "destination": "Paris Orly",
+    "nights": 5,
+    "dates": "17 Jun - 23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-paris-orly-RLC109462",
+    "distance_km": 1228
   }
 ]
