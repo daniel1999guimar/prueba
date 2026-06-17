@@ -5191,5 +5191,14 @@
     "dates": "24 Jun - 8 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/berlin-to-malaga-RLC109743",
     "distance_km": 3237
+  },
+  {
+    "id": "RLC109721",
+    "origin": "Malaga",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "18 Jun - 25 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/malaga-to-barcelona-RLC109721",
+    "distance_km": 1380
   }
 ]
