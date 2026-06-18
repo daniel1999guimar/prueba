@@ -5209,5 +5209,14 @@
     "dates": "18 Jun - 25 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-barcelona-RLC109718",
     "distance_km": 1180
+  },
+  {
+    "id": "RLC109719",
+    "origin": "Malaga",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "18 Jun - 25 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/malaga-to-barcelona-RLC109719",
+    "distance_km": 1180
   }
 ]
