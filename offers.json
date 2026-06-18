@@ -5569,5 +5569,14 @@
     "dates": "19 Jun - 23 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-warsaw-RLC109943",
     "distance_km": 2550
+  },
+  {
+    "id": "RLC109954",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "19 Jun - 25 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC109954",
+    "distance_km": 1273
   }
 ]
