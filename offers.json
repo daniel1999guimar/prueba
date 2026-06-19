@@ -5587,5 +5587,50 @@
     "dates": "25 Jun - 29 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC109946",
     "distance_km": 1273
+  },
+  {
+    "id": "RLC110074",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC110074",
+    "distance_km": 1758
+  },
+  {
+    "id": "RLC110076",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC110076",
+    "distance_km": 1758
+  },
+  {
+    "id": "RLC110077",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC110077",
+    "distance_km": 1758
+  },
+  {
+    "id": "RLC110075",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC110075",
+    "distance_km": 1758
+  },
+  {
+    "id": "RLC110073",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 6,
+    "dates": "23 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC110073",
+    "distance_km": 1758
   }
 ]
