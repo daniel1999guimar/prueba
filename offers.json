@@ -5578,5 +5578,14 @@
     "dates": "19 Jun - 25 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC109954",
     "distance_km": 1273
+  },
+  {
+    "id": "RLC109946",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "25 Jun - 29 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC109946",
+    "distance_km": 1273
   }
 ]
