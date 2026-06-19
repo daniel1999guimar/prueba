@@ -5983,5 +5983,14 @@
     "dates": "22 Jun - 26 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-warsaw-RLC110099",
     "distance_km": 2550
+  },
+  {
+    "id": "RLC110166",
+    "origin": "Barcelona",
+    "destination": "Paris Orly",
+    "nights": 5,
+    "dates": "22 Jun - 28 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-paris-orly-RLC110166",
+    "distance_km": 1228
   }
 ]
