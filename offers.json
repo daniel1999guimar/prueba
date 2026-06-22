@@ -6316,5 +6316,14 @@
     "dates": "23 Jun - 29 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-bastia-RLC110825",
     "distance_km": 2070
+  },
+  {
+    "id": "RLC110794",
+    "origin": "Nantes",
+    "destination": "Madrid",
+    "nights": 5,
+    "dates": "26 Jun - 3 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-madrid-RLC110794",
+    "distance_km": 1237
   }
 ]
