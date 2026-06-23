@@ -6325,5 +6325,23 @@
     "dates": "26 Jun - 3 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/nantes-to-madrid-RLC110794",
     "distance_km": 1237
+  },
+  {
+    "id": "RLC110779",
+    "origin": "Nantes",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "23 Jun - 30 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-barcelona-RLC110779",
+    "distance_km": 1175
+  },
+  {
+    "id": "RLC110782",
+    "origin": "Seville",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "23 Jun - 30 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/seville-to-barcelona-RLC110782",
+    "distance_km": 1193
   }
 ]
