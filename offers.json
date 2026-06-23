@@ -6640,5 +6640,41 @@
     "dates": "24 Jun - 29 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-bastia-RLC111107",
     "distance_km": 2070
+  },
+  {
+    "id": "RLC111014",
+    "origin": "Pisa",
+    "destination": "Vienna",
+    "nights": 5,
+    "dates": "24 Jun - 28 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/pisa-to-vienna-RLC111014",
+    "distance_km": 1121
+  },
+  {
+    "id": "RLC110992",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "25 Jun - 29 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC110992",
+    "distance_km": 1273
+  },
+  {
+    "id": "RLC110993",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "24 Jun - 28 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC110993",
+    "distance_km": 1273
+  },
+  {
+    "id": "RLC110991",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "24 Jun - 28 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC110991",
+    "distance_km": 1273
   }
 ]
