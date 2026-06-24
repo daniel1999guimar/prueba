@@ -6991,5 +6991,14 @@
     "dates": "25 Jun - 7 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/olbia-to-oslo-RLC111196",
     "distance_km": 2734
+  },
+  {
+    "id": "RLC111211",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "25 Jun - 3 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC111211",
+    "distance_km": 1273
   }
 ]
