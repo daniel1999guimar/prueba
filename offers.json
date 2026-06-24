@@ -6676,5 +6676,14 @@
     "dates": "24 Jun - 28 Jun",
     "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC110991",
     "distance_km": 1273
+  },
+  {
+    "id": "RLC110982",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 9,
+    "dates": "24 Jun - 1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC110982",
+    "distance_km": 1940
   }
 ]
