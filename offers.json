@@ -7000,5 +7000,32 @@
     "dates": "25 Jun - 3 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC111211",
     "distance_km": 1273
+  },
+  {
+    "id": "RLC111305",
+    "origin": "Nice",
+    "destination": "Bordeaux",
+    "nights": 4,
+    "dates": "29 Jul - 4 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/nice-to-bordeaux-RLC111305",
+    "distance_km": 1010
+  },
+  {
+    "id": "RLC111293",
+    "origin": "Cologne",
+    "destination": "Nantes",
+    "nights": 4,
+    "dates": "25 Jun - 1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/cologne-to-nantes-RLC111293",
+    "distance_km": 1079
+  },
+  {
+    "id": "RLC111274",
+    "origin": "Lisbon",
+    "destination": "Valencia",
+    "nights": 4,
+    "dates": "28 Jun - 4 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/lisbon-to-valencia-RLC111274",
+    "distance_km": 1082
   }
 ]
