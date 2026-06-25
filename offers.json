@@ -7027,5 +7027,14 @@
     "dates": "28 Jun - 4 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/lisbon-to-valencia-RLC111274",
     "distance_km": 1082
+  },
+  {
+    "id": "RLC111275",
+    "origin": "Marseille",
+    "destination": "Paris",
+    "nights": 4,
+    "dates": "25 Jun - 30 Jun",
+    "link": "https://www.imoova.com/es/relocations/deal/marseille-to-paris-RLC111275",
+    "distance_km": 975
   }
 ]
