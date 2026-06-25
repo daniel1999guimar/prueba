@@ -7342,5 +7342,14 @@
     "dates": "26 Jun - 6 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC111458",
     "distance_km": 973
+  },
+  {
+    "id": "RLC111453",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "26 Jun - 3 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC111453",
+    "distance_km": 935
   }
 ]
