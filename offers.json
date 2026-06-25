@@ -7333,5 +7333,14 @@
     "dates": "26 Jun - 3 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/paris-to-trondheim-RLC111431",
     "distance_km": 2396
+  },
+  {
+    "id": "RLC111458",
+    "origin": "Naples",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "26 Jun - 6 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC111458",
+    "distance_km": 973
   }
 ]
