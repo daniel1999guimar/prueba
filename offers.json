@@ -7972,5 +7972,14 @@
     "dates": "30 Jun - 14 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/berlin-to-lisbon-RLC111844",
     "distance_km": 2983
+  },
+  {
+    "id": "RLC112182",
+    "origin": "Frankfurt",
+    "destination": "Warsaw",
+    "nights": 5,
+    "dates": "30 Jun - 4 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC112182",
+    "distance_km": 1273
   }
 ]
