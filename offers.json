@@ -7981,5 +7981,14 @@
     "dates": "30 Jun - 4 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC112182",
     "distance_km": 1273
+  },
+  {
+    "id": "RLC112152",
+    "origin": "Catania",
+    "destination": "Florence",
+    "nights": 5,
+    "dates": "3 Jul - 3 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112152",
+    "distance_km": 1241
   }
 ]
