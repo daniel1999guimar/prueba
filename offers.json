@@ -7999,5 +7999,50 @@
     "dates": "16 Jul - 3 Aug",
     "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112151",
     "distance_km": 1241
+  },
+  {
+    "id": "RLC112336",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC112336",
+    "distance_km": null
+  },
+  {
+    "id": "RLC112335",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC112335",
+    "distance_km": null
+  },
+  {
+    "id": "RLC112333",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC112333",
+    "distance_km": null
+  },
+  {
+    "id": "RLC112332",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC112332",
+    "distance_km": null
+  },
+  {
+    "id": "RLC112330",
+    "origin": "Tromso",
+    "destination": "Oslo",
+    "nights": 5,
+    "dates": "1 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC112330",
+    "distance_km": null
   }
 ]
