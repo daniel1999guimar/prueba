@@ -8044,5 +8044,14 @@
     "dates": "1 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/tromso-to-oslo-RLC112330",
     "distance_km": null
+  },
+  {
+    "id": "RLC112150",
+    "origin": "Catania",
+    "destination": "Florence",
+    "nights": 5,
+    "dates": "18 Jul - 3 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112150",
+    "distance_km": 1241
   }
 ]
