@@ -8458,5 +8458,23 @@
     "dates": "1 Jul - 15 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/berlin-to-lisbon-RLC112459",
     "distance_km": 2983
+  },
+  {
+    "id": "RLC112408",
+    "origin": "Catania",
+    "destination": "Florence",
+    "nights": 5,
+    "dates": "3 Aug - 10 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112408",
+    "distance_km": 1241
+  },
+  {
+    "id": "RLC112433",
+    "origin": "Palermo",
+    "destination": "Bologna",
+    "nights": 6,
+    "dates": "25 Jul - 4 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-bologna-RLC112433",
+    "distance_km": 1488
   }
 ]
