@@ -8476,5 +8476,14 @@
     "dates": "25 Jul - 4 Aug",
     "link": "https://www.imoova.com/es/relocations/deal/palermo-to-bologna-RLC112433",
     "distance_km": 1488
+  },
+  {
+    "id": "RLC112407",
+    "origin": "Catania",
+    "destination": "Florence",
+    "nights": 5,
+    "dates": "1 Jul - 3 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112407",
+    "distance_km": 1241
   }
 ]
