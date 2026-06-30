@@ -8053,5 +8053,14 @@
     "dates": "18 Jul - 3 Aug",
     "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112150",
     "distance_km": 1241
+  },
+  {
+    "id": "RLC112149",
+    "origin": "Catania",
+    "destination": "Florence",
+    "nights": 5,
+    "dates": "19 Jul - 3 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-florence-RLC112149",
+    "distance_km": 1241
   }
 ]
