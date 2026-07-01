@@ -8503,5 +8503,14 @@
     "dates": "1 Jul - 5 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/frankfurt-to-warsaw-RLC112347",
     "distance_km": 1273
+  },
+  {
+    "id": "RLC112481",
+    "origin": "Bordeaux",
+    "destination": "Nice",
+    "nights": 4,
+    "dates": "1 Jul - 12 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bordeaux-to-nice-RLC112481",
+    "distance_km": 1010
   }
 ]
