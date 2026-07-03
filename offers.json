@@ -9214,5 +9214,14 @@
     "dates": "6 Jul - 20 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/berlin-to-lisbon-RLC112894",
     "distance_km": 2983
+  },
+  {
+    "id": "RLC112951",
+    "origin": "Munich",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "6 Jul - 13 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-hamburg-RLC112951",
+    "distance_km": 991
   }
 ]
