@@ -9286,5 +9286,14 @@
     "dates": "11 Jul - 17 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC112931",
     "distance_km": 925
+  },
+  {
+    "id": "RLC112919",
+    "origin": "Munich",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "6 Jul - 12 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-hamburg-RLC112919",
+    "distance_km": 991
   }
 ]
