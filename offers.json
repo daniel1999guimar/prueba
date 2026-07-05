@@ -9277,5 +9277,14 @@
     "dates": "10 Jul - 16 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC112934",
     "distance_km": 973
+  },
+  {
+    "id": "RLC112931",
+    "origin": "Naples",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "11 Jul - 17 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC112931",
+    "distance_km": 925
   }
 ]
