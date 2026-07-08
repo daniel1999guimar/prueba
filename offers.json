@@ -9727,5 +9727,14 @@
     "dates": "13 Jul - 19 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-bordeaux-RLC113245",
     "distance_km": 1416
+  },
+  {
+    "id": "RLC113262",
+    "origin": "Milan",
+    "destination": "Hamburg",
+    "nights": 6,
+    "dates": "14 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/milan-to-hamburg-RLC113262",
+    "distance_km": 1310
   }
 ]
