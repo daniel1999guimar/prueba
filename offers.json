@@ -10123,5 +10123,302 @@
     "dates": "9 Jul - 24 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/palermo-to-berlin-RLC113432",
     "distance_km": 2600
+  },
+  {
+    "id": "RLC113706",
+    "origin": "Naples",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "11 Jul - 14 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC113706",
+    "distance_km": 925
+  },
+  {
+    "id": "RLC113737",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "11 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC113737",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC113736",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "11 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC113736",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC113734",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "13 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC113734",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC113735",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "11 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC113735",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC113725",
+    "origin": "Naples",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "11 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC113725",
+    "distance_km": 973
+  },
+  {
+    "id": "RLC113726",
+    "origin": "Naples",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "11 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC113726",
+    "distance_km": 973
+  },
+  {
+    "id": "RLC113724",
+    "origin": "Naples",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "11 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC113724",
+    "distance_km": 973
+  },
+  {
+    "id": "RLC113708",
+    "origin": "Munich",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "11 Jul - 14 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-hamburg-RLC113708",
+    "distance_km": 991
+  },
+  {
+    "id": "RLC113715",
+    "origin": "Munich",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "11 Jul - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-hamburg-RLC113715",
+    "distance_km": 991
+  },
+  {
+    "id": "RLC113743",
+    "origin": "Oslo",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "26 Jul - 30 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-hamburg-RLC113743",
+    "distance_km": 1014
+  },
+  {
+    "id": "RLC113740",
+    "origin": "Oslo",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "18 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-hamburg-RLC113740",
+    "distance_km": 1014
+  },
+  {
+    "id": "RLC113730",
+    "origin": "Oslo",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "16 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-hamburg-RLC113730",
+    "distance_km": 1014
+  },
+  {
+    "id": "RLC113732",
+    "origin": "Oslo",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "18 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-berlin-RLC113732",
+    "distance_km": 1234
+  },
+  {
+    "id": "RLC113720",
+    "origin": "Oslo",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "13 Jul - 17 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-berlin-RLC113720",
+    "distance_km": 1234
+  },
+  {
+    "id": "RLC113716",
+    "origin": "Oslo",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "12 Jul - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-berlin-RLC113716",
+    "distance_km": 1234
+  },
+  {
+    "id": "RLC113717",
+    "origin": "Milan",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "11 Jul - 12 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/milan-to-berlin-RLC113717",
+    "distance_km": 1237
+  },
+  {
+    "id": "RLC113718",
+    "origin": "Bergamo",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "11 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergamo-to-berlin-RLC113718",
+    "distance_km": 1277
+  },
+  {
+    "id": "RLC113722",
+    "origin": "Bergamo",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "12 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergamo-to-berlin-RLC113722",
+    "distance_km": 1277
+  },
+  {
+    "id": "RLC113702",
+    "origin": "Bergen",
+    "destination": "Hamburg",
+    "nights": 5,
+    "dates": "11 Jul - 13 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-hamburg-RLC113702",
+    "distance_km": 1310
+  },
+  {
+    "id": "RLC113745",
+    "origin": "Bergen",
+    "destination": "Hamburg",
+    "nights": 6,
+    "dates": "15 Aug - 19 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-hamburg-RLC113745",
+    "distance_km": 1310
+  },
+  {
+    "id": "RLC113742",
+    "origin": "Bergen",
+    "destination": "Hamburg",
+    "nights": 6,
+    "dates": "18 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-hamburg-RLC113742",
+    "distance_km": 1310
+  },
+  {
+    "id": "RLC113709",
+    "origin": "Bergen",
+    "destination": "Hamburg",
+    "nights": 6,
+    "dates": "11 Jul - 14 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-hamburg-RLC113709",
+    "distance_km": 1310
+  },
+  {
+    "id": "RLC113714",
+    "origin": "Milan",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "14 Jul - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/milan-to-hamburg-RLC113714",
+    "distance_km": 1310
+  },
+  {
+    "id": "RLC113690",
+    "origin": "Bologna",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "11 Jul - 13 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bologna-to-berlin-RLC113690",
+    "distance_km": 1351
+  },
+  {
+    "id": "RLC113698",
+    "origin": "Florence",
+    "destination": "Berlin",
+    "nights": 4,
+    "dates": "11 Jul - 12 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/florence-to-berlin-RLC113698",
+    "distance_km": 1446
+  },
+  {
+    "id": "RLC113700",
+    "origin": "Catania",
+    "destination": "Venice",
+    "nights": 5,
+    "dates": "11 Jul - 13 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-venice-RLC113700",
+    "distance_km": 1494
+  },
+  {
+    "id": "RLC113721",
+    "origin": "Oslo",
+    "destination": "Frankfurt",
+    "nights": 7,
+    "dates": "14 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-frankfurt-RLC113721",
+    "distance_km": 1509
+  },
+  {
+    "id": "RLC113712",
+    "origin": "Bergen",
+    "destination": "Berlin",
+    "nights": 7,
+    "dates": "12 Jul - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-berlin-RLC113712",
+    "distance_km": 1601
+  },
+  {
+    "id": "RLC113710",
+    "origin": "Bergen",
+    "destination": "Berlin",
+    "nights": 7,
+    "dates": "11 Jul - 15 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-berlin-RLC113710",
+    "distance_km": 1601
+  },
+  {
+    "id": "RLC113741",
+    "origin": "Trondheim",
+    "destination": "Frankfurt",
+    "nights": 7,
+    "dates": "16 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/trondheim-to-frankfurt-RLC113741",
+    "distance_km": 2001
+  },
+  {
+    "id": "RLC113744",
+    "origin": "Tromso",
+    "destination": "Berlin",
+    "nights": 7,
+    "dates": "25 Jul - 26 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-berlin-RLC113744",
+    "distance_km": 2848
+  },
+  {
+    "id": "RLC113739",
+    "origin": "Tromso",
+    "destination": "Berlin",
+    "nights": 7,
+    "dates": "15 Jul - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/tromso-to-berlin-RLC113739",
+    "distance_km": 2848
   }
 ]
