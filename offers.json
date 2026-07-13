@@ -10672,5 +10672,68 @@
     "dates": "25 Jul - 26 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/tromso-to-berlin-RLC113794",
     "distance_km": 2848
+  },
+  {
+    "id": "RLC113961",
+    "origin": "Naples",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "14 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC113961",
+    "distance_km": 925
+  },
+  {
+    "id": "RLC113967",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "14 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC113967",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC113970",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "17 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC113970",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC113963",
+    "origin": "Naples",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "14 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-milan-RLC113963",
+    "distance_km": 973
+  },
+  {
+    "id": "RLC113960",
+    "origin": "Munich",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "14 Jul - 16 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/munich-to-hamburg-RLC113960",
+    "distance_km": 991
+  },
+  {
+    "id": "RLC113969",
+    "origin": "Oslo",
+    "destination": "Hamburg",
+    "nights": 4,
+    "dates": "18 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-hamburg-RLC113969",
+    "distance_km": 1014
+  },
+  {
+    "id": "RLC113973",
+    "origin": "Malaga",
+    "destination": "Lyon",
+    "nights": 7,
+    "dates": "14 Jul - 15 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/malaga-to-lyon-RLC113973",
+    "distance_km": 1812
   }
 ]
