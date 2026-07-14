@@ -10735,5 +10735,104 @@
     "dates": "14 Jul - 15 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/malaga-to-lyon-RLC113973",
     "distance_km": 1812
+  },
+  {
+    "id": "RLC114178",
+    "origin": "Naples",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "15 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC114178",
+    "distance_km": 925
+  },
+  {
+    "id": "RLC114184",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "15 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114184",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114187",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "17 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114187",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114161",
+    "origin": "Nice",
+    "destination": "Paris Orly",
+    "nights": 5,
+    "dates": "16 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/nice-to-paris-orly-RLC114161",
+    "distance_km": 1125
+  },
+  {
+    "id": "RLC114156",
+    "origin": "Nantes",
+    "destination": "Marseille",
+    "nights": 5,
+    "dates": "15 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-marseille-RLC114156",
+    "distance_km": 1186
+  },
+  {
+    "id": "RLC114157",
+    "origin": "Marseille",
+    "destination": "Brussels",
+    "nights": 5,
+    "dates": "15 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/marseille-to-brussels-RLC114157",
+    "distance_km": 1225
+  },
+  {
+    "id": "RLC114153",
+    "origin": "Madrid",
+    "destination": "Lyon",
+    "nights": 5,
+    "dates": "15 Jul - 19 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/madrid-to-lyon-RLC114153",
+    "distance_km": 1443
+  },
+  {
+    "id": "RLC114155",
+    "origin": "Paris Orly",
+    "destination": "Madrid",
+    "nights": 6,
+    "dates": "15 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/paris-orly-to-madrid-RLC114155",
+    "distance_km": 1467
+  },
+  {
+    "id": "RLC114176",
+    "origin": "Oslo",
+    "destination": "Frankfurt",
+    "nights": 4,
+    "dates": "15 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-frankfurt-RLC114176",
+    "distance_km": 1509
+  },
+  {
+    "id": "RLC114162",
+    "origin": "Marseille",
+    "destination": "Malaga",
+    "nights": 7,
+    "dates": "15 Jul - 25 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/marseille-to-malaga-RLC114162",
+    "distance_km": 1677
+  },
+  {
+    "id": "RLC114152",
+    "origin": "Alicante",
+    "destination": "Paris Orly",
+    "nights": 5,
+    "dates": "15 Jul - 19 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/alicante-to-paris-orly-RLC114152",
+    "distance_km": 1740
   }
 ]
