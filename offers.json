@@ -10834,5 +10834,95 @@
     "dates": "15 Jul - 19 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/alicante-to-paris-orly-RLC114152",
     "distance_km": 1740
+  },
+  {
+    "id": "RLC114318",
+    "origin": "Naples",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "16 Jul - 18 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC114318",
+    "distance_km": 925
+  },
+  {
+    "id": "RLC114320",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "16 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114320",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114322",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "21 Jul - 28 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114322",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114323",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "17 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114323",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114310",
+    "origin": "Nantes",
+    "destination": "Marseille",
+    "nights": 5,
+    "dates": "16 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-marseille-RLC114310",
+    "distance_km": 1186
+  },
+  {
+    "id": "RLC114317",
+    "origin": "Oslo",
+    "destination": "Berlin",
+    "nights": 5,
+    "dates": "16 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/oslo-to-berlin-RLC114317",
+    "distance_km": 1234
+  },
+  {
+    "id": "RLC114308",
+    "origin": "Toulouse",
+    "destination": "Amsterdam",
+    "nights": 4,
+    "dates": "16 Jul - 17 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/toulouse-to-amsterdam-RLC114308",
+    "distance_km": 1378
+  },
+  {
+    "id": "RLC114307",
+    "origin": "Toulouse",
+    "destination": "Amsterdam",
+    "nights": 4,
+    "dates": "16 Jul - 17 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/toulouse-to-amsterdam-RLC114307",
+    "distance_km": 1378
+  },
+  {
+    "id": "RLC114309",
+    "origin": "Madrid",
+    "destination": "Lyon",
+    "nights": 4,
+    "dates": "16 Jul - 19 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/madrid-to-lyon-RLC114309",
+    "distance_km": 1443
+  },
+  {
+    "id": "RLC114319",
+    "origin": "Bergen",
+    "destination": "Berlin",
+    "nights": 6,
+    "dates": "16 Jul - 19 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-berlin-RLC114319",
+    "distance_km": 1601
   }
 ]
