@@ -10924,5 +10924,176 @@
     "dates": "16 Jul - 19 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/bergen-to-berlin-RLC114319",
     "distance_km": 1601
+  },
+  {
+    "id": "RLC114472",
+    "origin": "Naples",
+    "destination": "Venice",
+    "nights": 4,
+    "dates": "17 Jul - 27 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-venice-RLC114472",
+    "distance_km": 925
+  },
+  {
+    "id": "RLC114473",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "17 Jul - 28 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114473",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114474",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "21 Jul - 4 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114474",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114470",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "17 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114470",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114466",
+    "origin": "Vienna",
+    "destination": "Bologna",
+    "nights": 4,
+    "dates": "4 Aug - 7 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/vienna-to-bologna-RLC114466",
+    "distance_km": 952
+  },
+  {
+    "id": "RLC114464",
+    "origin": "Vienna",
+    "destination": "Bologna",
+    "nights": 4,
+    "dates": "31 Jul - 3 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/vienna-to-bologna-RLC114464",
+    "distance_km": 952
+  },
+  {
+    "id": "RLC114468",
+    "origin": "Vienna",
+    "destination": "Bergamo",
+    "nights": 4,
+    "dates": "31 Jul - 3 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/vienna-to-bergamo-RLC114468",
+    "distance_km": 1020
+  },
+  {
+    "id": "RLC114463",
+    "origin": "Vienna",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "2 Aug - 7 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/vienna-to-milan-RLC114463",
+    "distance_km": 1059
+  },
+  {
+    "id": "RLC114465",
+    "origin": "Vienna",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "31 Jul - 5 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/vienna-to-milan-RLC114465",
+    "distance_km": 1059
+  },
+  {
+    "id": "RLC114461",
+    "origin": "Vienna",
+    "destination": "Milan",
+    "nights": 4,
+    "dates": "31 Jul - 4 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/vienna-to-milan-RLC114461",
+    "distance_km": 1059
+  },
+  {
+    "id": "RLC114458",
+    "origin": "Rome",
+    "destination": "Munich",
+    "nights": 5,
+    "dates": "17 Jul - 20 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/rome-to-munich-RLC114458",
+    "distance_km": 1115
+  },
+  {
+    "id": "RLC114449",
+    "origin": "Toulouse",
+    "destination": "Brussels",
+    "nights": 5,
+    "dates": "17 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/toulouse-to-brussels-RLC114449",
+    "distance_km": 1181
+  },
+  {
+    "id": "RLC114453",
+    "origin": "Nantes",
+    "destination": "Marseille",
+    "nights": 5,
+    "dates": "17 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/nantes-to-marseille-RLC114453",
+    "distance_km": 1186
+  },
+  {
+    "id": "RLC114447",
+    "origin": "Toulouse",
+    "destination": "Amsterdam",
+    "nights": 6,
+    "dates": "17 Jul - 27 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/toulouse-to-amsterdam-RLC114447",
+    "distance_km": 1378
+  },
+  {
+    "id": "RLC114444",
+    "origin": "Toulouse",
+    "destination": "Amsterdam",
+    "nights": 6,
+    "dates": "17 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/toulouse-to-amsterdam-RLC114444",
+    "distance_km": 1378
+  },
+  {
+    "id": "RLC114471",
+    "origin": "Bergen",
+    "destination": "Berlin",
+    "nights": 7,
+    "dates": "17 Jul - 27 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/bergen-to-berlin-RLC114471",
+    "distance_km": 1601
+  },
+  {
+    "id": "RLC114446",
+    "origin": "A Coruña",
+    "destination": "Amsterdam",
+    "nights": 10,
+    "dates": "17 Jul - 29 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/a-corua-to-amsterdam-RLC114446",
+    "distance_km": 2156
+  },
+  {
+    "id": "RLC114445",
+    "origin": "Alicante",
+    "destination": "Amsterdam",
+    "nights": 9,
+    "dates": "17 Jul - 25 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/alicante-to-amsterdam-RLC114445",
+    "distance_km": 2249
+  },
+  {
+    "id": "RLC114450",
+    "origin": "Naples",
+    "destination": "Madrid",
+    "nights": 11,
+    "dates": "17 Jul - 21 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/naples-to-madrid-RLC114450",
+    "distance_km": 2360
   }
 ]
