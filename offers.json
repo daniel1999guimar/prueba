@@ -11095,5 +11095,131 @@
     "dates": "17 Jul - 21 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/naples-to-madrid-RLC114450",
     "distance_km": 2360
+  },
+  {
+    "id": "RLC114556",
+    "origin": "Lyon",
+    "destination": "Brussels",
+    "nights": 4,
+    "dates": "27 Jul - 30 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/lyon-to-brussels-RLC114556",
+    "distance_km": 916
+  },
+  {
+    "id": "RLC114538",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "20 Jul - 28 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114538",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114537",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "20 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114537",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114569",
+    "origin": "Malaga",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "30 Jul - 4 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/malaga-to-barcelona-RLC114569",
+    "distance_km": 1180
+  },
+  {
+    "id": "RLC114577",
+    "origin": "A Coruña",
+    "destination": "Barcelona",
+    "nights": 5,
+    "dates": "20 Jul - 8 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/a-corua-to-barcelona-RLC114577",
+    "distance_km": 1287
+  },
+  {
+    "id": "RLC114533",
+    "origin": "Venice",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "20 Jul - 25 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/venice-to-dusseldorf-RLC114533",
+    "distance_km": 1322
+  },
+  {
+    "id": "RLC114528",
+    "origin": "Toulouse",
+    "destination": "Amsterdam",
+    "nights": 6,
+    "dates": "20 Jul - 23 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/toulouse-to-amsterdam-RLC114528",
+    "distance_km": 1378
+  },
+  {
+    "id": "RLC114570",
+    "origin": "Barcelona",
+    "destination": "Faro",
+    "nights": 5,
+    "dates": "3 Aug - 6 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/barcelona-to-faro-RLC114570",
+    "distance_km": 1394
+  },
+  {
+    "id": "RLC114576",
+    "origin": "Venice",
+    "destination": "Barcelona",
+    "nights": 4,
+    "dates": "5 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/venice-to-barcelona-RLC114576",
+    "distance_km": 1435
+  },
+  {
+    "id": "RLC114580",
+    "origin": "Nice",
+    "destination": "A Coruña",
+    "nights": 8,
+    "dates": "4 Aug - 17 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/nice-to-a-corua-RLC114580",
+    "distance_km": 1737
+  },
+  {
+    "id": "RLC114592",
+    "origin": "Seville",
+    "destination": "Tenerife",
+    "nights": 8,
+    "dates": "16 Aug - 24 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/seville-to-tenerife-RLC114592",
+    "distance_km": 1774
+  },
+  {
+    "id": "RLC114529",
+    "origin": "Alicante",
+    "destination": "Amsterdam",
+    "nights": 6,
+    "dates": "20 Jul - 25 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/alicante-to-amsterdam-RLC114529",
+    "distance_km": 2249
+  },
+  {
+    "id": "RLC114591",
+    "origin": "Madrid",
+    "destination": "Tenerife",
+    "nights": 10,
+    "dates": "15 Aug - 31 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/madrid-to-tenerife-RLC114591",
+    "distance_km": 2294
+  },
+  {
+    "id": "RLC114590",
+    "origin": "Marseille",
+    "destination": "Tenerife",
+    "nights": 11,
+    "dates": "21 Aug - 31 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/marseille-to-tenerife-RLC114590",
+    "distance_km": 3270
   }
 ]
