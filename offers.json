@@ -11221,5 +11221,14 @@
     "dates": "21 Aug - 31 Aug",
     "link": "https://www.imoova.com/es/relocations/deal/marseille-to-tenerife-RLC114590",
     "distance_km": 3270
+  },
+  {
+    "id": "RLC109693",
+    "origin": "Hamburg",
+    "destination": "Warsaw",
+    "nights": 4,
+    "dates": "19 Jul - 22 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/hamburg-to-warsaw-RLC109693",
+    "distance_km": 1053
   }
 ]
