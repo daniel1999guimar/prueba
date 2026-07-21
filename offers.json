@@ -11455,5 +11455,14 @@
     "dates": "14 Aug - 31 Aug",
     "link": "https://www.imoova.com/es/relocations/deal/paris-orly-to-tenerife-RLC114912",
     "distance_km": 3487
+  },
+  {
+    "id": "RLC114892",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "25 Jul - 31 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114892",
+    "distance_km": 935
   }
 ]
