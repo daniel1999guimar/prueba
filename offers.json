@@ -11464,5 +11464,14 @@
     "dates": "25 Jul - 31 Jul",
     "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114892",
     "distance_km": 935
+  },
+  {
+    "id": "RLC114890",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "27 Jul - 5 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114890",
+    "distance_km": 935
   }
 ]
