@@ -11356,5 +11356,104 @@
     "dates": "14 Aug - 31 Aug",
     "link": "https://www.imoova.com/es/relocations/deal/paris-orly-to-tenerife-RLC114820",
     "distance_km": 3487
+  },
+  {
+    "id": "RLC114888",
+    "origin": "Palermo",
+    "destination": "Olbia",
+    "nights": 4,
+    "dates": "22 Jul - 25 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/palermo-to-olbia-RLC114888",
+    "distance_km": 935
+  },
+  {
+    "id": "RLC114885",
+    "origin": "Catania",
+    "destination": "Olbia",
+    "nights": 5,
+    "dates": "3 Aug - 10 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/catania-to-olbia-RLC114885",
+    "distance_km": 1142
+  },
+  {
+    "id": "RLC114889",
+    "origin": "Marseille",
+    "destination": "Dusseldorf",
+    "nights": 5,
+    "dates": "22 Jul - 30 Jul",
+    "link": "https://www.imoova.com/es/relocations/deal/marseille-to-dusseldorf-RLC114889",
+    "distance_km": 1261
+  },
+  {
+    "id": "RLC114915",
+    "origin": "Seville",
+    "destination": "Tenerife",
+    "nights": 8,
+    "dates": "30 Aug - 2 Sep",
+    "link": "https://www.imoova.com/es/relocations/deal/seville-to-tenerife-RLC114915",
+    "distance_km": 1774
+  },
+  {
+    "id": "RLC114914",
+    "origin": "Seville",
+    "destination": "Tenerife",
+    "nights": 8,
+    "dates": "16 Aug - 24 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/seville-to-tenerife-RLC114914",
+    "distance_km": 1774
+  },
+  {
+    "id": "RLC114913",
+    "origin": "Seville",
+    "destination": "Tenerife",
+    "nights": 8,
+    "dates": "18 Aug - 24 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/seville-to-tenerife-RLC114913",
+    "distance_km": 1774
+  },
+  {
+    "id": "RLC114910",
+    "origin": "Madrid",
+    "destination": "Tenerife",
+    "nights": 10,
+    "dates": "27 Aug - 8 Sep",
+    "link": "https://www.imoova.com/es/relocations/deal/madrid-to-tenerife-RLC114910",
+    "distance_km": 2294
+  },
+  {
+    "id": "RLC114911",
+    "origin": "Madrid",
+    "destination": "Tenerife",
+    "nights": 9,
+    "dates": "23 Aug - 31 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/madrid-to-tenerife-RLC114911",
+    "distance_km": 2294
+  },
+  {
+    "id": "RLC114894",
+    "origin": "Bilbao",
+    "destination": "Tenerife",
+    "nights": 12,
+    "dates": "31 Aug - 14 Sep",
+    "link": "https://www.imoova.com/es/relocations/deal/bilbao-to-tenerife-RLC114894",
+    "distance_km": 2625
+  },
+  {
+    "id": "RLC114909",
+    "origin": "Marseille",
+    "destination": "Tenerife",
+    "nights": 15,
+    "dates": "20 Aug - 6 Sep",
+    "link": "https://www.imoova.com/es/relocations/deal/marseille-to-tenerife-RLC114909",
+    "distance_km": 3270
+  },
+  {
+    "id": "RLC114912",
+    "origin": "Paris Orly",
+    "destination": "Tenerife",
+    "nights": 16,
+    "dates": "14 Aug - 31 Aug",
+    "link": "https://www.imoova.com/es/relocations/deal/paris-orly-to-tenerife-RLC114912",
+    "distance_km": 3487
   }
 ]
